@@ -1,0 +1,1498 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+<title>Sloka drill</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600&display=swap">
+<style>
+/* Layout: una colonna da telefono; il dipinto in alto sfuma nel fondo, sotto pannelli di vetro stondati; barra delle sezioni fissa. */
+:root{
+  --ground:#F3E2BE; --halo1:rgba(240,150,60,.38); --halo2:rgba(226,186,110,.6);
+  --ink:#1F2A5C; --soft:#3D466F; --accent:#A04F10; --on-accent:#FFFFFF;
+  --glass:rgba(255,255,255,.46); --glass-b:rgba(255,255,255,.78); --row:rgba(255,255,255,.44); --pill:rgba(255,255,255,.6);
+  --hi:rgba(255,255,255,.7); --sel-bg:rgba(160,79,16,.17); --sel-ink:#75380A; --sel-b:rgba(160,79,16,.5); --navglass:rgba(255,248,235,.5);
+  --g1:rgba(255,255,255,.72); --g2:rgba(255,255,255,.1); --g3:rgba(255,255,255,.36); --edge:rgba(255,255,255,.9); --drop:rgba(120,66,14,.26);
+  --c1:rgba(255,255,255,.64); --c2:rgba(255,255,255,.26); --sel-a:rgba(214,128,48,.34); --sel-glow:rgba(190,100,20,.45); --halo3:rgba(232,120,90,.3); --gold-a:rgba(247,206,98,.92); --gold-b:rgba(224,162,40,.78); --gold-e:#D8A535; --gold-ink:#5A3404; --gold-glow:rgba(214,150,30,.55); --dr1:rgba(255,255,255,.5); --dr2:rgba(255,255,255,.16); --ti-glow:rgba(255,241,202,.96); --ti-a:#6A3303; --ti-b:#AD6A0C; --ti-sh:rgba(255,246,220,.9); --veil-top:rgba(243,226,190,.05); --veil-mid:rgba(243,226,190,.8);
+  --c1s:rgba(255,251,243,.78); --c2s:rgba(255,246,231,.54); --rows:rgba(255,255,255,.56); --cap:rgba(255,248,236,.86); --g2s:rgba(255,250,240,.56); --g3s:rgba(255,245,228,.7); --sels:rgba(240,200,146,.78); --selas:rgba(234,176,104,.82);
+  --hair:rgba(31,42,92,.18); --blank:rgba(160,79,16,.16); --veil:rgba(31,42,92,.14);
+  --shadow:0 18px 40px rgba(140,90,30,.16); --fade-top:rgba(243,226,190,0);
+  --mark:#C98A12; --mark-soft:#FBE7B4;
+  --ok:#17693F; --ok-soft:#DDF1E3; --bad:#A8281F; --bad-soft:#F9DEDA;
+  --f-dev:"Noto Serif Devanagari","FreeSerif","Noto Sans Devanagari",serif;
+  --f-serif:"Noto Serif","Georgia","Liberation Serif",serif;
+  --f-ui:"Noto Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1230; --halo1:rgba(74,58,110,.55); --halo2:rgba(40,46,110,.6);
+    --ink:#F3EEE2; --soft:#C9C6E0; --accent:#E9B65A; --on-accent:#1A1530;
+    --glass:rgba(28,33,84,.6); --glass-b:rgba(255,255,255,.18); --row:rgba(255,255,255,.09); --pill:rgba(14,18,48,.55);
+    --hi:rgba(255,255,255,.14); --sel-bg:rgba(233,182,90,.2); --sel-ink:#F3CC80; --sel-b:rgba(233,182,90,.6); --navglass:rgba(30,35,92,.5);
+    --g1:rgba(255,255,255,.24); --g2:rgba(255,255,255,.03); --g3:rgba(255,255,255,.11); --edge:rgba(255,255,255,.3); --drop:rgba(0,0,0,.5);
+    --c1:rgba(74,80,160,.46); --c2:rgba(20,24,66,.56); --sel-a:rgba(240,196,110,.36); --sel-glow:rgba(233,182,90,.4); --halo3:rgba(120,70,150,.4); --gold-a:rgba(246,208,120,.95); --gold-b:rgba(218,164,62,.85); --gold-e:#F3CC80; --gold-ink:#2A1A04; --gold-glow:rgba(233,182,90,.5); --dr1:rgba(70,78,160,.46); --dr2:rgba(22,26,70,.36); --ti-glow:rgba(233,182,90,.3); --ti-a:#F8DFA0; --ti-b:#E2A93E; --ti-sh:rgba(10,12,36,.9); --veil-top:rgba(14,18,48,.3); --veil-mid:rgba(14,18,48,.84);
+    --c1s:rgba(40,46,108,.78); --c2s:rgba(18,22,62,.72); --rows:rgba(255,255,255,.11); --cap:rgba(18,22,62,.84); --g2s:rgba(40,46,108,.58); --g3s:rgba(24,28,76,.72); --sels:rgba(96,76,40,.8); --selas:rgba(128,98,46,.84);
+    --hair:rgba(255,255,255,.16); --blank:rgba(233,182,90,.22); --veil:rgba(255,255,255,.22);
+    --shadow:0 18px 40px rgba(0,0,0,.35); --fade-top:rgba(14,18,48,.38);
+    --mark:#E9B94A; --mark-soft:#3E3317;
+    --ok:#5CC796; --ok-soft:#17372A; --bad:#F08B84; --bad-soft:#3E1D1B;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1230; --halo1:rgba(74,58,110,.55); --halo2:rgba(40,46,110,.6);
+  --ink:#F3EEE2; --soft:#C9C6E0; --accent:#E9B65A; --on-accent:#1A1530;
+  --glass:rgba(28,33,84,.6); --glass-b:rgba(255,255,255,.18); --row:rgba(255,255,255,.09); --pill:rgba(14,18,48,.55);
+    --hi:rgba(255,255,255,.14); --sel-bg:rgba(233,182,90,.2); --sel-ink:#F3CC80; --sel-b:rgba(233,182,90,.6); --navglass:rgba(30,35,92,.5);
+    --g1:rgba(255,255,255,.24); --g2:rgba(255,255,255,.03); --g3:rgba(255,255,255,.11); --edge:rgba(255,255,255,.3); --drop:rgba(0,0,0,.5);
+    --c1:rgba(74,80,160,.46); --c2:rgba(20,24,66,.56); --sel-a:rgba(240,196,110,.36); --sel-glow:rgba(233,182,90,.4); --halo3:rgba(120,70,150,.4); --gold-a:rgba(246,208,120,.95); --gold-b:rgba(218,164,62,.85); --gold-e:#F3CC80; --gold-ink:#2A1A04; --gold-glow:rgba(233,182,90,.5); --dr1:rgba(70,78,160,.46); --dr2:rgba(22,26,70,.36); --ti-glow:rgba(233,182,90,.3); --ti-a:#F8DFA0; --ti-b:#E2A93E; --ti-sh:rgba(10,12,36,.9); --veil-top:rgba(14,18,48,.3); --veil-mid:rgba(14,18,48,.84);
+    --c1s:rgba(40,46,108,.78); --c2s:rgba(18,22,62,.72); --rows:rgba(255,255,255,.11); --cap:rgba(18,22,62,.84); --g2s:rgba(40,46,108,.58); --g3s:rgba(24,28,76,.72); --sels:rgba(96,76,40,.8); --selas:rgba(128,98,46,.84);
+  --hair:rgba(255,255,255,.16); --blank:rgba(233,182,90,.22); --veil:rgba(255,255,255,.22);
+  --shadow:0 18px 40px rgba(0,0,0,.35); --fade-top:rgba(14,18,48,.38);
+  --mark:#E9B94A; --mark-soft:#3E3317;
+  --ok:#5CC796; --ok-soft:#17372A; --bad:#F08B84; --bad-soft:#3E1D1B;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);background-image:radial-gradient(70% 30% at 92% 34%,var(--halo1),transparent),radial-gradient(80% 34% at 4% 62%,var(--halo2),transparent),radial-gradient(70% 28% at 80% 92%,var(--halo3),transparent);background-attachment:fixed;color:var(--ink);font:16px/1.55 var(--f-ui);padding-inline:16px;padding-block:0 84px;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin-inline:auto}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* testata con il dipinto */
+.hero{position:relative;height:132px;margin-inline:-16px;overflow:hidden}
+.hero.noimg{height:72px}
+.hero img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 40%}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(180deg,var(--fade-top) 0%,var(--fade-top) 50%,var(--ground) 100%)}
+.topbar{position:absolute;left:16px;right:16px;top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.brand{padding:8px 14px;border-radius:18px;background:var(--pill);font:600 12px var(--f-ui);letter-spacing:.14em;text-transform:uppercase}
+.chip{min-height:44px;padding:0 16px;border:0;border-radius:22px;background:var(--pill);font:600 13.5px var(--f-ui);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+header{padding-block:2px 10px;display:flex;flex-direction:column;gap:4px}
+.titlerow{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.star{flex:0 0 auto;width:48px;height:48px;border:0;border-radius:24px;background:var(--pill);display:grid;place-items:center;cursor:pointer;color:var(--accent)}
+.star svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.star[aria-pressed="true"] svg{fill:currentColor}
+h1{font:600 clamp(20px,6vw,26px)/1.2 var(--f-serif);margin:0;color:var(--accent);text-wrap:balance}
+.sub{color:var(--soft);margin:0;font-size:14.5px}
+.prefs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.prefs::-webkit-scrollbar{display:none}
+.prefs .chip{flex:0 0 auto;font-size:13px}
+.prefs .chip{background:var(--row);padding:0 12px}
+.prefs .chip[aria-pressed="true"]{background:var(--accent)}
+
+nav{position:fixed;z-index:5;left:50%;transform:translateX(-50%);width:min(528px,calc(100% - 32px));bottom:calc(8px + env(safe-area-inset-bottom,0px));padding:4px;border-radius:30px;background:var(--navglass);border:1px solid var(--glass-b);box-shadow:var(--shadow),inset 0 1px 0 var(--hi);-webkit-backdrop-filter:blur(22px) saturate(1.6);backdrop-filter:blur(22px) saturate(1.6)}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-height:44px;padding:0 16px;border:0;background:var(--row);color:var(--ink);border-radius:22px;font:500 15px var(--f-ui);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent);font-weight:600}
+#tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+#tabs .tab{padding:0 6px}
+#tabs .tab{font-size:16px}
+#subnav{padding-top:10px}
+.tabs.sub{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);overflow:visible}
+.tabs.sub .tab{padding:0 4px;font-size:14px}
+.tabs.sub .tab{background:none;border:1.5px solid var(--hair)}
+.tabs.sub .tab[aria-selected="true"]{background:var(--row);border-color:var(--accent);color:var(--ink)}
+.seg.scope{display:grid;grid-template-columns:1.6fr repeat(4,minmax(0,1fr))}
+.seg.scope button{padding:0 4px}
+.ctl{display:flex;flex-direction:column;gap:10px}
+.tile{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer;color:var(--ink);padding:18px}
+.tile-t{display:block;font:600 19px/1.3 var(--f-serif);color:var(--accent)}
+.tile-d{display:block;font-size:14.5px;color:var(--soft);margin-top:2px}
+.seg.diff{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.seg.diff button{padding:0 4px;font-size:13.5px;white-space:nowrap}
+.dots{display:inline-flex;gap:3px;margin-right:6px;vertical-align:middle}
+.dots i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.btn[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:-2px}
+.btn.primary[aria-pressed="true"]{outline:0}
+
+section.panel{padding-block:10px 14px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--glass);border:1px solid var(--glass-b);border-radius:26px;padding:18px 16px;box-shadow:var(--shadow);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.hint{color:var(--soft);font-size:14.5px;margin:0}
+h2{font:600 19px/1.25 var(--f-serif);margin:0 0 6px;color:var(--accent)}
+.eyebrow{font:600 12px var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:0 0 6px}
+
+/* righe di pāda */
+.pada{display:grid;grid-template-columns:1.2rem minmax(0,1fr);gap:8px;align-items:baseline;padding-block:5px}
+.pada.nonum{display:block;text-align:center}
+.pn{font:600 12.5px var(--f-ui);color:var(--soft);text-align:right;font-variant-numeric:tabular-nums}
+.dev{font-family:var(--f-dev);font-weight:600;color:var(--accent);font-size:clamp(19px,5.2vw,24px);line-height:1.8;overflow-wrap:anywhere}
+.iast{font:400 clamp(18px,4.9vw,22px)/1.75 var(--f-serif);font-style:italic;overflow-wrap:anywhere}
+.gloss{font-size:13px;line-height:1.45;color:var(--soft);margin-top:2px}
+.w{background:none;border:0;border-bottom:1px solid var(--mark);padding:0 2px;font:inherit;font-style:inherit;cursor:pointer;color:inherit;border-radius:6px}
+.w[aria-pressed="true"]{background:var(--sel-bg);border-bottom-color:var(--accent)}
+.wcard{padding:12px 0;border-top:1px solid var(--hair)}
+.wcard:first-child{border-top:0;padding-top:0}
+.wk{font:italic 600 20px var(--f-serif);color:var(--accent)}
+.wm{font-weight:600;margin-top:2px}
+.wi{color:var(--soft);font-size:15px;margin-top:2px}
+.wp{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.wp li{padding:8px 12px;border-radius:14px;background:var(--row)}
+details{border-top:1px solid var(--hair);padding-block:10px}
+details:first-of-type{border-top:0}
+summary{font-weight:600;cursor:pointer;min-height:28px}
+details p{margin:8px 0 0;font:400 16px/1.6 var(--f-serif)}
+.src{font:400 13.5px/1.5 var(--f-ui);color:var(--soft)}
+ul.src{padding-left:18px;margin:8px 0 0}
+.src li{margin-bottom:3px;overflow-wrap:anywhere}
+
+/* controlli */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{min-height:46px;padding:0 16px;border-radius:16px;border:0;background:var(--row);font:500 15px var(--f-ui);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);font-weight:600}
+.btn.primary{background:var(--accent);color:var(--on-accent);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lbl{font:600 12px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin:0 0 6px;display:block}
+.blank{font:inherit;display:inline-block;min-width:2ch;height:1.4em;vertical-align:middle;border:0;border-bottom:2px dashed var(--accent);background:var(--blank);border-radius:8px;cursor:pointer;margin-inline:1px}
+.sep{white-space:pre}
+
+/* campi di scrittura */
+input.fld{font:400 20px var(--f-serif);font-style:italic;color:var(--ink);background:var(--row);border:0;border-bottom:2px solid var(--accent);border-radius:12px 12px 0 0;padding:6px 10px;min-height:44px;max-width:100%}
+input.fld.wide{width:100%}
+input.fld.ok{border-color:var(--ok);background:var(--ok-soft)}
+input.fld.bad{border-color:var(--bad);background:var(--bad-soft)}
+.cloze{font:400 clamp(18px,4.9vw,22px)/2.6 var(--f-serif);font-style:italic}
+.cloze input.fld{font-size:inherit;padding:2px 8px;min-height:40px}
+.kb{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;margin-top:12px}
+.key{min-height:44px;border:0;border-radius:12px;background:var(--row);font:400 20px var(--f-serif);cursor:pointer}
+.key:active{background:var(--blank)}
+.fbrow{border-radius:14px;padding:10px 12px;margin-top:8px;background:var(--row)}
+.fbrow.ok{background:var(--ok-soft)}
+.fbrow.bad{background:var(--bad-soft)}
+.diff{font:400 21px/1.6 var(--f-serif);font-style:italic;overflow-wrap:anywhere}
+.ch.dia{background:var(--mark-soft);border-bottom:2px solid var(--mark)}
+.ch.dia sup,.ch.let sup{font:600 13px var(--f-serif);font-style:normal;margin-left:1px}
+.ch.let{border-bottom:2px solid var(--bad);color:var(--bad)}
+.ch.miss{border-bottom:2px dashed var(--bad);color:var(--bad)}
+.ch.extra{text-decoration:line-through;color:var(--bad)}
+.fbs{font-size:14.5px;color:var(--soft);margin-top:2px}
+.legend{font-size:13px;color:var(--soft);margin:10px 0 0}
+.good{font-weight:600;color:var(--ok)}
+
+/* sandhi */
+.verse-s{font:400 clamp(18px,4.9vw,22px)/1.85 var(--f-serif);font-style:italic;white-space:pre-wrap}
+.sg{border:0;border-bottom:1px solid var(--mark);padding:0 2px 1px;margin:0 -1px;font:inherit;font-style:inherit;cursor:pointer;color:inherit;border-radius:9px;white-space:pre-wrap;text-align:left;
+  background:linear-gradient(180deg,var(--g3),var(--g2));box-shadow:inset 0 1px 0 var(--hi)}
+.sg:active{background:var(--sel-bg)}
+.sg sup{font:600 .58em var(--f-ui);font-style:normal;margin-left:1px;color:var(--accent)}
+.sandhi-card{margin-top:10px;padding-top:10px;border-top:1px solid var(--hair);border-radius:4px}
+.sandhi-card:first-child{margin-top:0;padding-top:0;border-top:0}
+.sandhi-card.flash{animation:flash 1.4s ease-out}
+@keyframes flash{from{outline:4px solid var(--mark)}to{outline:4px solid transparent}}
+.sh{display:flex;gap:10px;align-items:center;width:100%;min-height:44px;padding:0;border:0;background:none;text-align:left;cursor:pointer;color:var(--ink)}
+.sh .eq{flex:1 1 auto;min-width:0}
+.sh .chev{flex:0 0 auto;transition:transform .15s}
+.sh[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.btn.sm{min-height:44px;padding:0 10px;font-size:14px;border-radius:14px}
+.btn.sm[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);outline:0}
+.nb{flex:0 0 auto;display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:13px;background:var(--accent);color:var(--on-accent);font:600 14px var(--f-ui)}
+.eq{font:italic 600 18px/1.4 var(--f-serif);overflow-wrap:anywhere}
+.sut{margin-top:10px;padding-top:10px;border-top:1px solid var(--hair)}
+.sut-n{font:600 12.5px var(--f-ui);color:var(--accent);letter-spacing:.06em}
+.sut-t{font:italic 400 17px/1.5 var(--f-serif);margin:2px 0;overflow-wrap:anywhere}
+.sut-x{font-size:14.5px;color:var(--soft)}
+.cover .sut-body{filter:blur(7px);cursor:pointer;user-select:none}
+.cover .sut-body.rev{filter:none;user-select:auto}
+.choices{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.choices button{min-height:46px;padding:8px 14px;text-align:left;display:flex;gap:10px;align-items:baseline;border-radius:16px;border:2px solid transparent;background:var(--row);font:600 15px var(--f-ui);cursor:pointer}
+.choices button[aria-pressed="true"]{border-color:var(--accent)}
+.choices button.ok{background:var(--ok-soft);border-color:var(--ok)}
+.choices button.bad{background:var(--bad-soft);border-color:var(--bad)}
+.choices .cn{flex:0 0 auto;min-width:2ch;font-variant-numeric:tabular-nums;color:var(--accent)}
+.choices .ct{font:italic 400 16px/1.4 var(--f-serif);overflow-wrap:anywhere;min-width:0}
+.trad{font:400 15.5px/1.62 var(--f-serif);margin:0;padding:2px 6px 4px;text-wrap:pretty}
+.vcard{padding:18px 14px}
+.rule{height:1px;background:var(--hair);margin:14px 6px}
+.fitbox{text-align:center}
+.fitline{white-space:nowrap;line-height:1.6}
+.vcard .iast{font-weight:500}
+/* il verso in tondo invece che in corsivo */
+.roman .iast{font-style:normal;font-weight:500;letter-spacing:.005em}
+.star{width:44px;height:44px}
+
+/* schede */
+.flash-card{min-height:230px;width:100%;text-align:center;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:8px;color:var(--ink)}
+.flash-card .big{font:italic 600 29px/1.3 var(--f-serif);color:var(--accent);overflow-wrap:anywhere}
+.flash-card .wp{text-align:left}
+.count{font:600 13px var(--f-ui);color:var(--soft);font-variant-numeric:tabular-nums;margin:0}
+.rp{display:flex;flex-direction:column;gap:16px;align-items:stretch;text-align:center;padding-block:26px}
+.rp .first{font:italic 400 30px/1.3 var(--f-serif);color:var(--accent);overflow-wrap:anywhere}
+.veilbox{display:flex;flex-direction:column;gap:14px;align-items:center;padding:20px 0;border-radius:20px;background:var(--row)}
+.veilbox span{display:block;height:14px;border-radius:7px;background:var(--veil)}
+.rp .full{text-align:left;padding:8px 12px;border-radius:20px;background:var(--row)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.chip,.tab,.seg button,.btn,.key,.choices button,.star{
+  border:1px solid var(--edge);border-radius:999px;
+  background:radial-gradient(120% 75% at 50% -12%,var(--g1),transparent 62%),linear-gradient(180deg,var(--g2),var(--g3));
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -7px 10px -7px var(--g1),0 8px 18px -8px var(--drop),0 1px 2px -1px var(--drop);
+  -webkit-backdrop-filter:blur(16px) saturate(1.9);backdrop-filter:blur(16px) saturate(1.9);
+  transition:transform .16s ease,box-shadow .2s ease;
+}
+.chip:active,.tab:active,.seg button:active,.btn:active,.key:active,.choices button:active,.star:active,.tile:active,.flash-card:active{transform:scale(.96)}
+.key{border-radius:16px}
+.choices button{border-radius:22px}
+.seg button,.btn{border-radius:999px}
+input.fld{border:1px solid var(--edge);border-bottom:2px solid var(--accent);background:linear-gradient(180deg,var(--g3),var(--g2));box-shadow:inset 0 2px 5px -2px var(--drop);border-radius:14px 14px 4px 4px}
+.card{border-radius:30px;border:1px solid var(--edge);
+  background:radial-gradient(90% 50% at 20% -6%,var(--g1),transparent 60%),linear-gradient(160deg,var(--c1),var(--c2));
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -14px 22px -16px var(--g1),0 22px 40px -18px var(--drop);
+  -webkit-backdrop-filter:blur(24px) saturate(1.8);backdrop-filter:blur(24px) saturate(1.8)}
+nav{border-radius:999px;border-color:var(--edge);
+  background:radial-gradient(100% 90% at 50% -30%,var(--g1),transparent 65%),var(--navglass);
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -8px 12px -8px var(--g1),0 16px 34px -10px var(--drop)}
+nav .tab{background:none;border-color:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;min-height:36px;font-size:14.5px}
+.chip[aria-pressed="true"],.prefs .chip[aria-pressed="true"],.tab[aria-selected="true"],nav .tab[aria-selected="true"],.tabs.sub .tab[aria-selected="true"],.seg button[aria-pressed="true"],.btn.primary,.btn.sm[aria-pressed="true"],.star[aria-pressed="true"]{
+  background:radial-gradient(120% 75% at 50% -12%,var(--g1),transparent 62%),linear-gradient(180deg,var(--sel-a),var(--sel-bg));
+  color:var(--sel-ink);border-color:var(--sel-b);font-weight:600;outline:0;
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -7px 10px -7px var(--g1),0 10px 20px -10px var(--sel-glow)}
+.tabs.sub .tab{border-width:1px;border-color:var(--edge)}
+.wp li,.fbrow,.veilbox,.rp .full{border:1px solid var(--edge);box-shadow:inset 0 1px 0 var(--hi)}
+.panel.enter>*{animation:rise .34s cubic-bezier(.2,.8,.2,1) both}
+.panel.enter>*:nth-child(2){animation-delay:.04s}
+.panel.enter>*:nth-child(3){animation-delay:.08s}
+.panel.enter>*:nth-child(n+4){animation-delay:.12s}
+#b-lang{margin-left:auto}
+.chip.round{width:44px;min-width:44px;height:44px;padding:0;border-radius:50%;display:grid;place-items:center;font-size:12.5px}
+.chip.round svg{width:20px;height:20px}
+.hero.tall:not(.noimg){height:250px}
+.hero.tall img{object-position:50% 48%}
+#home header{padding-block:2px 12px}
+.vlist{display:flex;flex-direction:column;gap:10px}
+.vtile{width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:var(--ink);padding:14px 16px;border-radius:24px;transition:transform .16s ease}
+.vtile:active{transform:scale(.98)}
+.vtile .nb{min-width:32px;height:32px;border-radius:16px;font-size:16px}
+.vt{flex:1 1 auto;min-width:0}
+.vi{display:block;font:italic 400 16.5px/1.35 var(--f-serif);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vd{display:block;font-size:14px;color:var(--soft)}
+.vtile.off{cursor:default;opacity:.62}
+.vtile.off .nb{background:var(--veil);color:var(--soft)}
+.vstar{flex:0 0 auto;width:22px;height:22px;fill:var(--accent)}
+/* il dipinto continua sotto tutta la pagina */
+#bg{position:fixed;inset:0;z-index:0;background-size:auto 150%;background-position:46% 100%;opacity:0;transition:opacity .4s;pointer-events:none}
+#bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--veil-top) 0%,var(--veil-top) 24%,var(--veil-mid) 48%,var(--veil-mid) 100%)}
+body.bgfull #bg{opacity:1}
+/* sopra il dipinto: riquadri meno trasparenti e didascalie con un fondo leggero, per leggere bene */
+body.bgfull{--c1:var(--c1s);--c2:var(--c2s);--row:var(--rows);--g2:var(--g2s);--g3:var(--g3s);--sel-bg:var(--sels);--sel-a:var(--selas)}
+body.bgfull .tabs.sub .tab:not([aria-selected="true"]){background:linear-gradient(180deg,var(--g2),var(--g3))}
+body.bgfull .panel>.hint,body.bgfull .panel>.count{align-self:flex-start;margin:0;padding:8px 14px;border-radius:16px;background:var(--cap);border:1px solid var(--edge);color:var(--ink);box-shadow:inset 0 1px 0 var(--hi);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.wrap{position:relative;z-index:1}
+body.bgfull .hero img,body.bgfull .hero-fade{display:none}
+body.bgfull .hero{height:205px}
+body.bgfull .hero.tall:not(.noimg){height:300px}
+body.bgfull #verseview>header,body.bgfull #review>header{margin-bottom:10px;padding:10px 14px;border-radius:24px;border:1px solid var(--edge);background:linear-gradient(160deg,var(--c1),var(--c2));box-shadow:inset 0 1px 0 var(--hi);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6)}
+.vcard.in-l,#verseview>header.in-l{animation:inl .26s ease both}
+.vcard.in-r,#verseview>header.in-r{animation:inr .26s ease both}
+@keyframes inl{from{opacity:.3;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes inr{from{opacity:.3;transform:translateX(-26px)}to{opacity:1;transform:none}}
+.tbtns{flex:0 0 auto;display:flex;gap:8px}
+.titlerow{align-items:center}
+.tnav{display:flex;align-items:center;gap:2px;min-width:0}
+.navarr{flex:0 0 auto;width:34px;height:44px;padding:0;border:0;background:none;color:var(--accent);display:grid;place-items:center;cursor:pointer;border-radius:12px}
+.navarr svg{width:22px;height:22px}
+.navarr:disabled{opacity:.28;cursor:default}
+.navarr:active{transform:scale(.9)}
+.navarr:first-child{margin-left:-8px}
+#b-dev{font:600 20px/1 var(--f-dev);padding-top:3px}
+.star[aria-pressed="true"]{background:radial-gradient(120% 75% at 50% -12%,var(--g1),transparent 60%),linear-gradient(180deg,var(--gold-a),var(--gold-b));border-color:var(--gold-e);color:var(--gold-ink);box-shadow:inset 0 1px 0 var(--hi),0 8px 18px -8px var(--gold-glow)}
+.prefs.three{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);overflow:visible}
+.prefs.three .chip{padding:0 4px;font-size:12.5px;line-height:1.15}
+.pwnav{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center}
+.pwnav .star{width:48px;height:48px;color:var(--ink)}
+.mrow{padding-block:6px}
+.mrow .gloss{white-space:normal}
+.cloze.fitline{line-height:2.3}
+.cloze input.fld{padding:0 2px;min-height:34px;text-align:center}
+input.fld.wide{font-size:17px}
+/* home: il titolo sta sul dipinto, senza riquadro; l'alone dorato segue le lettere */
+.hh{text-align:center}
+#home>.hh{position:relative;margin-top:-64px;padding:6px 10px 16px}
+.hdev{font:600 36px/1.7 var(--f-dev);padding-top:6px;background:linear-gradient(180deg,var(--ti-a) 18%,var(--ti-b) 58%,var(--ti-a) 96%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 1px 0 var(--ti-sh)) drop-shadow(0 0 7px var(--ti-glow)) drop-shadow(0 0 18px var(--ti-glow))}
+.hh h1{font:600 21px/1.3 var(--f-serif);letter-spacing:.03em;color:var(--ink);text-shadow:0 1px 0 var(--ti-sh),0 0 10px var(--ti-glow),0 0 20px var(--ti-glow);margin-top:-6px}
+#review>header h1{font-size:22px;letter-spacing:0;color:var(--accent);text-shadow:none;margin-top:0}
+.center{display:flex;justify-content:center}
+.contp{min-height:40px;padding:0 18px;font-size:14.5px;display:inline-flex;align-items:center;gap:6px}
+.contp svg{width:16px;height:16px}
+.vgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-block:18px 20px}
+/* riquadri dei versi: gocce di vetro, con il numero al centro */
+.gtile{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 12px 14px;border-radius:30px;text-align:center;color:var(--ink);cursor:pointer;transition:transform .16s ease;
+  border:1px solid var(--edge);
+  background:radial-gradient(90% 55% at 50% -8%,var(--g1),transparent 62%),linear-gradient(170deg,var(--dr1),var(--dr2));
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -12px 18px -12px var(--g1),0 14px 26px -16px var(--drop);
+  -webkit-backdrop-filter:blur(14px) saturate(1.8);backdrop-filter:blur(14px) saturate(1.8)}
+.gtile:active{transform:scale(.97)}
+.gtop{display:flex;align-items:center;justify-content:center;gap:6px;position:relative}
+.gnum{font:400 30px/1.15 var(--f-serif);color:var(--accent);font-variant-numeric:lining-nums}
+.gi{font:italic 500 14.5px/1.35 var(--f-serif);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtile .vstar{position:absolute;left:100%;margin-left:6px;width:17px;height:17px;fill:var(--gold-e)}
+.gtile.off{cursor:default;opacity:.62}
+#review{padding-block:0 14px}
+.rp{position:relative;display:block;text-align:center;padding:52px 14px 26px;cursor:pointer}
+.rp .eyebrow{position:absolute;left:18px;top:22px}
+.eye{position:absolute;top:10px;right:10px;width:40px;height:40px;color:var(--ink)}
+.eye svg{width:21px;height:21px;stroke-width:1.8;stroke-linecap:round}
+.veiled{color:transparent;background:var(--veil);border-radius:8px;-webkit-user-select:none;user-select:none;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@keyframes rise{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.panel.enter>*{animation:none}.chip,.tab,.seg button,.btn,.key,.choices button,.star{transition:none}}
+@media (prefers-reduced-motion:reduce){.sandhi-card.flash{animation:none;outline:3px solid var(--mark)}}
+</style>
+<style>
+/* Sloka drill: stesse tinte e vetro della pagina del Dāmodarāṣṭakam, ma senza dipinto di sfondo */
+#bg{display:none}
+body{background-image:none;padding-block:0 40px}
+.hero.noimg{height:60px}
+.prefs.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;overflow:visible}
+.prefs.four .chip{padding:0 3px;font-size:12px;line-height:1.15;min-height:46px}
+#home>.hh{margin-top:0;padding:4px 10px 14px}
+#home .hh h1,#review .hh h1{color:var(--accent);text-shadow:none;margin:0;font:600 28px/1.2 var(--f-serif);letter-spacing:.01em}
+.hh .sub{margin-top:4px}
+.vlist{display:flex;flex-direction:column;gap:10px;margin-block:6px 18px}
+.vtile .vi{font-style:normal;font-weight:600;font-size:17.5px;color:var(--ink)}
+.vtile .vd{font:italic 400 14px/1.35 var(--f-serif);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vtile .vstar{fill:var(--gold-e);width:20px;height:20px}
+.empty{text-align:center;color:var(--soft);padding:26px 10px}
+.ctx p{margin:0 0 10px;font:400 15.5px/1.6 var(--f-serif)}
+.ctx p:last-child{margin-bottom:0}
+details.ctx>summary+p{margin-top:8px}
+.tag{display:inline-block;margin-right:6px;padding:1px 9px;border-radius:999px;font:600 11.5px var(--f-ui);letter-spacing:.03em;vertical-align:1px}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.no{background:var(--bad-soft);color:var(--bad)}
+.met dl{margin:0}
+.met dt{font:600 12px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-top:12px}
+.met dd{margin:2px 0 0;font:400 15.5px/1.55 var(--f-serif)}
+.met dd .gen{font:600 11.5px var(--f-ui);color:var(--soft)}
+.scan{margin-top:10px;padding-top:10px;border-top:1px solid var(--hair)}
+.scan:first-of-type{border-top:0;padding-top:0}
+.scan .it{font:italic 400 15px/1.4 var(--f-serif);overflow-wrap:anywhere}
+.scan .ln{font:500 17px/1.7 var(--f-ui);letter-spacing:.04em;white-space:nowrap;overflow-x:auto}
+.scan .ln .g{display:inline-block;margin-right:.55em}
+.scan .ln .yt{color:var(--accent);font-weight:700;margin-inline:.1em .55em}
+.scan .nt{font-size:13px;color:var(--soft)}
+</style>
+<style>
+/* barra in basso come nel Dāmodarāṣṭakam */
+nav{left:0;right:0;margin-inline:auto;transform:translate3d(0,0,0)}
+body.hasnav{padding-block-end:84px}
+.tabs.sub.five .tab{padding:0 2px;font-size:12.5px}
+.seg.diff .dots i{width:5px;height:5px}
+/* esercizi più snelli */
+#verseview .seg button,#verseview .btn{min-height:34px;padding:0 12px;font-size:13.5px}
+#verseview .seg{gap:4px}
+#verseview .seg.diff button{font-size:12.5px;gap:4px}
+#verseview .ctl{gap:6px;padding:10px}
+#verseview .btn.big{min-height:42px;width:100%;font-size:14.5px}
+#verseview input.fld{min-height:40px}
+#verseview .cloze input.fld{min-height:38px}
+#verseview .mrow{padding-block:7px}
+#p-scrivi .card,#p-memorizza .card{padding:12px}
+#subtabs.five{grid-auto-flow:row;grid-template-columns:1.45fr 1fr 1fr 1fr .85fr}
+.tabs.sub.five .tab{padding:0 2px;font-size:13.5px;min-height:46px}
+#verseview .seg.diff button{min-height:28px!important;font-size:12px;padding:0 2px}
+#verseview .seg.diff .dots i{width:4px;height:4px}
+.diffrow{display:flex;gap:8px;align-items:center}.diffrow .seg{flex:1}
+.eyesm{flex:0 0 auto;width:34px;height:34px;border:0;border-radius:50%;background:var(--row);color:var(--accent);display:grid;place-items:center;cursor:pointer;padding:0}
+.eyesm svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.eyesm[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.abtns{display:grid;gap:6px;margin-top:10px;align-items:center}
+.abtns.four{grid-template-columns:1.4fr 1fr 44px 1fr}
+.abtns.three{grid-template-columns:1.4fr 1fr 1fr}
+.abtns .eyesm{width:40px;height:40px;justify-self:center}
+.abtns .btn{min-height:40px!important}
+#verseview .kb{gap:5px;margin-top:10px;grid-template-columns:repeat(7,minmax(0,1fr))}
+#verseview .key{min-height:38px;font-size:19px;padding:0}
+/* intestazione compatta dentro un esercizio */
+body.instudio #h-sub{display:none}
+body.instudio #verseview #h-title{font-size:19px;line-height:1.2}
+body.instudio #verseview header{padding-block:0 2px}
+.card.tile.last{border-color:var(--accent)!important}
+/* barra fissa */
+#dock{background:var(--cap)!important;position:fixed;z-index:6;left:0;right:0;margin-inline:auto;width:min(528px,calc(100% - 24px));bottom:calc(70px + env(safe-area-inset-bottom,0px));padding:6px;border-radius:24px;background:var(--navglass);border:1px solid var(--glass-b);box-shadow:var(--shadow),inset 0 1px 0 var(--hi);-webkit-backdrop-filter:blur(22px) saturate(1.6);backdrop-filter:blur(22px) saturate(1.6)}
+#dock .kbrow{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+#dock .kbrow::-webkit-scrollbar{display:none}
+#dock .key{flex:0 0 40px;min-height:40px;padding:0;font-size:19px;border-radius:14px}
+#dock .dbtns{display:grid;gap:6px}
+#dock .dbtns.four{grid-template-columns:1.3fr .9fr 1.1fr 1fr}
+#dock .dbtns.three{grid-template-columns:1.3fr 1fr 1fr}
+#dock .btn{min-height:40px;padding:0 4px;font-size:13.5px;border:0;border-radius:999px;background:var(--row);color:var(--ink);font-family:var(--f-ui);font-weight:500;cursor:pointer}
+#dock .btn.primary{background:var(--accent);color:var(--on-accent);font-weight:600}
+#dock .btn[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+body.hasdock{padding-block-end:170px}
+#wr-fb,#sd-fb{scroll-margin-bottom:190px}
+/* stati delle caselle */
+input.fld.near{border-color:#E0A23A;background:rgba(224,162,58,.16)}
+input.fld.shown{border-bottom-color:var(--accent);color:var(--accent);opacity:.9}
+.blank.rev{display:inline;vertical-align:baseline;height:auto;min-width:0;line-height:inherit;margin:0;background:none;border:0;text-decoration:underline dotted var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;color:inherit;font:inherit;padding:0;border-radius:0;cursor:pointer}
+/* quiz */
+.qdots{display:flex;gap:6px;justify-content:center;padding:2px 0}
+.qdots i{width:9px;height:9px;border-radius:50%;background:var(--hair)}
+.qdots i.cur{background:var(--accent);transform:scale(1.25)}
+.qdots i.ok{background:var(--ok)}
+.qdots i.bad{background:var(--bad)}
+.choices button.ok,.choices button.bad{animation:pop .28s ease}
+@keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+#sd-ch button{min-height:40px;padding-block:6px}
+#p-verso .trad{font-size:15px;line-height:1.55}
+/* (non più usata) versione «senza blocchi» (per ora solo Mādhurya-kādambinī 1) */
+body.flat{padding-inline:12px}
+body.flat #verseview .card:not(.tile):not(.flash-card):not(.rp){background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-radius:0;padding:4px 2px}
+body.flat #verseview .card:not(.tile):not(.flash-card):not(.rp)::before,body.flat #verseview .card:not(.tile):not(.flash-card):not(.rp)::after{display:none}
+body.flat #verseview section.panel{gap:12px}
+body.flat #verseview section.panel>.card:not(.tile):not(.flash-card):not(.rp)+.card:not(.tile):not(.flash-card):not(.rp){border-top:1px solid var(--hair);padding-top:14px}
+body.flat .trad{font-size:15px;line-height:1.55}
+body.flat #verseview>header{margin-bottom:10px;padding:10px 14px;border-radius:24px;border:1px solid var(--edge);background:linear-gradient(160deg,var(--c1),var(--c2));box-shadow:inset 0 1px 0 var(--hi);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6)}
+body.flat #verseview .vcard{padding-inline:0}
+body.flat #verseview .ctl{padding:0}
+</style>
+
+<div id="bg" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="hero noimg" id="hero">
+    <div class="topbar">
+      <button type="button" class="chip" id="b-home" data-act="home" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M15 5l-7 7 7 7"></path></svg>Versi</button>
+      <button type="button" class="chip round" id="b-theme" data-act="theme" aria-label="Tema: automatico" style="margin-left:auto"></button>
+    </div>
+  </div>
+  <section id="home"></section>
+  <section id="review" class="panel" hidden></section>
+  <div id="verseview" hidden>
+    <header>
+      <div class="titlerow">
+        <h1 id="h-title"></h1>
+        <div class="tbtns">
+          <button type="button" class="star" id="b-dev" data-act="pref-dev" aria-pressed="false" aria-label="Mostra la devanāgarī">अ</button>
+          <button type="button" class="star" id="b-learned" data-act="learned" aria-pressed="false" aria-label="Salva il verso con la stella"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.1 6.6 20l1.1-6.1L3.2 9.6l6.1-.8z"></path></svg></button>
+        </div>
+      </div>
+      <p class="sub" id="h-sub"></p>
+    </header>
+    <div id="dock" hidden></div>
+    <nav><div class="tabs" role="tablist" aria-label="Sezioni di studio" id="tabs"></div></nav>
+    <div id="subnav" hidden><div class="tabs sub" role="tablist" aria-label="Esercizi" id="subtabs"></div></div>
+    <section class="panel" id="p-verso" role="tabpanel" hidden></section>
+    <section class="panel" id="p-studio" role="tabpanel" hidden></section>
+    <section class="panel" id="p-memorizza" role="tabpanel" hidden></section>
+    <section class="panel" id="p-scrivi" role="tabpanel" hidden></section>
+    <section class="panel" id="p-parole" role="tabpanel" hidden></section>
+    <section class="panel" id="p-quiz" role="tabpanel" hidden></section>
+    <section class="panel" id="p-ripasso" role="tabpanel" hidden></section>
+    <section class="panel" id="p-grammatica" role="tabpanel" hidden></section>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var nf=function(s){return s.normalize('NFC')};
+
+/* ===== LA RACCOLTA =====
+   Un blocco DATA.push(...) per ogni verso. Si aggiunge in fondo: nella home l'ultimo aggiunto compare in alto.
+   Il campo "context" è una lista di paragrafi: v:true = preso da una fonte, v:false = creato da me, non verificato. */
+var BOOK={title:'Sloka drill'};
+var DATA=[];
+
+/* ----- Mādhurya-kādambinī 1 ----- */
+DATA.push({
+ id:'madhurya-kadambini-1',
+ label:'Mādhurya-kādambinī 1',
+ sub:'śārdūla-vikrīḍita · 19 sillabe per pāda',
+ padas:[
+  {iast:'hṛd-vapre nava-bhakti-śasya-vitateḥ sañjīvanī svāgamā', dev:'हृद्वप्रे नवभक्तिशस्यवितते: सञ्जीवनी स्वागमा'},
+  {iast:'rambhe kāma-tapartu-dāha-damanī viśvāpagollāsinī', dev:'रम्भे कामतपर्तुदाहदमनी विश्वापगोल्लासिनी ।'},
+  {iast:'dūrān me maru-śākhino ’pi sarasī-bhāvāya bhūyāt prabhu', dev:'दूरान्मे मरुशाखिनोऽपि सरसीभावाय भूयात्प्रभु'},
+  {iast:'śrī-caitanya-kṛpā-niraṅkuśa-mahā-mādhurya-kādambinī', dev:'श्रीचैतन्यकृपानिरङ्कुशमहामाधुर्यकादम्बिनी ॥१॥'}
+ ],
+ translation:'La misericordia di Svayam Bhagavān Śrī Kṛṣṇa Caitanya Mahāprabhu è come un banco di nuvole illimitato e incontrollabile di nettare straordinario, che cade come pioggia sul cuore del sādhaka. La pioggia della Sua misericordia dà piena vitalità ai raccolti dei nove membri della bhakti, come śravaṇa e kīrtana, appena seminati nel campo del cuore dei sādhaka. Già il primo apparire del banco di nuvole della misericordia di Mahāprabhu dissolve la bruciante arsura della stagione estiva – i vari desideri materiali di godimento personale – e fa gonfiare di gioia il cuore di tutti i devoti dell’universo, come i fiumi si gonfiano con la pioggia. Possa quel banco di nuvole senza freni e di potenza illimitata, la dolce misericordia di Śrīman Mahāprabhu, la cui influenza si sente anche da grande distanza, riempire me, albero secco e senza vita nel deserto, di rasa che dà vita.',
+ translationSrc:'Resa italiana della traduzione inglese del libro Mādhurya-kādambinī (Pure Bhakti, Gaudiya Vedanta Publications, commento Pīyūṣa-varṣiṇī-vṛtti di Bhaktivedānta Nārāyaṇa Gosvāmī Mahārāja). Il testo inglese l’ho letto tramite un’estrazione automatica del PDF: da ricontrollare sul libro.',
+ words:[
+  {k:'hṛd-vapre',mean:'nel campo del cuore',info:'composto · saptamī ekavacana = locativo singolare',parts:[['hṛd','(n.) cuore (hṛt, davanti a v)'],['vapra','(m./n.) campo, argine: nel senso del libro, «campo»']]},
+  {k:'nava-bhakti-śasya-vitateḥ',mean:'della distesa di raccolti della bhakti nuova / dai nove membri',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare. Il libro parla di «nove membri della bhakti appena seminati»: nava può dunque valere «nuovo» e «nove»',parts:[['nava','nuovo; nove'],['bhakti','(f.) devozione amorevole'],['śasya','(n.) raccolto, messe'],['vitati','(f.) distesa, moltitudine']]},
+  {k:'sañjīvanī',mean:'che dà piena vita',info:'tema sañjīvanī (f.) · prathamā ekavacana = nominativo singolare, concorda con kādambinī · prefisso sam + radice jīv: vivere'},
+  {k:'sva-āgama-ārambhe',mean:'già al primo apparire di essa',info:'composto · saptamī ekavacana = locativo singolare',parts:[['sva','proprio, suo'],['āgama','(m.) venuta, arrivo'],['ārambha','(m.) inizio']]},
+  {k:'kāma-tapa-ṛtu-dāha-damanī',mean:'che doma la bruciatura della stagione calda dei desideri',info:'composto · prathamā ekavacana = nominativo singolare (f.). Per il libro: i desideri materiali di godimento personale sono la «stagione estiva»',parts:[['kāma','(m.) desiderio'],['tapa','(m.) calore'],['ṛtu','(m.) stagione'],['dāha','(m.) bruciatura'],['damanī','(f.) che doma, che placa']]},
+  {k:'viśva-apagā-ullāsinī',mean:'che fa gioire i fiumi di tutto l’universo (i devoti)',info:'composto · prathamā ekavacana = nominativo singolare (f.). Nel libro: «fa gonfiare di gioia il cuore di tutti i devoti, come i fiumi con la pioggia»',parts:[['viśva','tutto, universo'],['apagā','(f.) fiume'],['ullāsinī','(f.) che fa gioire, che fa gonfiare']]},
+  {k:'dūrāt',mean:'da lontano',info:'indeclinabile (ablativo di dūra)'},
+  {k:'me',mean:'a me, per me',info:'pronome asmad · genitivo o dativo singolare (qui letto come «a me»)'},
+  {k:'maru-śākhinaḥ',mean:'dell’albero del deserto',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare',parts:[['maru','(m.) deserto'],['śākhin','(m.) albero, «che ha rami»']]},
+  {k:'api',mean:'anche (pur essendo così secco)',info:'indeclinabile'},
+  {k:'sarasī-bhāvāya',mean:'perché (io) diventi pieno di rasa',info:'composto · caturthī ekavacana = dativo singolare. Dubbio mio: sarasī (f.) è «stagno, lago»; il senso «ricco di rasa» viene dalla traduzione del libro',parts:[['sarasī','(f.) stagno, lago'],['bhāva','(m.) stato, condizione']]},
+  {k:'bhūyāt',mean:'possa essere, possa diventare',info:'verbo, benedittivo (āśīrliṅ) 3ª singolare · radice bhū: essere, diventare'},
+  {k:'prabhu-śrī-caitanya-kṛpā',mean:'la misericordia di Śrī Caitanya Mahāprabhu',info:'composto · prathamā ekavacana = nominativo singolare (f.). Nel libro è stampato «prabhuśrī-caitanya»; qui prabhu e śrī sono separati (mia lettura)',parts:[['prabhu','(m.) signore'],['śrī-caitanya','Śrī Caitanya'],['kṛpā','(f.) misericordia']]},
+  {k:'niraṅkuśa',mean:'senza freni, incontrollabile',info:'aggettivo, concorda con kādambinī',parts:[['nis-','senza'],['aṅkuśa','(m.) pungolo (per l’elefante)']]},
+  {k:'mahā-mādhurya-kādambinī',mean:'banco di nuvole di grande dolcezza',info:'composto · prathamā ekavacana = nominativo singolare (f.)',parts:[['mahā','grande'],['mādhurya','(n.) dolcezza'],['kādambinī','(f.) banco di nuvole']]}
+ ],
+ surf:[
+  [{t:'hṛd-vapre',e:[0]},{t:'nava-bhakti-śasya-vitateḥ',e:[1]},{t:'sañjīvanī',e:[2]},{t:'svāgamā-',e:[3]}],
+  [{t:'-rambhe',e:[3]},{t:'kāma-tapartu-dāha-damanī',e:[4]},{t:'viśvāpagollāsinī',e:[5]}],
+  [{t:'dūrān',e:[6]},{t:'me',e:[7]},{t:'maru-śākhino',e:[8]},{t:'’pi',e:[9]},{t:'sarasī-bhāvāya',e:[10]},{t:'bhūyāt',e:[11]},{t:'prabhu-',e:[12]}],
+  [{t:'śrī-caitanya-kṛpā-',e:[12]},{t:'niraṅkuśa-',e:[13]},{t:'mahā-mādhurya-kādambinī',e:[14]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  45:{txt:'ṛ-dvaye ar',tr:'Quando a-dvaya è seguito da ṛ-dvaya, si uniscono e diventano ar.',ex:'Esempio: kṛṣṇa + ṛddhiḥ → kṛṣṇarddhiḥ'},
+  56:{txt:'e-obhyām asya haro viṣṇupadānte',tr:'A-rāma (a) cade quando viene dopo una e o una o che sta a fine di viṣṇupada.',ex:'Esempio: hare + atra → hare ’tra'},
+  61:{txt:'viṣṇudāso viṣṇupadānte harighoṣe ca harigadā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa harigadā; se non è a fine di viṣṇupada, lo diventa solo se segue un harighoṣa.',ex:'Esempio: bhagavat + icchā → bhagavad-icchā',note:'La sostituzione è quella più simile per luogo di pronuncia (sthāne sadṛśatamaḥ).'},
+  62:{txt:'hariveṇau hariveṇur vā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa, a scelta, hariveṇu quando segue un hariveṇu.',ex:'Esempio: jagat + nāthaḥ → jagan-nāthaḥ oppure (61) jagad-nāthaḥ'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  80:{txt:'ād a-rāma-gopālayor ur nityam',tr:'Un viṣṇusarga (ḥ) dopo a diventa sempre u quando segue a o un gopāla.',ex:'Esempio: kṛṣṇaḥ + gacchati → kṛṣṇo gacchati; kṛṣṇaḥ + atra → kṛṣṇo ’tra'}
+ },
+ sandhi:[
+  {a:'hṛt',b:'vapre',r:'hṛd-vapre',sut:[61],note:'t finale diventa d davanti a v (harimitra).'},
+  {a:'sam',b:'jīvanī',r:'sañjīvanī',sut:[72,73],note:'Prima m → ṁ (72), poi ṁ → ñ, l’hariveṇu del ca-varga a cui appartiene j (73). I sūtra parlano di fine di viṣṇupada: qui sam è un prefisso, quindi l’applicazione è una mia lettura, da verificare.'},
+  {a:'sva-āgama',b:'ārambhe',r:'svāgamārambhe',sut:[42],note:'Due volte: sva + āgama → svāgama e āgama + ārambhe → āgamārambhe. La parola attraversa il confine fra il pāda 1 e il pāda 2 (svāgamā- | -rambhe).'},
+  {a:'tapa',b:'ṛtu',r:'tapartu',sut:[45]},
+  {a:'viśva',b:'apagā',r:'viśvāpagā',sut:[42]},
+  {a:'viśvāpagā',b:'ullāsinī',r:'viśvāpagollāsinī',sut:[44]},
+  {a:'dūrāt',b:'me',r:'dūrān me',sut:[62],note:'La scelta è facoltativa: l’altra forma è dūrād me (61).'},
+  {a:'śākhinaḥ',b:'api',r:'śākhino ’pi',sut:[80,44,56],note:'ḥ → u (80), a + u → o (44), poi la a di api cade (56). Stessa catena di namo ’nanta.'},
+  {a:'mahā',b:'mādhurya',r:'mahā-mādhurya',sut:[42]}
+ ],
+ seg:[
+  [{t:'hṛd',s:[1]},{t:'-vapre nava-bhakti-śasya-vitateḥ '},{t:'sañ',s:[2]},{t:'jīvanī '},{t:'svāgamā',s:[3]}],
+  [{t:'rambhe',s:[3]},{t:' kāma-'},{t:'tapartu',s:[4]},{t:'-dāha-damanī '},{t:'viśvāpagollāsinī',s:[5,6]}],
+  [{t:'dūrān me',s:[7]},{t:' maru-'},{t:'śākhino ’pi',s:[8]},{t:' sarasī-bhāvāya bhūyāt prabhu'}],
+  [{t:'śrī-caitanya-kṛpā-niraṅkuśa-'},{t:'mahā-mādhurya',s:[9]},{t:'-kādambinī'}]
+ ],
+ metrica:{
+  name:'Śārdūla-vikrīḍita',
+  syl:19,
+  gana:'ma · sa · ja · sa · ta · ta · ga',
+  yati:'dopo la 12ª sillaba',
+  lakshana:'sūryāśvair yadi masajasatatagāḥ śārdūlavikrīḍitam',
+  scan:['GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLL','GGGLLGLGLLLGGGLGGLG'],
+  note:'Nel pāda 3 l’ultima sillaba (bhu) è breve: a fine pāda si conta lunga [mia conoscenza generale, da verificare].'
+ },
+ context:[
+  {v:true,t:'Il verso apre il libro, nel Maṅgalācaraṇa (invocazione iniziale), prima della Prima Pioggia «Preminenza della bhakti». Il libro ha otto piogge (vṛṣṭi) e, nell’edizione inglese consultata, è accompagnato dal commento Pīyūṣa-varṣiṇī-vṛtti di Bhaktivedānta Nārāyaṇa Gosvāmī Mahārāja.'},
+  {v:false,t:'A parlare è l’autore stesso, che prega Śrī Caitanya Mahāprabhu: chiede che la Sua misericordia, paragonata a un banco di nuvole monsoniche, riempia di vita il proprio cuore, paragonato a un albero secco nel deserto. Nel verso la nuvola è la misericordia, il campo è il cuore del sādhaka, i raccolti sono i nove membri della bhakti.'},
+  {v:false,t:'L’autore del libro è tradizionalmente indicato in Viśvanātha Cakravartī Ṭhākura [mia conoscenza generale, da verificare].'}
+ ],
+ note:'Nel libro il testo è stampato «prabhuśrī-caitanya…»: qui prabhu e śrī sono separati, perché il pāda 3 finisce con prabhu e il pāda 4 comincia con śrī (19 sillabe ciascuno). Anche la divisione in quattro pāda è mia: nel libro il verso è stampato di seguito.',
+ sources:[
+  'Testo del verso e traduzione inglese: Mādhurya-kādambinī, edizione inglese Pure Bhakti, https://www.purebhakti.com/resources/ebooks-magazines/bhakti-books/english/636-madhurya-kadambini-1/file (nel libro non ci sono synonyms)',
+  'Sūtra 42, 44, 45, 56, 61, 62, 72, 73 e 80: Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto)',
+  'Devanāgarī: ricavata da me dal testo in caratteri latini del libro, che non la riporta.',
+  'Parola per parola, genere, caso, composti, nome del metro e lakṣaṇa: conoscenza generale, da verificare.'
+ ]
+});
+/* ----- fine Mādhurya-kādambinī 1 ----- */
+/* ----- Arcana-dīpikā · mantra-hīnaṁ ----- */
+DATA.push({
+ id:'arcana-dipika-mantra-hinam',
+ label:'Arcana-dīpikā · mantra-hīnaṁ',
+ sub:'anuṣṭubh (śloka) · 8 sillabe per pāda',
+ padas:[
+  {iast:'mantra-hīnaṁ kriyā-hīnaṁ', dev:'मन्त्रहीनं क्रियाहीनं'},
+  {iast:'bhakti-hīnaṁ janārdana', dev:'भक्तिहीनं जनार्दन ।'},
+  {iast:'yat pūjitaṁ mayā deva', dev:'यत्पूजितं मया देव'},
+  {iast:'paripūrṇaṁ tad astu me', dev:'परिपूर्णं तदस्तु मे ॥'}
+ ],
+ translation:'Privo di mantra, privo di azione rituale, privo di devozione, o Janārdana: qualunque adorazione io abbia offerto, o Signore, sia resa completa per me.',
+ translationSrc:'Traduzione italiana fornita da te in chat. Non l’ho verificata sulla traduzione inglese del libro, perché non sono riuscito a leggere la pagina dell’Arcana-dīpikā che contiene il verso.',
+ words:[
+  {k:'mantra-hīnam',mean:'privo di mantra',info:'composto · prathamā/dvitīyā ekavacana = nominativo/accusativo singolare (n.); concorda con pūjitam',parts:[['mantra','(m.) mantra, formula sacra'],['hīna','(agg.) privo, mancante (dalla radice hā: lasciare, abbandonare)']]},
+  {k:'kriyā-hīnam',mean:'privo di azione rituale',info:'composto · prathamā/dvitīyā ekavacana = nominativo/accusativo singolare (n.); concorda con pūjitam',parts:[['kriyā','(f.) azione, atto rituale (dalla radice kṛ: fare)'],['hīna','(agg.) privo, mancante']]},
+  {k:'bhakti-hīnam',mean:'privo di devozione',info:'composto · prathamā/dvitīyā ekavacana = nominativo/accusativo singolare (n.); concorda con pūjitam',parts:[['bhakti','(f.) devozione amorevole'],['hīna','(agg.) privo, mancante']]},
+  {k:'janārdana',mean:'o Janārdana',info:'tema janārdana (m.) · sambodhana ekavacana = vocativo singolare · nome di Bhagavān'},
+  {k:'yat',mean:'ciò che, qualunque cosa',info:'pronome relativo yad (n.) · prathamā ekavacana = nominativo singolare; correlativo di tat'},
+  {k:'pūjitam',mean:'adorato, offerto in adorazione',info:'participio passato · radice pūj: adorare, venerare · tema pūjita (n.) · prathamā ekavacana = nominativo singolare'},
+  {k:'mayā',mean:'da me',info:'pronome asmad · tṛtīyā ekavacana = strumentale singolare'},
+  {k:'deva',mean:'o Signore',info:'tema deva (m.): dio, signore · sambodhana ekavacana = vocativo singolare'},
+  {k:'paripūrṇam',mean:'completo, pieno',info:'composto · tema paripūrṇa (n.) · prathamā ekavacana = nominativo singolare; è il predicato di pūjitam',parts:[['pari','prefisso: tutto intorno, interamente'],['pūrṇa','(agg.) pieno (dalla radice pṝ: riempire)']]},
+  {k:'tat',mean:'quello',info:'pronome tad (n.) · prathamā ekavacana = nominativo singolare; riprende yat'},
+  {k:'astu',mean:'sia',info:'verbo, imperativo (loṭ) 3ª singolare · radice as: essere'},
+  {k:'me',mean:'a me, per me',info:'pronome asmad · caturthī o ṣaṣṭhī ekavacana = dativo o genitivo singolare (qui letto «per me»)'}
+ ],
+ surf:[
+  [{t:'mantra-hīnaṁ',e:[0]},{t:'kriyā-hīnaṁ',e:[1]}],
+  [{t:'bhakti-hīnaṁ',e:[2]},{t:'janārdana',e:[3]}],
+  [{t:'yat',e:[4]},{t:'pūjitaṁ',e:[5]},{t:'mayā',e:[6]},{t:'deva',e:[7]}],
+  [{t:'paripūrṇaṁ',e:[8]},{t:'tad',e:[9]},{t:'astu',e:[10]},{t:'me',e:[11]}]
+ ],
+ sutra:{
+  61:{txt:'viṣṇudāso viṣṇupadānte harighoṣe ca harigadā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa harigadā; se non è a fine di viṣṇupada, lo diventa solo se segue un harighoṣa.',ex:'Esempio: bhagavat + icchā → bhagavad-icchā',note:'La sostituzione è quella più simile per luogo di pronuncia (sthāne sadṛśatamaḥ).'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'}
+ },
+ sandhi:[
+  {a:'hīnam',b:'kriyā-',r:'hīnaṁ kriyā-',sut:[72,73],note:'m → ṁ davanti a consonante (72). Con il sūtra 73 la nasale può anche assimilarsi alla consonante seguente (hīnaṅ kriyā-, hīnam bhakti-, hīnañ janārdana, paripūrṇan tat): è facoltativo, e nel verso c’è sempre ṁ. Lo stesso vale per i sandhi 2, 3, 4 e 5.'},
+  {a:'hīnam',b:'bhakti-',r:'hīnaṁ bhakti-',sut:[72],note:'La parola attraversa il confine fra il pāda 1 e il pāda 2.'},
+  {a:'hīnam',b:'janārdana',r:'hīnaṁ janārdana',sut:[72]},
+  {a:'pūjitam',b:'mayā',r:'pūjitaṁ mayā',sut:[72]},
+  {a:'paripūrṇam',b:'tat',r:'paripūrṇaṁ tat',sut:[72]},
+  {a:'tat',b:'astu',r:'tad astu',sut:[61],note:'t finale diventa d prima di una vocale (harigadā, 61), come in bhagavad-icchā.'}
+ ],
+ seg:[
+  [{t:'mantra-hīna'},{t:'ṁ',s:[1]},{t:' kriyā-hīna'},{t:'ṁ',s:[2]}],
+  [{t:'bhakti-hīna'},{t:'ṁ',s:[3]},{t:' janārdana'}],
+  [{t:'yat pūjita'},{t:'ṁ',s:[4]},{t:' mayā deva'}],
+  [{t:'paripūrṇa'},{t:'ṁ',s:[5]},{t:' ta'},{t:'d',s:[6]},{t:' astu me'}]
+ ],
+ metrica:{
+  name:'Anuṣṭubh (śloka)',
+  syl:8,
+  gana:'nessuno schema fisso di gaṇa: nel pāda di 8 sillabe contano soprattutto la 5ª, la 6ª e la 7ª',
+  yati:'nessuna pausa fissa',
+  lakshana:'śloke ṣaṣṭhaṁ guru jñeyaṁ sarvatra laghu pañcamam / dvi-catuḥ-pādayor hrasvaṁ saptamaṁ dīrghamanyayoḥ',
+  sylNote:'contate da me sul testo: 4 × 8 = 32',
+  yatiNote:'Non ho dati affidabili su una cesura fissa nell’anuṣṭubh',
+  scan:['GLGGLGGG','GLGGLGLL','GGLGLGGL','LLGGLGLG'],
+  note:'Secondo il lakṣaṇa citato: 5ª sillaba breve, 6ª lunga, 7ª lunga nei pāda 1 e 3 e breve nei pāda 2 e 4. In tutti e quattro i pāda la regola è rispettata. Ricorda che e e o sono sempre lunghe (de, me). L’ultima sillaba di ogni pāda si conta lunga anche se è breve [mia conoscenza generale, da verificare].'
+ },
+ context:[
+  {v:true,t:'L’indice dell’Arcana-dīpikā (terza edizione inglese, Pure Bhakti) contiene a pag. 113 la sezione «Prayers Begging Forgiveness for Offences (aparādha-kṣamāpana-mantras)».'},
+  {v:false,t:'Probabilmente il verso sta in quella sezione, ma non ho potuto leggere la pagina: capitolo, numero del verso, fonte originale e traduzione inglese del libro non sono verificati.'},
+  {v:false,t:'Dal testo stesso: chi parla si rivolge a Janārdana e dice che la sua adorazione è mancata di mantra, di azione rituale e di devozione; chiede che, comunque sia stata, sia resa completa.'}
+ ],
+ note:'Il testo del verso è quello che mi hai scritto in chat: non l’ho confrontato con il libro. La divisione in quattro pāda da otto sillabe è mia (due righe da sedici sillabe). La devanāgarī l’ho ricavata io dall’IAST; non ho un numero del verso, quindi la chiusura è un semplice ॥.',
+ sources:[
+  'Testo del verso e traduzione italiana: forniti da te in chat. Verifica sul libro non riuscita: il PDF Arcana-dīpikā (https://www.purebhakti.com/resources/ebooks-magazines/bhakti-books/english/615-arcana-dipika-3rd-edition/file) con i miei strumenti si legge solo fino a circa pag. 107.',
+  'Sūtra 61, 72 e 73: Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto).',
+  'Devanāgarī: ricavata da me dal testo in caratteri latini.',
+  'Parola per parola, genere, caso, composti, scansione, nome del metro e lakṣaṇa: conoscenza generale, da verificare. Śrī Ślokāmṛta-bindu e Vedabase non consultati: una ricerca sul web del verso non ha dato fonti con il parola per parola.'
+ ]
+});
+/* ----- fine Arcana-dīpikā · mantra-hīnaṁ ----- */
+
+/* ----- Arcana-dīpikā · aparādha-sahasrāṇi ----- */
+DATA.push({
+ id:'arcana-dipika-aparadha-sahasrani',
+ label:'Arcana-dīpikā · aparādha-sahasrāṇi',
+ sub:'anuṣṭubh (śloka) · 8 sillabe per pāda',
+ padas:[
+  {iast:'aparādha-sahasrāṇi', dev:'अपराधसहस्राणि'},
+  {iast:'kriyante ’har-niśaṁ mayā', dev:'क्रियन्तेऽहर्निशं मया ।'},
+  {iast:'dāso ’ham iti māṁ matvā', dev:'दासोऽहमिति मां मत्वा'},
+  {iast:'kṣamasva madhusūdana', dev:'क्षमस्व मधुसूदन ॥'}
+ ],
+ translation:'Mille offese vengono commesse da me giorno e notte; considerandomi tuo servitore, perdonami, o Madhusūdana.',
+ translationSrc:'Traduzione italiana fornita da te in chat. Non l’ho verificata sulla traduzione inglese del libro, perché non sono riuscito a leggere la pagina dell’Arcana-dīpikā che contiene il verso.',
+ words:[
+  {k:'aparādha-sahasrāṇi',mean:'mille offese',info:'composto · prathamā bahuvacana = nominativo plurale (n.); soggetto di kriyante',parts:[['aparādha','(m.) offesa, colpa'],['sahasra','(n.) mille']]},
+  {k:'kriyante',mean:'vengono commesse (fatte)',info:'verbo, presente (laṭ), passivo, 3ª plurale · radice kṛ: fare'},
+  {k:'ahar-niśam',mean:'giorno e notte',info:'composto con valore avverbiale (indeclinabile). Non ho dati affidabili per scomporlo e analizzarne la forma finale: lo lascio intero.'},
+  {k:'mayā',mean:'da me',info:'pronome asmad · tṛtīyā ekavacana = strumentale singolare'},
+  {k:'dāsaḥ',mean:'servitore',info:'tema dāsa (m.) · prathamā ekavacana = nominativo singolare. «Tuo» è sottinteso nel verso.'},
+  {k:'aham',mean:'io',info:'pronome asmad · prathamā ekavacana = nominativo singolare'},
+  {k:'iti',mean:'così (chiude il pensiero «sono servitore»)',info:'indeclinabile'},
+  {k:'mām',mean:'me',info:'pronome asmad · dvitīyā ekavacana = accusativo singolare'},
+  {k:'matvā',mean:'considerando, ritenendo',info:'gerundio (ktvā), indeclinabile · radice man: pensare, considerare'},
+  {k:'kṣamasva',mean:'perdona',info:'verbo, imperativo (loṭ) 2ª singolare · radice kṣam: perdonare, sopportare'},
+  {k:'madhusūdana',mean:'o Madhusūdana',info:'tema madhusūdana (m.) · sambodhana ekavacana = vocativo singolare · nome di Bhagavān'}
+ ],
+ surf:[
+  [{t:'aparādha-sahasrāṇi',e:[0]}],
+  [{t:'kriyante',e:[1]},{t:'’har-niśaṁ',e:[2]},{t:'mayā',e:[3]}],
+  [{t:'dāso',e:[4]},{t:'’ham',e:[5]},{t:'iti',e:[6]},{t:'māṁ',e:[7]},{t:'matvā',e:[8]}],
+  [{t:'kṣamasva',e:[9]},{t:'madhusūdana',e:[10]}]
+ ],
+ sutra:{
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  56:{txt:'e-obhyām asya haro viṣṇupadānte',tr:'A-rāma (a) cade quando viene dopo una e o una o che sta a fine di viṣṇupada.',ex:'Esempio: hare + atra → hare ’tra'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  80:{txt:'ād a-rāma-gopālayor ur nityam',tr:'Un viṣṇusarga (ḥ) dopo a diventa sempre u quando segue a o un gopāla.',ex:'Esempio: kṛṣṇaḥ + gacchati → kṛṣṇo gacchati; kṛṣṇaḥ + atra → kṛṣṇo ’tra'}
+ },
+ sandhi:[
+  {a:'kriyante',b:'ahar-',r:'kriyante ’har-',sut:[56],note:'La a iniziale di ahar cade dopo la e finale di kriyante; l’apostrofo (avagraha) segna la a caduta.'},
+  {a:'niśam',b:'mayā',r:'niśaṁ mayā',sut:[72,73],note:'m → ṁ davanti a consonante (72). Con il sūtra 73 la nasale può anche diventare la nasale del varga seguente (qui m): è facoltativo, e nel verso c’è ṁ.'},
+  {a:'dāsaḥ',b:'aham',r:'dāso ’ham',sut:[80,44,56],note:'ḥ → u (80), a + u → o (44), poi la a di aham cade (56).'},
+  {a:'mām',b:'matvā',r:'māṁ matvā',sut:[72]}
+ ],
+ seg:[
+  [{t:'aparādha-sahasrāṇi'}],
+  [{t:'kriyante ’har',s:[1]},{t:'-niśa'},{t:'ṁ',s:[2]},{t:' mayā'}],
+  [{t:'dāso ’ham',s:[3]},{t:' iti mā'},{t:'ṁ',s:[4]},{t:' matvā'}],
+  [{t:'kṣamasva madhusūdana'}]
+ ],
+ metrica:{
+  name:'Anuṣṭubh (śloka)',
+  syl:8,
+  gana:'nessuno schema fisso di gaṇa: nel pāda di 8 sillabe contano soprattutto la 5ª, la 6ª e la 7ª',
+  yati:'nessuna pausa fissa',
+  lakshana:'śloke ṣaṣṭhaṁ guru jñeyaṁ sarvatra laghu pañcamam / dvi-catuḥ-pādayor hrasvaṁ saptamaṁ dīrghamanyayoḥ',
+  sylNote:'contate da me sul testo: 4 × 8 = 32',
+  yatiNote:'Non ho dati affidabili su una cesura fissa nell’anuṣṭubh',
+  scan:['LLGLLGGL','LGGGLGLG','GGLLLGGG','LGLLLGLL'],
+  note:'Secondo il lakṣaṇa citato: 5ª sillaba breve, 6ª lunga, 7ª lunga nei pāda 1 e 3 e breve nei pāda 2 e 4. In tutti e quattro i pāda la regola è rispettata. Ricorda che e e o sono sempre lunghe (te, so). L’ultima sillaba di ogni pāda si conta lunga anche se è breve [mia conoscenza generale, da verificare].'
+ },
+ context:[
+  {v:true,t:'L’indice dell’Arcana-dīpikā (terza edizione inglese, Pure Bhakti) contiene a pag. 113 la sezione «Prayers Begging Forgiveness for Offences (aparādha-kṣamāpana-mantras)».'},
+  {v:false,t:'Probabilmente il verso sta in quella sezione, ma non ho potuto leggere la pagina: capitolo, numero del verso, fonte originale e traduzione inglese del libro non sono verificati.'},
+  {v:false,t:'Dal testo stesso: chi parla si rivolge a Madhusūdana, riconosce di commettere mille offese giorno e notte e chiede perdono presentandosi come suo servitore.'}
+ ],
+ note:'Il testo del verso è quello che mi hai scritto in chat: non l’ho confrontato con il libro. La divisione in quattro pāda da otto sillabe è mia (due righe da sedici sillabe). La devanāgarī l’ho ricavata io dall’IAST; non ho un numero del verso, quindi la chiusura è un semplice ॥. Il composto ahar-niśam non è stato analizzato.',
+ sources:[
+  'Testo del verso e traduzione italiana: forniti da te in chat. Verifica sul libro non riuscita: il PDF Arcana-dīpikā (https://www.purebhakti.com/resources/ebooks-magazines/bhakti-books/english/615-arcana-dipika-3rd-edition/file) con i miei strumenti si legge solo fino a circa pag. 107.',
+  'Sūtra 44, 56, 72, 73 e 80: Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto).',
+  'Devanāgarī: ricavata da me dal testo in caratteri latini.',
+  'Parola per parola, genere, caso, composti, scansione, nome del metro e lakṣaṇa: conoscenza generale, da verificare. Śrī Ślokāmṛta-bindu e Vedabase non consultati.'
+ ]
+});
+/* ----- fine Arcana-dīpikā · aparādha-sahasrāṇi ----- */
+/* ===== FINE RACCOLTA ===== */
+
+DATA.forEach(function(d){d.padas.forEach(function(p){p.iast=nf(p.iast)})});
+
+/* ---------- memoria locale: preferenze e stelle ---------- */
+var PKEY='impara-versi-preferenze',SKEY='impara-versi-stelle';
+function load(k){try{return JSON.parse(localStorage.getItem(k))||{}}catch(e){return {}}}
+function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var prefs=load(PKEY),stars=load(SKEY);
+if(['auto','light','dark'].indexOf(prefs.theme)<0)prefs.theme='auto';
+prefs.mode='trad';prefs.dev=false;
+function saveAll(){put(PKEY,{theme:prefs.theme,last:prefs.last});put(SKEY,stars)}
+var cur=-1,sel=null;
+
+/* ---------- tema ---------- */
+var root=document.documentElement,hostTheme=root.getAttribute('data-theme');
+var ICON={
+ auto:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"></path></svg>',
+ light:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"></path></svg>',
+ dark:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>'
+};
+function nightNow(){var h=new Date().getHours();return h>=20||h<7}
+function applyTheme(){
+  var mode=prefs.theme;
+  if(mode==='auto'){
+    var sys=false;try{sys=window.matchMedia('(prefers-color-scheme: dark)').matches}catch(e){}
+    mode=(hostTheme==='dark'||sys||nightNow())?'dark':'light';
+  }
+  root.setAttribute('data-theme',mode);
+  var b=$('#b-theme');b.innerHTML=ICON[prefs.theme];
+  b.setAttribute('aria-label','Tema: '+{auto:'automatico',light:'giorno',dark:'notte'}[prefs.theme]);
+}
+setInterval(function(){if(prefs.theme==='auto')applyTheme()},300000);
+
+/* ---------- pezzi di pagina ---------- */
+var STAR='<svg class="vstar" viewBox="0 0 24 24" aria-label="Salvato"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.1 6.6 20l1.1-6.1L3.2 9.6l6.1-.8z"></path></svg>';
+var CHEV='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>';
+var SHUF='<svg viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px;stroke-width:2;stroke-linecap:round"><path d="M20 11a8 8 0 0 0-14.3-4.6L3.5 9"></path><path d="M3.5 4v5h5"></path><path d="M4 13a8 8 0 0 0 14.3 4.6L20.5 15"></path><path d="M20.5 20v-5h-5"></path></svg>';
+var EYE={
+ open:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="2.8"></circle></svg>',
+ shut:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="2.8"></circle><path d="M4 4l16 16"></path></svg>'
+};
+function eyeBtn(act,shown){return '<button type="button" class="star eye" data-act="'+act+'" aria-pressed="'+shown+'" aria-label="'+(shown?'Nascondi il verso':'Mostra il verso')+'">'+(shown?EYE.shut:EYE.open)+'</button>'}
+function chip(act,label,on){return '<button type="button" class="chip" data-act="'+act+'" aria-pressed="'+(!!on)+'">'+label+'</button>'}
+function seg(name,opts,c){return '<div class="seg" role="group">'+opts.map(function(o){return '<button type="button" data-act="seg" data-name="'+name+'" data-val="'+esc(o[0])+'" aria-pressed="'+(String(o[0])===String(c))+'">'+esc(o[1])+'</button>'}).join('')+'</div>'}
+function partsHtml(w){return w.parts?'<ul class="wp">'+w.parts.map(function(p){return '<li><i>'+esc(p[0])+'</i> '+esc(p[1])+'</li>'}).join('')+'</ul>':''}
+function wordHtml(w){return '<div class="wcard"><div class="wk">'+esc(w.k)+'</div><div class="wm">'+esc(w.mean)+'</div><div class="wi">'+esc(w.info)+'</div>'+partsHtml(w)+'</div>'}
+function sutHtml(d,n){
+  var s=d.sutra[n];
+  return '<div class="sut"><div class="sut-n">SŪTRA '+n+'</div><div class="sut-t">'+esc(s.txt)+'</div><div>'+esc(s.tr)+'</div>'+(s.note?'<div class="sut-x">'+esc(s.note)+'</div>':'')+'<div class="sut-x">'+esc(s.ex)+'</div></div>';
+}
+function sandhiVerse(d,pi){
+  var groups=[];
+  d.seg[pi].forEach(function(x){
+    var last=groups[groups.length-1];
+    if(x.s&&last&&last.s){last.t+=x.t;x.s.forEach(function(n){if(last.s.indexOf(n)<0)last.s.push(n)})}
+    else groups.push({t:x.t,s:x.s?x.s.slice():null});
+  });
+  return groups.map(function(g){return g.s?'<button type="button" class="sg" data-act="sg" data-s="'+g.s[0]+'">'+esc(g.t)+'<sup>'+g.s.join('·')+'</sup></button>':esc(g.t)}).join('');
+}
+function sandhiHtml(d){
+  return '<div class="card">'+d.sandhi.map(function(x,i){
+    var n=i+1;
+    return '<div class="sandhi-card" id="sd-card-'+n+'"><button type="button" class="sh" data-act="sd-tog" data-t="sd-b-'+n+'" aria-expanded="false"><span class="nb">'+n+'</span><span class="eq">'+esc(x.r)+'</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>'+
+     '<div id="sd-b-'+n+'" hidden><p class="eq" style="margin:10px 0 0">'+esc(x.a)+' + '+esc(x.b)+' → '+esc(x.r)+'</p>'+(x.note?'<div class="sut-x" style="margin-top:4px">'+esc(x.note)+'</div>':'')+x.sut.map(function(s){return sutHtml(d,s)}).join('')+'</div></div>';
+  }).join('')+'<p class="hint" style="margin-top:12px">Ho segnato i sandhi principali; non è un elenco completo. I sūtra sono quelli del PDF del progetto; il fatto che si applichino a questo verso è una mia lettura.</p></div>';
+}
+function metricaHtml(d){
+  var m=d.metrica,G='<span class="gen">[mia conoscenza generale, da verificare]</span>';
+  var sc=m.scan.map(function(s,i){
+    var out='',k;
+    for(k=0;k<s.length;k++){
+      if(k%3===0)out+=(k?'</span>':'')+'<span class="g">';
+      out+=s[k]==='G'?'—':'∪';
+      if(k===11)out+='</span><span class="yt">|</span><span class="g">';
+    }
+    out+='</span>';
+    return '<div class="scan"><div class="it">'+(i+1)+'. '+esc(d.padas[i].iast)+'</div><div class="ln" aria-label="Scansione laghu e guru">'+out+'</div></div>';
+  }).join('');
+  return '<div class="card met"><dl><dt>Nome</dt><dd>'+esc(m.name)+' '+G+'</dd>'+
+   '<dt>Sillabe per pāda</dt><dd>'+m.syl+' ('+esc(m.sylNote||'contate da me sul testo: 4 × 19 = 76')+')</dd>'+
+   '<dt>Gaṇa</dt><dd>'+esc(m.gana)+' '+G+'</dd>'+
+   '<dt>Pausa (yati)</dt><dd>'+esc(m.yati)+(m.yatiNote?'. '+esc(m.yatiNote)+' ':': in tutti e quattro i pāda cade a fine parola (vitateḥ, damanī, sarasī, mahā) ')+G+'</dd>'+
+   '<dt>Verso che definisce il metro (lakṣaṇa)</dt><dd><i>'+esc(m.lakshana)+'</i><br><span class="gen">Citato a memoria, non ho trovato una fonte che lo confermi: non ho dati affidabili su questo.</span></dd></dl></div>'+
+   '<div class="card"><p class="eyebrow">Scansione · — guru · ∪ laghu · | pausa</p>'+sc+'<p class="scan nt" style="border-top:1px solid var(--hair);padding-top:10px;margin-top:12px">'+esc(m.note)+' La scansione è calcolata da me sul testo.</p></div>';
+}
+function contextHtml(d){
+  return '<details class="ctx"><summary>Contesto</summary>'+d.context.map(function(c){
+    return '<p><span class="tag '+(c.v?'ok':'no')+'">'+(c.v?'dal libro':'creato da me, non verificato')+'</span>'+esc(c.t)+'</p>';
+  }).join('')+'</details>';
+}
+function fitVerse(){
+  $$('.fitbox').forEach(function(box){
+    var lines=$$('.fitline',box),max=Number(box.dataset.max),avail=box.clientWidth;
+    if(!lines.length||!avail)return;
+    var f=max,mn=(box.dataset.min?Number(box.dataset.min):10);
+    lines.forEach(function(l){l.style.whiteSpace=''});
+    for(var k=0;k<6;k++){
+      lines.forEach(function(l){l.style.fontSize=f+'px'});
+      var w=Math.max.apply(null,lines.map(function(l){return l.scrollWidth}));
+      if(w<=avail||f<=mn)break;
+      f=Math.max(mn,Math.floor(f*avail/w*100)/100-0.2);
+    }
+    if(mn>10&&f<=mn)lines.forEach(function(l){l.style.whiteSpace='normal'});
+  });
+}
+window.addEventListener('resize',fitVerse);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitVerse);
+
+/* ---------- pagina del verso ---------- */
+function renderVerso(){
+  var d=DATA[cur],m=prefs.mode;
+  var dev=d.padas.map(function(p){return '<div class="dev fitline">'+p.dev+'</div>'}).join('');
+  var ia=d.padas.map(function(p,i){
+    var t;
+    if(m==='wbw')t=d.surf[i].map(function(s,j){var on=sel&&sel[0]===i&&sel[1]===j;return '<button type="button" class="w" data-act="word" data-p="'+i+'" data-j="'+j+'" aria-pressed="'+(!!on)+'">'+esc(s.t)+'</button>'}).join(' ');
+    else if(m==='gram')t=sandhiVerse(d,i);
+    else t=esc(p.iast);
+    return '<div class="iast fitline">'+t+'</div>';
+  }).join('');
+  var det='<p class="hint">Tocca una parola del verso per vederne il significato e l’analisi.</p>';
+  if(sel)det=d.surf[sel[0]][sel[1]].e.map(function(e){return wordHtml(d.words[e])}).join('');
+  var extra='';
+  if(m==='wbw')extra='<div class="card" aria-live="polite">'+det+'</div><p class="hint">Il libro non ha il parola per parola: questa analisi è mia, da verificare.</p>';
+  else if(m==='gram')extra=sandhiHtml(d);
+  else if(m==='metr')extra=metricaHtml(d);
+  $('#p-verso').innerHTML=
+   '<div class="prefs four" role="group" aria-label="Cosa mostrare">'+chip('pref-trad','Traduzione',m==='trad')+chip('pref-wbw','Parola per parola',m==='wbw')+chip('pref-gram','Sandhi',m==='gram')+chip('pref-metr','Metrica',m==='metr')+'</div>'+
+   '<div class="card vcard roman">'+(prefs.dev?'<div class="fitbox" data-max="22">'+dev+'</div><div class="rule"></div>':'')+'<div class="fitbox" data-max="21" data-min="16.5">'+ia+'</div>'+
+   (m==='trad'?'<div class="rule"></div><p class="trad">'+esc(d.translation)+'</p>':'')+'</div>'+
+   extra+
+   '<div class="card">'+contextHtml(d)+(d.note?'<details><summary>Nota sul testo</summary><p>'+esc(d.note)+'</p></details>':'')+
+   '<details><summary>Fonti</summary><ul class="src">'+(d.translationSrc?['Traduzione: '+d.translationSrc]:[]).concat(d.sources).map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ul></details></div>';
+  fitVerse();
+}
+function applyPrefs(){
+  var d=DATA[cur];
+  $('#b-learned').setAttribute('aria-pressed',String(!!(d&&stars[d.id])));
+  $('#b-dev').setAttribute('aria-pressed',String(!!prefs.dev));
+}
+function openVerse(i){
+  cur=i;sel=null;prefs.mode='trad';prefs.dev=false;
+  var d=DATA[i];
+  $('#h-title').textContent=d.label;$('#h-sub').textContent=d.sub;
+  document.title=d.label.replace(/,/g,'');
+  prefs.last=d.id;saveAll();
+  bindVerse(i);view('verse');applyPrefs();buildTabs();
+  memReset();wrReset();
+  sd.q=null;sd.pick=null;sd.order=[];sd.oi=0;pw.i=0;pw.flip=false;pw.order=WORDS.map(function(_,k){return k});rp.shown=false;qz=null;
+  main='verso';curSub=null;renderAll();show();
+}
+
+/* ---------- home ---------- */
+function order(){return DATA.map(function(_,i){return i}).reverse()}   /* l'ultimo aggiunto sta in alto */
+function renderHome(){
+  var list=order(),cont='';
+  var li=-1;DATA.forEach(function(d,k){if(d.id===prefs.last)li=k});
+  if(li>=0)cont='<div class="center"><button type="button" class="btn primary contp" data-act="open" data-i="'+li+'">Continua · '+esc(DATA[li].label)+CHEV+'</button></div>';
+  var tiles=list.length?list.map(function(k){
+    var d=DATA[k];
+    return '<button type="button" class="card vtile" data-act="open" data-i="'+k+'"><span class="vt"><span class="vi">'+esc(d.label)+'</span><span class="vd">'+esc(d.padas[0].iast)+'</span></span>'+(stars[d.id]?STAR:'')+CHEV+'</button>';
+  }).join(''):'<p class="empty">Nessun verso ancora. Scrivimi in chat il verso da studiare.</p>';
+  $('#home').innerHTML='<header class="hh"><h1>'+esc(BOOK.title)+'</h1></header>'+cont+
+   '<div class="vlist" style="margin-top:16px">'+tiles+'</div>'+
+   '<div class="center"><button type="button" class="btn contp" data-act="review">Ripasso generale</button></div>';
+}
+function view(name){
+  $('#home').hidden=name!=='home';$('#verseview').hidden=name!=='verse';$('#review').hidden=name!=='review';
+  $('#b-home').hidden=name==='home';document.body.classList.toggle('hasnav',name==='verse');if(name!=='verse'){var dk=$('#dock');if(dk)dk.hidden=true;document.body.classList.remove('hasdock','instudio','flat')}
+  try{window.scrollTo(0,0)}catch(e){}
+}
+function goHome(){cur=-1;renderHome();view('home');document.title=BOOK.title}
+
+/* ---------- ripasso generale: una scheda per verso, con solo la prima parola ---------- */
+var rv={mode:'all',order:[],i:0,flip:false};
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function rvReset(){rv.order=order().filter(function(k){return rv.mode==='all'||stars[DATA[k].id]});rv.i=0;rv.flip=false}
+function veiledVerse(d,shown){
+  var first=nf(d.surf[0][0].t);
+  return '<div class="fitbox roman" data-max="21">'+d.padas.map(function(p,pi){
+    if(shown)return '<div class="iast fitline">'+esc(p.iast)+'</div>';
+    if(pi===0)return '<div class="iast fitline">'+esc(first)+'<span class="veiled" aria-hidden="true">'+esc(p.iast.slice(first.length))+'</span></div>';
+    return '<div class="iast fitline"><span class="veiled" aria-hidden="true">'+esc(p.iast)+'</span></div>';
+  }).join('')+'</div>';
+}
+function goReview(){
+  rv.mode=DATA.some(function(d){return stars[d.id]})?'star':'all';rvReset();renderRv();view('review');
+}
+function renderRv(){
+  var nStar=DATA.filter(function(d){return stars[d.id]}).length,body;
+  if(!rv.order.length){
+    body='<div class="card"><p class="hint" style="color:var(--ink)">'+(DATA.length?'Non hai ancora salvato nessun verso con la stella.':'Non ci sono ancora versi da ripassare.')+'</p></div>';
+  }else{
+    var d=DATA[rv.order[rv.i]];
+    body='<p class="count">'+(rv.i+1)+' / '+rv.order.length+'</p>'+
+     '<div class="card rp" data-act="rv-flip">'+eyeBtn('rv-flip',rv.flip)+'<div class="eyebrow" style="margin:0">'+esc(d.label)+'</div>'+veiledVerse(d,rv.flip)+'</div>'+
+     '<div class="pwnav"><button type="button" class="btn" data-act="rv-prev">Precedente</button><button type="button" class="star" data-act="rv-shuffle" aria-label="Mescola le schede">'+SHUF+'</button><button type="button" class="btn primary" data-act="rv-next">Prossima</button></div>'+
+     '<div><button type="button" class="btn sm" data-act="open" data-i="'+rv.order[rv.i]+'">Apri il verso</button></div>';
+  }
+  $('#review').innerHTML='<header class="hh"><h1>Ripasso generale</h1></header>'+
+   '<div class="card">'+seg('rv-mode',[['star','Solo con la stella ('+nStar+')'],['all','Tutti i versi']],rv.mode)+'</div>'+body;
+  fitVerse();
+}
+
+/* ---------- studio: Memorizza, Scrivi, Parole, Sandhi, Quiz e Ripasso (stessa struttura dell'app del Dāmodarāṣṭakam) ---------- */
+var PADAS=[],WORDS=[],SURF=[],SUTRA={},SANDHI=[],SEG=[];
+function tokenize(s){return s.split(/([ \-])/).filter(function(x){return x!==''}).map(function(x){return {w:!/^[ \-]$/.test(x),t:nf(x)}})}
+DATA.forEach(function(d){d.padas.forEach(function(p){p.tok=tokenize(p.iast)})});
+
+/* progressi: quante volte il verso intero è stato scritto a memoria */
+var PFKEY='impara-versi-progressi',perf=load(PFKEY);
+function perfOf(){var id=DATA[cur].id;perf[id]=perf[id]||{verse:0};return perf[id]}
+var KEYS=['ā','ī','ū','ṁ','ḥ','ś','ṣ','ṇ','ṭ','ḍ','ṛ','ṅ','ñ','ṝ'].map(nf);
+
+/* ---------- confronto con correzione dei diacritici ---------- */
+function strip(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function canon(s){return nf(s).toLowerCase().replace(/ṃ/g,'ṁ').replace(/[\s\-‐–—.,;:।॥0-9'’‘]/g,'')}
+function align(u,c){
+  var n=u.length,m=c.length,i,j,d=[];
+  for(i=0;i<=n;i++){d.push(new Array(m+1).fill(0));d[i][0]=i}
+  for(j=0;j<=m;j++)d[0][j]=j;
+  for(i=1;i<=n;i++)for(j=1;j<=m;j++){
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(u[i-1]===c[j-1]?0:1));
+  }
+  var ops=[];i=n;j=m;
+  while(i>0||j>0){
+    if(i>0&&j>0&&d[i][j]===d[i-1][j-1]+(u[i-1]===c[j-1]?0:1)){
+      ops.push(u[i-1]===c[j-1]?{t:'ok',u:u[i-1]}:{t:'sub',u:u[i-1],c:c[j-1]});i--;j--;
+    }else if(i>0&&d[i][j]===d[i-1][j]+1){ops.push({t:'extra',u:u[i-1]});i--}
+    else{ops.push({t:'miss',c:c[j-1]});j--}
+  }
+  return ops.reverse();
+}
+function compare(user,expected){
+  var u=Array.from(canon(user)),c=Array.from(canon(expected));
+  var ops=align(u,c),cnt={dia:0,let:0,extra:0,miss:0};
+  ops.forEach(function(o){
+    if(o.t==='sub'){o.k=(strip(o.u)===strip(o.c))?'dia':'let';cnt[o.k]++}
+    else if(o.t==='extra')cnt.extra++;
+    else if(o.t==='miss')cnt.miss++;
+  });
+  return {ok:u.join('')===c.join(''),ops:ops,cnt:cnt};
+}
+function renderDiff(ops){
+  return ops.map(function(o){
+    if(o.t==='ok')return esc(o.u);
+    if(o.t==='sub')return '<span class="ch '+o.k+'">'+esc(o.u)+'<sup>'+esc(o.c)+'</sup></span>';
+    if(o.t==='extra')return '<span class="ch extra">'+esc(o.u)+'</span>';
+    return '<span class="ch miss">'+esc(o.c)+'</span>';
+  }).join('');
+}
+function stCls(r,val){
+  if(r.ok)return 'ok';
+  if(!String(val).trim())return '';
+  return (r.cnt.let||r.cnt.miss||r.cnt.extra)?'bad':'near';
+}
+function setSt(inp,r){inp.classList.remove('ok','bad','near');var c=stCls(r,inp.value);if(c)inp.classList.add(c)}
+var STKEY='impara-versi-studio',stud=load(STKEY);
+function saveStudio(){
+  if(cur<0)return;var id=DATA[cur].id;
+  stud[id]={sub:stud[id]&&stud[id].sub||null,m:[mem.scope,mem.level],w:[wr.scope,wr.level]};
+  if(curSub)stud[id].sub=curSub;
+  put(STKEY,stud);
+}
+function restoreStudio(i){
+  var d=DATA[i],sv=stud[d.id]||{},n=d.padas.length;
+  function ok(sc){return sc==='all'||(Number(sc)>=0&&Number(sc)<n)}
+  mem.scope='all';mem.level=1;wr.scope='all';wr.level=1;
+  if(sv.m){if(ok(sv.m[0]))mem.scope=String(sv.m[0]);if(sv.m[1]>=1&&sv.m[1]<=3)mem.level=Number(sv.m[1])}
+  if(sv.w){if(ok(sv.w[0]))wr.scope=String(sv.w[0]);if(sv.w[1]>=1&&sv.w[1]<=3)wr.level=Number(sv.w[1])}
+  lastSub=sv.sub||null;
+}
+var lastSub=null;
+function pl(n,a,b){return n+' '+(n===1?a:b)}
+function summary(c){
+  var p=[];
+  if(c.dia)p.push(pl(c.dia,'diacritico da sistemare','diacritici da sistemare'));
+  if(c.let)p.push(pl(c.let,'lettera sbagliata','lettere sbagliate'));
+  if(c.miss)p.push(pl(c.miss,'lettera mancante','lettere mancanti'));
+  if(c.extra)p.push(pl(c.extra,'lettera in più','lettere in più'));
+  return p.join(' · ');
+}
+var LEGEND='<p class="legend">Evidenziato: diacritico da sistemare (in alto, quello giusto) · rosso: lettera sbagliata · tratteggio: lettera mancante · barrato: lettera in più. Spazi e trattini non contano.</p>';
+function kbHtml(){
+  return '<div class="kb" role="group" aria-label="Tastiera dei diacritici">'+KEYS.map(function(k){
+    return '<button type="button" class="key" data-act="key" data-ch="'+k+'" aria-label="inserisci '+k+'">'+k+'</button>';
+  }).join('')+'</div>';
+}
+function glossOf(pi){
+  var seen=[],out=[];
+  (SURF[pi]||[]).forEach(function(s){s.e.forEach(function(e){if(seen.indexOf(e)<0){seen.push(e);out.push(WORDS[e].mean)}})});
+  return out.join(' · ');
+}
+function devLine(pi){return prefs.dev&&PADAS[pi].dev?'<div class="dev">'+PADAS[pi].dev+'</div>':''}
+function sutH(n){return sutHtml(DATA[cur],n)}
+
+/* ---------- sezioni: Verso, Studio (gli esercizi), Ripasso ---------- */
+var MAINS=[['verso','Verso'],['studio','Studio'],['ripasso','Ripasso']];
+var ALLSUBS=[['memorizza','Memorizza','Il verso con parole nascoste, da recitare ad alta voce.'],['scrivi','Scrivi','Completa le parole mancanti o scrivi il verso a memoria.'],['parole','Parole','Schede con il significato e l\'analisi di ogni parola.'],['grammatica','Sandhi','Esercizio sui sandhi e sui loro sūtra.'],['quiz','Quiz','Domande a scelta multipla sulle parole e sui pāda del verso.']];
+var SUBS=ALLSUBS;
+var main='verso',lastField=null,curSub=null;
+function buildTabs(){
+  SUBS=ALLSUBS.filter(function(t){return (t[0]!=='grammatica'||SANDHI.length)&&(t[0]!=='parole'||WORDS.length)});
+  $('#tabs').innerHTML=MAINS.map(function(t){
+    return '<button type="button" class="tab" role="tab" id="m-'+t[0]+'" data-act="main" data-id="'+t[0]+'" aria-selected="false">'+t[1]+'</button>';
+  }).join('');
+  $('#subtabs').classList.toggle('five',SUBS.length>=5);
+  $('#subtabs').innerHTML=SUBS.map(function(t){
+    return '<button type="button" class="tab" role="tab" id="t-'+t[0]+'" data-act="sub" data-id="'+t[0]+'" aria-selected="false" aria-controls="p-'+t[0]+'">'+t[1]+'</button>';
+  }).join('');
+  $('#p-studio').innerHTML=SUBS.map(function(t){
+    return '<button type="button" class="card tile'+(t[0]===lastSub?' last':'')+'" data-act="sub" data-id="'+t[0]+'"><span><span class="tile-t">'+t[1]+'</span><span class="tile-d">'+esc(t[2])+'</span></span>'+
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>';
+  }).join('');
+}
+function show(){
+  if(!MAINS.some(function(t){return t[0]===main}))main='verso';
+  var m=main,st=m==='studio';
+  MAINS.forEach(function(t){$('#m-'+t[0]).setAttribute('aria-selected',String(t[0]===m))});
+  $('#p-verso').hidden=m!=='verso';$('#p-ripasso').hidden=m!=='ripasso';
+  $('#p-studio').hidden=!(st&&!curSub);$('#subnav').hidden=!(st&&curSub);
+  SUBS.forEach(function(t){
+    $('#p-'+t[0]).hidden=!(st&&t[0]===curSub);
+    $('#t-'+t[0]).setAttribute('aria-selected',String(t[0]===curSub));
+  });
+  $$('section.panel').forEach(function(el){el.classList.remove('enter');if(!el.hidden){void el.offsetWidth;el.classList.add('enter')}});
+  document.body.classList.toggle('instudio',st&&!!curSub);
+  saveAll();lastField=null;updateDock();fitVerse();
+  var tb=curSub&&$('#t-'+curSub);
+  if(st&&tb&&tb.scrollIntoView){try{tb.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}}
+}
+/* livelli: uno, due o tre puntini */
+function diffSeg(name,cur){
+  return '<div class="seg diff" role="group" aria-label="Difficoltà">'+[[1,'Facile'],[2,'Medio'],[3,'Difficile']].map(function(o){
+    return '<button type="button" data-act="seg" data-name="'+name+'" data-val="'+o[0]+'" aria-pressed="'+(o[0]===cur)+'"><span class="dots" aria-hidden="true">'+new Array(o[0]+1).join('<i></i>')+'</span>'+o[1]+'</button>';
+  }).join('')+'</div>';
+}
+function scopeSeg(name,cur){
+  return '<div class="seg scope" role="group" aria-label="Quale parte del verso" style="grid-template-columns:1.6fr repeat('+PADAS.length+',minmax(0,1fr))">'+[['all','Tutto']].concat(PADAS.map(function(_,i){return [String(i),String(i+1)]})).map(function(o){
+    return '<button type="button" data-act="seg" data-name="'+name+'" data-val="'+o[0]+'" aria-pressed="'+(o[0]===String(cur))+'"'+(o[0]==='all'?'':' aria-label="Pāda '+o[1]+'"')+'>'+o[1]+'</button>';
+  }).join('')+'</div>';
+}
+function allPads(){return PADAS.map(function(_,i){return i})}
+function padsOf(st){return st.scope==='all'?allPads():[Number(st.scope)]}
+function unitsOf(pi){var u=[];PADAS[pi].tok.forEach(function(t,i){if(t.w)u.push(i)});return u}
+function fullText(pads,noDev){
+  return pads.map(function(pi){return '<div class="pada"><span class="pn">'+(pi+1)+'</span><div><div class="iast">'+esc(PADAS[pi].iast)+'</div>'+(noDev?'':devLine(pi))+'</div></div>'}).join('');
+}
+function eyeSm(act,on){return '<button type="button" class="eyesm" data-act="'+act+'" aria-pressed="'+!!on+'" aria-label="'+(on?'Nascondi il testo':'Mostra il testo')+'">'+(on?EYE.shut:EYE.open)+'</button>'}
+function showLabel(on){return on?'Nascondi il testo':'Mostra il testo'}
+
+/* ---------- MEMORIZZA ---------- */
+var mem={scope:'all',level:1,hidden:new Set(),hid0:new Set(),show:false,gloss:true};
+function memReset(){
+  mem.hidden=new Set();mem.show=false;
+  padsOf(mem).forEach(function(pi){
+    var units=unitsOf(pi),hide;
+    if(mem.level===3)hide=units;
+    else if(mem.level===2)hide=units.slice(1);
+    else hide=shuffle(units.slice()).slice(0,Math.max(1,Math.round(units.length/2)));
+    hide.forEach(function(ui){mem.hidden.add(pi+':'+ui)});
+  });
+  mem.hid0=new Set(mem.hidden);saveStudio();
+}
+function renderMem(){
+  var rows=padsOf(mem).map(function(pi){
+    var html=PADAS[pi].tok.map(function(t,i){
+      if(!t.w)return '<span class="sep">'+esc(t.t)+'</span>';
+      var k=pi+':'+i;
+      if(!mem.show&&mem.hid0.has(k)){
+        if(mem.hidden.has(k))return '<button type="button" class="blank" data-act="mem-reveal" data-k="'+k+'" style="width:'+Math.max(2.4,t.t.length)+'ch" aria-label="Parola nascosta, tocca per rivelare"></button>';
+        return '<button type="button" class="blank rev" data-act="mem-hide" data-k="'+k+'" aria-label="Tocca per nascondere di nuovo">'+esc(t.t)+'</button>';
+      }
+      return esc(t.t);
+    }).join('');
+    return '<div class="mrow"><div class="iast fitline">'+html+'</div></div>';
+  }).join('');
+  $('#p-memorizza').innerHTML=
+   '<div class="card ctl">'+scopeSeg('mem-scope',mem.scope)+'<div class="diffrow">'+diffSeg('mem-level',mem.level)+eyeSm('mem-show',mem.show)+'</div></div>'+
+   '<div class="card"><div class="fitbox" data-max="21">'+rows+'</div></div>';
+  fitVerse();
+}
+
+/* ---------- SCRIVI: parole mancanti (facile, medio) o righe intere (difficile) ---------- */
+var wr={scope:'all',level:1,blanks:{},show:false,counted:false,hinted:false};
+function wrReset(){
+  wr.blanks={};wr.show=false;wr.counted=false;wr.hinted=false;saveStudio();
+  padsOf(wr).forEach(function(pi){
+    var u=unitsOf(pi);
+    wr.blanks[pi]=shuffle(u.slice()).slice(0,wr.level===1?1:Math.ceil(u.length/2));
+  });
+}
+function perfLine(){var n=perfOf().verse;return 'Verso intero scritto a memoria: '+n+(n===1?' volta':' volte')}
+var FLD='data-kb="1" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"';
+function renderWr(){
+  var num=(wr.scope==='all'&&wr.level===3);   /* i numeri delle righe solo con «Tutto» e «Difficile» */
+  var lines=padsOf(wr).map(function(pi){
+    if(wr.level===3){
+      var inp='<input class="fld wide" id="wr-'+pi+'" '+FLD+' aria-label="Pāda '+(pi+1)+'">';
+      return num?'<div class="pada" style="align-items:center"><span class="pn">'+(pi+1)+'</span><div>'+inp+'</div></div>':'<div class="mrow">'+inp+'</div>';
+    }
+    return '<div class="mrow"><div class="cloze fitline">'+PADAS[pi].tok.map(function(t,i){
+      if(!t.w)return '<span class="sep">'+esc(t.t)+'</span>';
+      if(wr.blanks[pi].indexOf(i)>=0)return '<input class="fld" id="wr-'+pi+'-'+i+'" '+FLD+' aria-label="Parola mancante" style="width:'+(t.t.length+1)+'ch">';
+      return esc(t.t);
+    }).join('')+'</div></div>';
+  }).join('');
+  if(wr.level<3)lines='<div class="fitbox" data-max="21">'+lines+'</div>';
+  $('#p-scrivi').innerHTML=
+   '<div class="card ctl">'+scopeSeg('wr-scope',wr.scope)+diffSeg('wr-level',wr.level)+
+   '</div>'+
+   '<div class="card">'+lines+kbHtml()+wrBtns()+'<div id="wr-fb" aria-live="polite"></div></div>'+
+   '<p class="hint" id="wr-perf">'+perfLine()+'</p>';
+  updateDock();fitVerse();
+}
+function wrCheck(){
+  var items=[];
+  padsOf(wr).forEach(function(pi){
+    if(wr.level===3)items.push({id:'wr-'+pi,exp:PADAS[pi].iast,name:'Pāda '+(pi+1),tell:false});
+    else wr.blanks[pi].slice().sort(function(a,b){return a-b}).forEach(function(i){items.push({id:'wr-'+pi+'-'+i,exp:PADAS[pi].tok[i].t,name:'Pāda '+(pi+1),tell:true})});
+  });
+  if(wr.show){$('#wr-fb').innerHTML='<p class="hint">Nascondi il testo per controllare ciò che hai scritto.</p>';return}
+  var html='',good=0,empties=[];
+  items.forEach(function(it){
+    var inp=$('#'+it.id),val=inp.value,r=compare(val,it.exp);
+    setSt(inp,r);
+    var fix=it.tell?'<div class="fbs">Corretto: <b>'+esc(it.exp)+'</b></div>':'';
+    if(r.ok)good++;
+    else if(!val.trim()){
+      if(it.tell)html+='<div class="fbrow bad">'+it.name+': vuoto.'+fix+'</div>';else empties.push(it.name.replace('Pāda ',''));
+    }
+    else html+='<div class="fbrow bad"><div class="fbs">'+it.name+'</div><div class="diff">'+renderDiff(r.ops)+'</div><div class="fbs">'+summary(r.cnt)+'</div>'+fix+'</div>';
+  });
+  if(empties.length)html='<div class="fbrow bad">'+(empties.length===1?'Pāda ':'Pāda ')+empties.join(', ')+': vuot'+(empties.length===1?'o':'i')+'.</div>'+html;
+  var all=good===items.length;
+  if(all&&wr.level===3&&wr.scope==='all'&&!wr.counted&&!wr.show&&!wr.hinted){
+    wr.counted=true;perfOf().verse++;put(PFKEY,perf);var pe=$('#wr-perf');if(pe)pe.textContent=perfLine();
+  }
+  $('#wr-fb').innerHTML=(all?'<p class="good" style="margin:12px 0 0">Tutto giusto.</p>':'<p style="margin:12px 0 0"><b>'+good+' su '+items.length+'</b> giuste.</p>')+html+(all?'':LEGEND);
+  try{$('#wr-fb').scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+}
+/* Scrivi: «Mostra il testo» scrive il testo corretto dentro le caselle (e lo toglie); «Riprova» le svuota e si riscrive lo stesso testo */
+function wrBtns(){return '<div class="abtns four"><button type="button" class="btn primary" data-act="wr-check">Controlla</button><button type="button" class="btn" data-act="wr-hint">Aiuto</button>'+eyeSm('wr-show',wr.show).replace('class="eyesm"','class="eyesm" id="wr-show"')+'<button type="button" class="btn" data-act="wr-clear">Riprova</button></div>'}
+function wrInputs(){return $$('#p-scrivi input.fld')}
+/* «Aiuto»: aggiunge una lettera giusta alla casella in uso (o alla prima non ancora giusta) */
+function wrHint(){
+  if(wr.show)return;
+  var el=(lastField&&lastField.id&&lastField.id.indexOf('wr-')===0&&document.body.contains(lastField))?lastField:null;
+  if(!el)el=wrInputs().filter(function(x){return !compare(x.value,wrAnswer(x)).ok})[0];
+  if(!el)return;
+  var ans=nf(wrAnswer(el)),v=nf(el.value),l=0;
+  while(l<v.length&&l<ans.length&&v[l]===ans[l])l++;
+  el.value=ans.slice(0,Math.min(ans.length,l+1));
+  el.classList.remove('ok','bad','near');wr.hinted=true;
+  el.focus({preventScroll:true});
+}
+function wrAnswer(inp){
+  var m=inp.id.match(/^wr-(\d+)(?:-(\d+))?$/),pi=Number(m[1]);
+  return m[2]===undefined?PADAS[pi].iast:PADAS[pi].tok[Number(m[2])].t;
+}
+function wrToggle(){
+  wr.show=!wr.show;
+  wrInputs().forEach(function(inp){
+    if(wr.show){inp.dataset.mine=inp.value;inp.value=wrAnswer(inp);inp.readOnly=true;inp.classList.remove('ok','bad','near');inp.classList.add('shown')}
+    else{inp.value=inp.dataset.mine||'';inp.readOnly=false;inp.classList.remove('shown')}
+  });
+  var b=$('#wr-show');b.innerHTML=wr.show?EYE.shut:EYE.open;b.setAttribute('aria-pressed',String(wr.show));b.setAttribute('aria-label',wr.show?'Nascondi il testo':'Mostra il testo');
+  if(wr.show)$('#wr-fb').innerHTML='';
+}
+function wrRetry(){
+  wr.show=false;wr.counted=false;wr.hinted=false;
+  wrInputs().forEach(function(inp){inp.value='';inp.dataset.mine='';inp.readOnly=false;inp.classList.remove('ok','bad','near','shown')});
+  $('#wr-fb').innerHTML='';
+  var b=$('#wr-show');b.innerHTML=EYE.open;b.setAttribute('aria-pressed','false');b.setAttribute('aria-label','Mostra il testo');
+}
+
+/* ---------- SANDHI: esercizio sui sandhi ---------- */
+var sd={q:null,pick:null,order:[],oi:0,opts:[]};
+function sdNext(){
+  if(sd.oi>=sd.order.length){sd.order=shuffle(SANDHI.map(function(_,i){return i}));sd.oi=0}
+  sd.q=sd.order[sd.oi++];sd.pick=null;
+  var right=SANDHI[sd.q].sut[0],pool=[];
+  SANDHI.forEach(function(s2){s2.sut.forEach(function(n){if(n!==right&&pool.indexOf(n)<0)pool.push(n)})});
+  sd.opts=[right].concat(shuffle(pool).slice(0,3)).sort(function(a,b){return a-b});
+}
+function renderSdEx(){
+  if(!SANDHI.length){$('#p-grammatica').innerHTML='';return}
+  if(sd.q===null)sdNext();
+  var x=SANDHI[sd.q],opts=sd.opts;
+  $('#p-grammatica').innerHTML='<div class="card">'+
+   '<p class="eq" style="margin:0 0 6px">'+esc(x.a)+' + '+esc(x.b)+' → ?</p>'+
+   '<label class="lbl" for="sd-in">Risultato</label>'+
+   '<input class="fld wide" id="sd-in" data-kb="1" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">'+
+   kbHtml()+
+   '<p class="lbl" style="margin-top:12px">Quale sūtra?</p>'+
+   '<div class="choices" id="sd-ch">'+opts.map(function(n){return '<button type="button" data-act="sd-pick" data-n="'+n+'" aria-pressed="false"><span class="cn">'+n+'</span><span class="ct">'+esc(SUTRA[n].txt)+'</span></button>'}).join('')+'</div>'+
+   '<div class="abtns three"><button type="button" class="btn primary" data-act="sd-check">Controlla</button><button type="button" class="btn" data-act="sd-retry">Riprova</button><button type="button" class="btn" data-act="sd-next">Prossima</button></div>'+
+   '<div id="sd-fb" aria-live="polite"></div></div>';
+}
+function sdCheck(){
+  var x=SANDHI[sd.q],inp=$('#sd-in'),val=inp.value,r=compare(val,x.r),html='';
+  setSt(inp,r);
+  if(r.ok)html+='<div class="fbrow ok">✓ Risultato giusto: <i>'+esc(x.r)+'</i></div>';
+  else if(!val.trim())html+='<div class="fbrow bad">Risultato vuoto. Corretto: <i>'+esc(x.r)+'</i></div>';
+  else html+='<div class="fbrow bad"><div class="diff">'+renderDiff(r.ops)+'</div><div class="fbs">'+summary(r.cnt)+'</div><div class="fbs">Corretto: <i>'+esc(x.r)+'</i></div></div>';
+  var right=x.sut[0];
+  $$('#sd-ch button').forEach(function(b){
+    var n=Number(b.dataset.n);
+    b.classList.remove('ok','bad');
+    if(n===right)b.classList.add('ok');
+    else if(sd.pick===n)b.classList.add('bad');
+  });
+  if(sd.pick===null)html+='<div class="fbrow bad">Non hai scelto il sūtra. Quello giusto è il <b>'+right+'</b>.</div>';
+  else if(sd.pick===right)html+='<div class="fbrow ok">✓ Sūtra '+right+' giusto.</div>';
+  else html+='<div class="fbrow bad">Sūtra '+sd.pick+': non è questo. Quello giusto è il <b>'+right+'</b>.</div>';
+  html+=sutH(right);
+  if(x.note)html+='<p class="hint" style="margin-top:8px">'+esc(x.note)+'</p>';
+  $('#sd-fb').innerHTML=html+(r.ok?'':LEGEND);
+  try{$('#sd-fb').scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+}
+
+/* ---------- PAROLE ---------- */
+var pw={mode:'cards',i:0,flip:false,order:[]};
+function renderPw(){
+  if(!WORDS.length){$('#p-parole').innerHTML='';return}
+  var body;
+  if(pw.mode==='list'){
+    body='<div class="card">'+WORDS.map(wordHtml).join('')+'</div>';
+  }else{
+    var w=WORDS[pw.order[pw.i]];
+    body='<p class="count">'+(pw.i+1)+' / '+WORDS.length+'</p>'+
+     '<button type="button" class="card flash-card" data-act="pw-flip" aria-live="polite">'+
+     (pw.flip?'<div class="wk">'+esc(w.k)+'</div><div class="wm" style="font-size:19px">'+esc(w.mean)+'</div><div class="wi">'+esc(w.info)+'</div>'+partsHtml(w):
+       '<div class="big">'+esc(w.k)+'</div><div class="hint">Tocca per girare la scheda</div>')+'</button>'+
+     '<div class="pwnav"><button type="button" class="btn" data-act="pw-prev">Precedente</button>'+
+     '<button type="button" class="star" data-act="pw-shuffle" aria-label="Mescola le schede">'+SHUF+'</button>'+
+     '<button type="button" class="btn primary" data-act="pw-next">Prossima</button></div>';
+  }
+  $('#p-parole').innerHTML=
+   '<div class="card">'+seg('pw-mode',[['cards','Schede'],['list','Elenco']],pw.mode)+'</div>'+body;
+}
+
+/* ---------- QUIZ (in più rispetto al Dāmodarāṣṭakam) ---------- */
+var qz=null;
+function qOpts(correct,pool,keep){
+  var seen={},o=[correct];
+  seen[canon(correct)]=1;
+  (keep?pool:shuffle(pool.slice())).forEach(function(t){var c=canon(t);if(o.length<4&&!seen[c]){seen[c]=1;o.push(t)}});
+  return shuffle(o);
+}
+function buildQuiz(d){
+  var W=d.words||[],P=d.padas,qs=[],all=[],allP=[],own={};
+  DATA.forEach(function(x){(x.words||[]).forEach(function(w){all.push(w)});x.padas.forEach(function(p){allP.push(p.iast)})});
+  P.forEach(function(p){own[canon(p.iast)]=1});
+  W.forEach(function(w){
+    var o,toIt=Math.random()<0.5;
+    if(toIt){
+      o=qOpts(w.mean,all.map(function(x){return x.mean}));
+      qs.push({q:'Che cosa significa <i>'+esc(w.k)+'</i>?',o:o,c:o.indexOf(w.mean)});
+    }else{
+      o=qOpts(w.k,all.filter(function(x){return canon(x.mean)!==canon(w.mean)}).map(function(x){return x.k}));
+      qs.push({q:'Quale parola significa «'+esc(w.mean)+'»?',o:o,c:o.indexOf(w.k)});
+    }
+  });
+  for(var i=0;i<P.length-1;i++){
+    var near=P.filter(function(_,j){return j!==i&&j!==i+1}).map(function(p){return p.iast});
+    var far=shuffle(allP.filter(function(t){return !own[canon(t)]}));
+    var okp=P[i+1].iast,o2=qOpts(okp,shuffle(near).concat(far),true);
+    qs.push({q:'Quale pāda viene dopo <i>'+esc(P[i].iast)+'</i>?',o:o2,c:o2.indexOf(okp)});
+  }
+  return shuffle(qs.filter(function(q){return q.o.length>=2})).slice(0,8);
+}
+function renderQz(){
+  var d=DATA[cur],html;
+  if(!qz)qz={qs:buildQuiz(d),i:0,score:0,pick:null,done:false,res:[]};
+  if(!qz.qs.length){
+    html='<div class="card"><p class="hint" style="color:var(--ink)">Per questo verso non ci sono ancora abbastanza dati per un quiz.</p></div>';
+  }else if(qz.done){
+    html='<div class="card" style="text-align:center"><h2>Quiz finito</h2><p class="trad" style="text-align:center">Risposte giuste: '+qz.score+' su '+qz.qs.length+'.</p><div class="row" style="justify-content:center;margin-top:12px"><button type="button" class="btn primary" data-act="qz-restart">Nuovo quiz</button></div></div>';
+  }else{
+    var q=qz.qs[qz.i],L='ABCD';
+    html='<div class="qdots" aria-label="Domanda '+(qz.i+1)+' di '+qz.qs.length+'">'+qz.qs.map(function(_,k){return '<i class="'+(qz.res[k]===true?'ok':qz.res[k]===false?'bad':(k===qz.i?'cur':''))+'"></i>'}).join('')+'</div>'+
+     '<div class="card"><p class="eyebrow">Domanda</p><p class="trad" style="font-size:17.5px;padding-inline:0">'+q.q+'</p>'+
+     '<div class="choices" role="group">'+q.o.map(function(t,n){
+       var cls='';
+       if(qz.pick!==null){if(n===q.c)cls='ok';else if(n===qz.pick)cls='bad'}
+       return '<button type="button" class="'+cls+'" data-act="qz-pick" data-n="'+n+'"><span class="cn">'+L.charAt(n)+'</span><span class="ct">'+esc(t)+'</span></button>';
+     }).join('')+'</div>'+
+     (qz.pick!==null?'<p class="fbs" style="margin-top:10px">'+(qz.pick===q.c?'<span class="good">Giusto.</span>':'Non è questa: la risposta giusta è evidenziata in verde.')+'</p><div class="row" style="margin-top:10px"><button type="button" class="btn primary" data-act="qz-next">'+(qz.i+1>=qz.qs.length?'Vedi il risultato':'Avanti')+'</button></div>':'')+
+     '</div><p class="hint">I significati vengono dal parola per parola del verso, che in parte è analisi mia da verificare.</p>';
+  }
+  $('#p-quiz').innerHTML=html;
+}
+
+/* ---------- RIPASSO: scheda con solo la prima parola ---------- */
+var rp={shown:false};
+function renderRp(){
+  $('#p-ripasso').innerHTML='<div class="card rp" data-act="rp-show">'+eyeBtn('rp-show',rp.shown)+veiledVerse(DATA[cur],rp.shown)+'</div>'+
+    '<button type="button" class="btn big primary" data-act="rp-show">'+(rp.shown?'Nascondi il verso':'Mostra il verso')+'</button>';
+  fitVerse();
+}
+function renderAll(){renderVerso();renderMem();renderWr();renderSdEx();renderPw();renderQz();renderRp()}
+
+/* ---------- barra fissa con diacritici e tasti d'azione (sale sopra la tastiera del telefono) ---------- */
+function dockHtml(kind){
+  var keys='<div class="kbrow" role="group" aria-label="Diacritici">'+KEYS.map(function(k){return '<button type="button" class="key" data-act="key" data-ch="'+k+'" aria-label="inserisci '+k+'">'+k+'</button>'}).join('')+'</div>';
+  if(kind==='scrivi')return keys+'<div class="dbtns four"><button type="button" class="btn primary" data-act="wr-check">Controlla</button><button type="button" class="btn" data-act="wr-hint">Aiuto</button><button type="button" class="btn" id="wr-show" data-act="wr-show" aria-pressed="'+wr.show+'">'+(wr.show?'Nascondi':'Mostra')+'</button><button type="button" class="btn" data-act="wr-clear">Riprova</button></div>';
+  return keys+'<div class="dbtns three"><button type="button" class="btn primary" data-act="sd-check">Controlla</button><button type="button" class="btn" data-act="sd-retry">Riprova</button><button type="button" class="btn" data-act="sd-next">Prossima</button></div>';
+}
+function placeDock(){
+  var d=$('#dock');if(!d||d.hidden)return;
+  var vv=window.visualViewport,kbo=vv?Math.max(0,window.innerHeight-vv.height-vv.offsetTop):0;
+  d.style.bottom=kbo>120?(kbo+6)+'px':'';
+}
+function updateDock(){var d=$('#dock');if(d)d.hidden=true;document.body.classList.remove('hasdock')}
+if(window.visualViewport){window.visualViewport.addEventListener('resize',placeDock);window.visualViewport.addEventListener('scroll',placeDock)}
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'||!e.target.matches||!e.target.matches('input.fld'))return;
+  e.preventDefault();
+  var el=e.target;
+  if(el.id==='sd-in'){sdCheck();el.blur();return}
+  if(el.id.indexOf('wr-')===0&&!wr.show){
+    setSt(el,compare(el.value,wrAnswer(el)));
+    var all=wrInputs(),k=all.indexOf(el);
+    if(k<all.length-1)all[k+1].focus();else{wrCheck();el.blur()}
+  }
+});
+document.addEventListener('focusin',function(e){
+  if(e.target.matches&&e.target.matches('input.fld'))setTimeout(function(){try{e.target.scrollIntoView({block:'center',behavior:'smooth'})}catch(x){}},320);
+});
+
+/* ---------- tastiera dei diacritici e gesti ---------- */
+function insertChar(ch){
+  var el=lastField;
+  if(!el||!document.body.contains(el)||el.offsetParent===null)return;
+  el.focus({preventScroll:true});
+  var s=(el.selectionStart==null)?el.value.length:el.selectionStart,e=(el.selectionEnd==null)?s:el.selectionEnd;
+  el.value=el.value.slice(0,s)+ch+el.value.slice(e);
+  var p=s+ch.length;try{el.setSelectionRange(p,p)}catch(x){}
+  el.dispatchEvent(new Event('input',{bubbles:true}));
+}
+document.addEventListener('animationend',function(e){if(e.target.parentNode&&e.target.parentNode.classList&&e.animationName==='rise')e.target.parentNode.classList.remove('enter')});
+/* scorrendo il dito a destra o a sinistra si cambia scheda.
+   Sul riquadro del verso: Traduzione, Parola per parola, Sandhi, Metrica. Sulla barra in basso: Verso, Studio, Ripasso.
+   Sulla fila degli esercizi: Memorizza, Scrivi, Parole, Sandhi, Quiz. */
+var swipe=null,MODES=['trad','wbw','gram','metr'];
+document.addEventListener('touchstart',function(e){
+  swipe=null;
+  if(cur<0||!e.target.closest)return;
+  var zone=e.target.closest('nav')?'nav':(e.target.closest('#subnav')?'sub':(main==='verso'&&e.target.closest('.vcard')?'card':null));
+  if(zone){var t=e.touches[0];swipe={x:t.clientX,y:t.clientY,zone:zone}}
+},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(!swipe)return;
+  var t=e.changedTouches[0],dx=t.clientX-swipe.x,dy=t.clientY-swipe.y,zone=swipe.zone;swipe=null;
+  if(Math.abs(dx)<45||Math.abs(dx)<1.5*Math.abs(dy))return;
+  function step(c,len){return dx<0?Math.min(len-1,c+1):Math.max(0,c<0?0:c-1)}
+  var c=-1,next;
+  if(zone==='nav'){
+    MAINS.forEach(function(m,i){if(m[0]===main)c=i});next=step(c,MAINS.length);
+    if(next!==c){main=MAINS[next][0];curSub=null;show()}
+  }else if(zone==='sub'){
+    SUBS.forEach(function(m,i){if(m[0]===curSub)c=i});next=step(c,SUBS.length);
+    if(next!==c){curSub=SUBS[next][0];show()}
+  }else{
+    MODES.forEach(function(m,i){if(m===prefs.mode)c=i});next=step(c,MODES.length);
+    if(next===c)return;
+    prefs.mode=MODES[next];sel=null;renderVerso();
+    var cd=$('#p-verso .vcard');if(cd)cd.classList.add(dx<0?'in-l':'in-r');
+  }
+},{passive:true});
+/* scorrendo il dito a sinistra su un punto libero della pagina del verso (fuori da riquadro, barre e campi di scrittura) si torna alla home */
+var back=null;
+function scrollableX(el){for(;el&&el!==document.body;el=el.parentNode){if(el.nodeType===1&&el.scrollWidth>el.clientWidth+2){var o=getComputedStyle(el).overflowX;if(o==='auto'||o==='scroll')return true}}return false}
+document.addEventListener('touchstart',function(e){
+  back=null;
+  var vv=$('#verseview');if(cur<0||!vv||vv.hidden||!e.target.closest||e.touches.length!==1)return;
+  if(e.target.closest('nav,#subnav,.vcard,input,textarea,select,button,a,.key,#dock')||scrollableX(e.target))return;
+  var t=e.touches[0];back={x:t.clientX,y:t.clientY}
+},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(!back)return;
+  var t=e.changedTouches[0],dx=t.clientX-back.x,dy=t.clientY-back.y;back=null;
+  if(dx<-60&&Math.abs(dx)>=2*Math.abs(dy))goHome();
+},{passive:true});
+document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('[data-kb]'))lastField=e.target});
+document.addEventListener('mousedown',function(e){if(e.target.closest&&e.target.closest('.key'))e.preventDefault()});
+document.addEventListener('input',function(e){
+  if(e.target.id&&e.target.id.indexOf('wr-')===0)wr.counted=false;
+});
+
+function bindVerse(i){var d=DATA[i];restoreStudio(i);PADAS=d.padas;WORDS=d.words||[];SURF=d.surf||[];SUTRA=d.sutra||{};SANDHI=d.sandhi||[];SEG=d.seg||[]}
+/* ---------- eventi ---------- */
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-act]');
+  if(!b)return;
+  var act=b.dataset.act;
+  switch(act){
+   case 'open':openVerse(Number(b.dataset.i));break;
+   case 'home':goHome();break;
+   case 'review':goReview();break;
+   case 'theme':prefs.theme={auto:'light',light:'dark',dark:'auto'}[prefs.theme];saveAll();applyTheme();break;
+   case 'pref-dev':prefs.dev=!prefs.dev;applyPrefs();renderVerso();renderMem();break;
+   case 'pref-trad':case 'pref-wbw':case 'pref-gram':case 'pref-metr':{
+     var k=act.slice(5);prefs.mode=prefs.mode===k?'trad':k;sel=null;renderVerso();break;}
+   case 'learned':{var d=DATA[cur];stars[d.id]=!stars[d.id];if(!stars[d.id])delete stars[d.id];saveAll();applyPrefs();break;}
+   case 'word':sel=[Number(b.dataset.p),Number(b.dataset.j)];renderVerso();break;
+   case 'sg':{
+     var card=$('#sd-card-'+b.dataset.s);
+     if(card){
+       $('#sd-b-'+b.dataset.s).hidden=false;card.querySelector('.sh').setAttribute('aria-expanded','true');
+       card.classList.remove('flash');void card.offsetWidth;card.classList.add('flash');
+       try{card.scrollIntoView({behavior:'smooth',block:'center'})}catch(x){card.scrollIntoView()}
+     }
+     break;}
+   case 'sd-tog':{var el=$('#'+b.dataset.t);el.hidden=!el.hidden;b.setAttribute('aria-expanded',String(!el.hidden));break;}
+   case 'seg':{
+     var n=b.dataset.name,v=b.dataset.val;
+     if(n==='mem-scope'){mem.scope=v;memReset();renderMem()}
+     else if(n==='mem-level'){mem.level=Number(v);memReset();renderMem()}
+     else if(n==='wr-scope'){wr.scope=v;wrReset();renderWr()}
+     else if(n==='wr-level'){wr.level=Number(v);wrReset();renderWr()}
+     else if(n==='pw-mode'){pw.mode=v;pw.flip=false;renderPw()}
+     else if(n==='rv-mode'){rv.mode=v;rvReset();renderRv()}
+     break;}
+   case 'main':main=b.dataset.id;curSub=null;show();break;
+   case 'sub':curSub=b.dataset.id;lastSub=curSub;saveStudio();show();break;
+   case 'key':insertChar(b.dataset.ch);break;
+   case 'mem-reveal':mem.hidden.delete(b.dataset.k);renderMem();break;
+   case 'mem-hide':mem.hidden.add(b.dataset.k);renderMem();break;
+   case 'wr-hint':wrHint();break;
+   case 'mem-show':mem.show=!mem.show;renderMem();break;
+   case 'wr-check':wrCheck();break;
+   case 'wr-show':wrToggle();break;
+   case 'wr-clear':wrRetry();break;
+   case 'sd-pick':
+     sd.pick=Number(b.dataset.n);
+     $$('#sd-ch button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));x.classList.remove('ok','bad')});
+     break;
+   case 'sd-check':sdCheck();break;
+   case 'sd-retry':sd.pick=null;renderSdEx();break;
+   case 'sd-next':sdNext();renderSdEx();break;
+   case 'pw-flip':pw.flip=!pw.flip;renderPw();break;
+   case 'pw-next':pw.i=(pw.i+1)%WORDS.length;pw.flip=false;renderPw();break;
+   case 'pw-shuffle':shuffle(pw.order);pw.i=0;pw.flip=false;renderPw();break;
+   case 'pw-prev':pw.i=(pw.i-1+WORDS.length)%WORDS.length;pw.flip=false;renderPw();break;
+   case 'rp-show':rp.shown=!rp.shown;renderRp();break;
+   case 'qz-pick':{if(!qz||qz.pick!==null)break;qz.pick=Number(b.dataset.n);qz.res[qz.i]=(qz.pick===qz.qs[qz.i].c);if(qz.res[qz.i])qz.score++;renderQz();break;}
+   case 'qz-next':qz.i++;qz.pick=null;if(qz.i>=qz.qs.length)qz.done=true;renderQz();break;
+   case 'qz-restart':qz=null;renderQz();break;
+   case 'rv-flip':rv.flip=!rv.flip;renderRv();break;
+   case 'rv-next':rv.i=(rv.i+1)%rv.order.length;rv.flip=false;renderRv();break;
+   case 'rv-prev':rv.i=(rv.i-1+rv.order.length)%rv.order.length;rv.flip=false;renderRv();break;
+   case 'rv-shuffle':shuffle(rv.order);rv.i=0;rv.flip=false;renderRv();break;
+  }
+});
+
+/* ---------- avvio ---------- */
+applyTheme();goHome();
+})();
+</script>
+
+
+</body></html>
