@@ -1403,7 +1403,7 @@ document.addEventListener('touchend',function(e){
     var cd=$('#p-verso .vcard');if(cd)cd.classList.add(dx<0?'in-l':'in-r');
   }
 },{passive:true});
-/* scorrendo il dito a sinistra su un punto libero della pagina del verso (fuori da riquadro, barre e campi di scrittura) si torna alla home */
+/* scorrendo il dito verso destra (da sinistra a destra) su un punto libero della pagina del verso (fuori da riquadro, barre e campi di scrittura) si torna alla home */
 var back=null;
 function scrollableX(el){for(;el&&el!==document.body;el=el.parentNode){if(el.nodeType===1&&el.scrollWidth>el.clientWidth+2){var o=getComputedStyle(el).overflowX;if(o==='auto'||o==='scroll')return true}}return false}
 document.addEventListener('touchstart',function(e){
@@ -1415,7 +1415,7 @@ document.addEventListener('touchstart',function(e){
 document.addEventListener('touchend',function(e){
   if(!back)return;
   var t=e.changedTouches[0],dx=t.clientX-back.x,dy=t.clientY-back.y;back=null;
-  if(dx<-60&&Math.abs(dx)>=2*Math.abs(dy))goHome();
+  if(dx>60&&Math.abs(dx)>=2*Math.abs(dy))goHome();
 },{passive:true});
 document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('[data-kb]'))lastField=e.target});
 document.addEventListener('mousedown',function(e){if(e.target.closest&&e.target.closest('.key'))e.preventDefault()});
