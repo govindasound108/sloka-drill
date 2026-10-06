@@ -310,7 +310,9 @@ input.fld.wide{font-size:17px}
 #review>header h1{font-size:22px;letter-spacing:0;color:var(--accent);text-shadow:none;margin-top:0}
 .center{display:flex;justify-content:center}
 .contp{min-height:40px;padding:0 18px;font-size:14.5px;display:inline-flex;align-items:center;gap:6px}
-.contp svg{width:16px;height:16px}
+.contp svg{width:16px;height:16px;flex:0 0 auto}
+.contp{max-width:100%;min-width:0}
+.contp .ctt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-style:italic}
 .vgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-block:18px 20px}
 /* riquadri dei versi: gocce di vetro, con il numero al centro */
 .gtile{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 12px 14px;border-radius:30px;text-align:center;color:var(--ink);cursor:pointer;transition:transform .16s ease;
@@ -345,8 +347,8 @@ body{background-image:none;padding-block:0 40px}
 #home .hh h1,#review .hh h1{color:var(--accent);text-shadow:none;margin:0;font:600 28px/1.2 var(--f-serif);letter-spacing:.01em}
 .hh .sub{margin-top:4px}
 .vlist{display:flex;flex-direction:column;gap:10px;margin-block:6px 18px}
-.vtile .vi{font-style:normal;font-weight:600;font-size:17.5px;color:var(--ink)}
-.vtile .vd{font:italic 400 14px/1.35 var(--f-serif);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vtile .vi{font-style:italic;font-weight:600;font-size:19px;line-height:1.3;color:var(--ink);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.vtile .vd{font:400 13.5px/1.35 var(--f-ui);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .vtile .vstar{fill:var(--gold-e);width:20px;height:20px}
 .empty{text-align:center;color:var(--soft);padding:26px 10px}
 .ctx p{margin:0 0 10px;font:400 15.5px/1.6 var(--f-serif)}
@@ -442,6 +444,49 @@ body.flat #verseview>header{margin-bottom:10px;padding:10px 14px;border-radius:2
 body.flat #verseview .vcard{padding-inline:0}
 body.flat #verseview .ctl{padding:0}
 </style>
+<style>
+/* Design alleggerito (body.lite): per ora solo Mādhurya-kādambinī 1. Meno scatole: testo sullo sfondo, filetti sottili, un solo riquadro per l'esercizio. */
+body.lite .chip,body.lite .tab,body.lite .seg button,body.lite .btn,body.lite .key,body.lite .choices button,body.lite .star,body.lite .eyesm{background:none;border:1px solid var(--hair);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+body.lite .chip[aria-pressed="true"],body.lite .seg button[aria-pressed="true"],body.lite .btn.sm[aria-pressed="true"],body.lite .eyesm[aria-pressed="true"]{background:var(--sel-bg);color:var(--sel-ink);border-color:var(--sel-b);box-shadow:none;font-weight:600}
+body.lite .btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);box-shadow:none}
+body.lite #b-home,body.lite #b-theme{border:0;background:none;color:var(--soft)}
+body.lite .star{border:0;color:var(--soft)}
+body.lite .star[aria-pressed="true"]{background:none;border:0;color:var(--accent);box-shadow:none}
+body.lite #b-learned[aria-pressed="true"]{color:var(--gold-e)}
+/* le quattro viste del verso: solo testo, la scelta attiva è sottolineata */
+body.lite #p-verso .prefs{gap:2px;border-bottom:1px solid var(--hair)}
+body.lite #p-verso .prefs .chip{border:0;border-radius:0;background:none;box-shadow:none;min-height:46px;padding:0 2px;font-size:13.5px;font-weight:400;line-height:1.2;color:var(--soft);border-bottom:2px solid transparent;margin-bottom:-1px}
+body.lite #p-verso .prefs .chip[aria-pressed="true"]{background:none;color:var(--accent);font-weight:500;border-bottom-color:var(--accent)}
+/* barra in basso: solo testo, linea in alto, nessun vetro */
+body.lite nav{width:min(560px,100%);bottom:0;padding:0 0 env(safe-area-inset-bottom,0px);border-radius:0;border:0;border-top:1px solid var(--hair);background:var(--ground);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+body.lite #tabs{gap:0}
+body.lite nav .tab{border:0;border-radius:0;background:none;min-height:52px;font-size:15.5px;font-weight:400;color:var(--soft);border-top:2px solid transparent;margin-top:-1px}
+body.lite nav .tab[aria-selected="true"]{background:none;color:var(--accent);font-weight:500;border-top-color:var(--accent);box-shadow:none}
+body.lite #dock{bottom:calc(58px + env(safe-area-inset-bottom,0px));border-radius:16px;border:1px solid var(--hair);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+/* sottosezioni degli esercizi: testo sottolineato, niente bordi */
+body.lite .tabs.sub{border-bottom:1px solid var(--hair);gap:0}
+body.lite .tabs.sub .tab{border:0;border-radius:0;background:none;box-shadow:none;color:var(--soft);font-weight:400;border-bottom:2px solid transparent;margin-bottom:-1px}
+body.lite .tabs.sub .tab[aria-selected="true"]{background:none;color:var(--accent);font-weight:500;border-bottom-color:var(--accent)}
+/* riquadri: solo l'esercizio ne ha uno, piatto e leggero */
+body.lite #verseview .card{background:var(--row);border:1px solid var(--hair);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-radius:16px}
+body.lite #verseview .card.ctl{background:none;border:0;padding:0}
+body.lite #p-studio .card.tile{background:none;border:0;border-bottom:1px solid var(--hair);border-radius:0;padding:14px 2px}
+body.lite #p-studio .card.tile.last{border-bottom-color:var(--accent)!important}
+/* pagina del verso: niente riquadri, il testo sta sullo sfondo e le parti sono divise da un filetto */
+body.lite #p-verso{gap:10px}
+body.lite #p-verso .card{background:none;border:0;border-radius:0;padding:4px 2px}
+body.lite #p-verso .vcard{padding-inline:0;padding-block:8px 6px}
+body.lite #p-verso .card+.card{border-top:1px solid var(--hair);padding-top:14px}
+body.lite .wp li{background:none;border:0;border-bottom:1px solid var(--hair);box-shadow:none;border-radius:0;padding:8px 0}
+body.lite .wp li:last-child{border-bottom:0}
+body.lite .sg{background:none;box-shadow:none;border-radius:0}
+body.lite .fbrow,body.lite .veilbox,body.lite .rp .full{box-shadow:none}
+/* campi di scrittura piatti, con gli stati di prima */
+body.lite input.fld{background:none;border:0;border-bottom:2px solid var(--accent);border-radius:0;box-shadow:none}
+body.lite input.fld.ok{border-bottom-color:var(--ok);background:var(--ok-soft)}
+body.lite input.fld.bad{border-bottom-color:var(--bad);background:var(--bad-soft)}
+body.lite input.fld.near{border-bottom-color:#E0A23A;background:rgba(224,162,58,.16)}
+</style>
 
 <div id="bg" aria-hidden="true"></div>
 <div class="wrap">
@@ -487,7 +532,7 @@ var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':
 var nf=function(s){return s.normalize('NFC')};
 
 /* ===== LA RACCOLTA =====
-   Un blocco DATA.push(...) per ogni verso. Si aggiunge in fondo: nella home l'ultimo aggiunto compare in alto.
+   Un blocco DATA.push(...) per ogni verso. Si aggiunge in fondo: nella home i versi sono in ordine alfabetico dell'inizio del verso.
    Il campo "context" è una lista di paragrafi: v:true = preso da una fonte, v:false = creato da me, non verificato. */
 var BOOK={title:'Sloka drill'};
 var DATA=[];
@@ -496,6 +541,7 @@ var DATA=[];
 DATA.push({
  id:'madhurya-kadambini-1',
  label:'Mādhurya-kādambinī 1',
+ lite:true,
  sub:'śārdūla-vikrīḍita · 19 sillabe per pāda',
  padas:[
   {iast:'hṛd-vapre nava-bhakti-śasya-vitateḥ sañjīvanī svāgamā', dev:'हृद्वप्रे नवभक्तिशस्यवितते: सञ्जीवनी स्वागमा'},
@@ -1449,24 +1495,46 @@ function applyPrefs(){
 function openVerse(i){
   cur=i;sel=null;prefs.mode='trad';prefs.dev=false;
   var d=DATA[i];
-  $('#h-title').textContent=d.label;$('#h-sub').textContent=d.sub;
-  document.title=d.label.replace(/,/g,'');
+  $('#h-title').textContent=titleOf(d);$('#h-sub').textContent=(srcOf(d)?srcOf(d)+' · ':'')+d.sub;
+  document.title=titleOf(d).replace(/,/g,'');
   prefs.last=d.id;saveAll();
-  bindVerse(i);view('verse');applyPrefs();buildTabs();
+  bindVerse(i);view('verse');document.body.classList.toggle('lite',!!d.lite);applyPrefs();buildTabs();
   memReset();wrReset();
   sd.q=null;sd.pick=null;sd.order=[];sd.oi=0;pw.i=0;pw.flip=false;pw.order=WORDS.map(function(_,k){return k});rp.shown=false;qz=null;
   main='verso';curSub=null;renderAll();show();
 }
 
 /* ---------- home ---------- */
-function order(){return DATA.map(function(_,i){return i}).reverse()}   /* l'ultimo aggiunto sta in alto */
+/* ordine alfabetico dell'inizio del verso, senza contare diacritici, trattini e apostrofi (ā = a, ś = s...) */
+function sortKey(d){return d.padas[0].iast.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z]/g,'')}
+/* da dove viene il verso (sotto il titolo della scheda nella home) */
+var SRC={
+ 'madhurya-kadambini-1':'Mādhurya-kādambinī 1',
+ 'arcana-dipika-mantra-hinam':'Hari-bhakti-vilāsa 8.427',
+ 'arcana-dipika-aparadha-sahasrani':'Hari-bhakti-vilāsa 8.439',
+ 'sb-11-9-29':'Śrīmad-Bhāgavatam 11.9.29',
+ 'sb-10-90-48':'Śrīmad-Bhāgavatam 10.90.48',
+ 'arcana-dipika-vidagdha-gopala':'Hari-bhakti-vilāsa 3.25',
+ 'sb-10-46-46':'Śrīmad-Bhāgavatam 10.46.46',
+ 'sb-3-9-25':'Śrīmad-Bhāgavatam 3.9.25',
+ 'deva-prapannartti-hara':'',
+ 'jaya-jaya-krpamaya':''
+};
+function srcOf(d){return d.id in SRC?SRC[d.id]:d.label}
+function titleOf(d){return d.padas[0].iast}
+function order(){
+  return DATA.map(function(_,i){return i}).sort(function(a,b){
+    var x=sortKey(DATA[a]),y=sortKey(DATA[b]);
+    return x<y?-1:x>y?1:a-b;
+  });
+}
 function renderHome(){
   var list=order(),cont='';
   var li=-1;DATA.forEach(function(d,k){if(d.id===prefs.last)li=k});
-  if(li>=0)cont='<div class="center"><button type="button" class="btn primary contp" data-act="open" data-i="'+li+'">Continua · '+esc(DATA[li].label)+CHEV+'</button></div>';
+  if(li>=0)cont='<div class="center"><button type="button" class="btn primary contp" data-act="open" data-i="'+li+'">Continua · <span class="ctt">'+esc(titleOf(DATA[li]))+'</span>'+CHEV+'</button></div>';
   var tiles=list.length?list.map(function(k){
     var d=DATA[k];
-    return '<button type="button" class="card vtile" data-act="open" data-i="'+k+'"><span class="vt"><span class="vi">'+esc(d.label)+'</span><span class="vd">'+esc(d.padas[0].iast)+'</span></span>'+(stars[d.id]?STAR:'')+CHEV+'</button>';
+    return '<button type="button" class="card vtile" data-act="open" data-i="'+k+'"><span class="vt"><span class="vi">'+esc(titleOf(d))+'</span>'+(srcOf(d)?'<span class="vd">'+esc(srcOf(d))+'</span>':'')+'</span>'+(stars[d.id]?STAR:'')+CHEV+'</button>';
   }).join(''):'<p class="empty">Nessun verso ancora. Scrivimi in chat il verso da studiare.</p>';
   $('#home').innerHTML='<header class="hh"><h1>'+esc(BOOK.title)+'</h1></header>'+cont+
    '<div class="vlist" style="margin-top:16px">'+tiles+'</div>'+
@@ -1474,7 +1542,7 @@ function renderHome(){
 }
 function view(name){
   $('#home').hidden=name!=='home';$('#verseview').hidden=name!=='verse';$('#review').hidden=name!=='review';
-  $('#b-home').hidden=name==='home';document.body.classList.toggle('hasnav',name==='verse');if(name!=='verse'){var dk=$('#dock');if(dk)dk.hidden=true;document.body.classList.remove('hasdock','instudio','flat')}
+  $('#b-home').hidden=name==='home';document.body.classList.toggle('hasnav',name==='verse');if(name!=='verse'){var dk=$('#dock');if(dk)dk.hidden=true;document.body.classList.remove('hasdock','instudio','flat','lite')}
   try{window.scrollTo(0,0)}catch(e){}
 }
 function goHome(){cur=-1;renderHome();view('home');document.title=BOOK.title}
@@ -1501,7 +1569,7 @@ function renderRv(){
   }else{
     var d=DATA[rv.order[rv.i]];
     body='<p class="count">'+(rv.i+1)+' / '+rv.order.length+'</p>'+
-     '<div class="card rp" data-act="rv-flip">'+eyeBtn('rv-flip',rv.flip)+'<div class="eyebrow" style="margin:0">'+esc(d.label)+'</div>'+veiledVerse(d,rv.flip)+'</div>'+
+     '<div class="card rp" data-act="rv-flip">'+eyeBtn('rv-flip',rv.flip)+(srcOf(d)?'<div class="eyebrow" style="margin:0">'+esc(srcOf(d))+'</div>':'')+veiledVerse(d,rv.flip)+'</div>'+
      '<div class="pwnav"><button type="button" class="btn" data-act="rv-prev">Precedente</button><button type="button" class="star" data-act="rv-shuffle" aria-label="Mescola le schede">'+SHUF+'</button><button type="button" class="btn primary" data-act="rv-next">Prossima</button></div>'+
      '<div><button type="button" class="btn sm" data-act="open" data-i="'+rv.order[rv.i]+'">Apri il verso</button></div>';
   }
