@@ -391,6 +391,7 @@ body.hasnav{padding-block-end:84px}
 .eyesm{flex:0 0 auto;width:34px;height:34px;border:0;border-radius:50%;background:var(--row);color:var(--accent);display:grid;place-items:center;cursor:pointer;padding:0}
 .eyesm svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .eyesm[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.mrow .gloss.trl,.pada .gloss.trl{margin-top:3px;font-size:13.5px}
 .abtns{display:grid;gap:6px;margin-top:10px;align-items:center}
 .abtns.four{grid-template-columns:1.4fr 1fr 44px 1fr}
 .abtns.three{grid-template-columns:1.4fr 1fr 1fr}
@@ -1644,6 +1645,18 @@ function fullText(pads,noDev){
 }
 function eyeSm(act,on){return '<button type="button" class="eyesm" data-act="'+act+'" aria-pressed="'+!!on+'" aria-label="'+(on?'Nascondi il testo':'Mostra il testo')+'">'+(on?EYE.shut:EYE.open)+'</button>'}
 function showLabel(on){return on?'Nascondi il testo':'Mostra il testo'}
+/* traduzione sotto ogni pāda (significati del parola per parola) e traduzione intera in fondo; si accende e si spegne senza ridisegnare, così non si perde ciò che hai scritto */
+var trShow=false;
+var TRI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H10l-4.5 4v-4H4z"></path><path d="M8 9.5h8M8 12.5h5"></path></svg>';
+function trBtn(){return '<button type="button" class="eyesm trbtn" data-act="tr-show" aria-pressed="'+trShow+'" aria-label="'+(trShow?'Nascondi la traduzione':'Mostra la traduzione')+'">'+TRI+'</button>'}
+function trGloss(pi){var g=glossOf(pi);return g?'<div class="gloss trl"'+(trShow?'':' hidden')+'>'+esc(g)+'</div>':''}
+function trFull(){var d=DATA[cur];return d&&d.translation?'<div class="card trl"'+(trShow?'':' hidden')+'><p class="eyebrow">Traduzione</p><p class="trad">'+esc(d.translation)+'</p></div>':''}
+function trToggle(){
+  trShow=!trShow;
+  $$('.trl').forEach(function(el){el.hidden=!trShow});
+  $$('.trbtn').forEach(function(b){b.setAttribute('aria-pressed',String(trShow));b.setAttribute('aria-label',trShow?'Nascondi la traduzione':'Mostra la traduzione')});
+  fitVerse();
+}
 
 /* ---------- MEMORIZZA ---------- */
 var mem={scope:'all',level:1,hidden:new Set(),hid0:new Set(),show:false,gloss:true};
@@ -1669,11 +1682,11 @@ function renderMem(){
       }
       return esc(t.t);
     }).join('');
-    return '<div class="mrow"><div class="iast fitline">'+html+'</div></div>';
+    return '<div class="mrow"><div class="iast fitline">'+html+'</div>'+trGloss(pi)+'</div>';
   }).join('');
   $('#p-memorizza').innerHTML=
-   '<div class="card ctl">'+scopeSeg('mem-scope',mem.scope)+'<div class="diffrow">'+diffSeg('mem-level',mem.level)+eyeSm('mem-show',mem.show)+'</div></div>'+
-   '<div class="card"><div class="fitbox" data-max="21">'+rows+'</div></div>';
+   '<div class="card ctl">'+scopeSeg('mem-scope',mem.scope)+'<div class="diffrow">'+diffSeg('mem-level',mem.level)+trBtn()+eyeSm('mem-show',mem.show)+'</div></div>'+
+   '<div class="card"><div class="fitbox" data-max="21">'+rows+'</div></div>'+trFull();
   fitVerse();
 }
 
@@ -1693,19 +1706,19 @@ function renderWr(){
   var lines=padsOf(wr).map(function(pi){
     if(wr.level===3){
       var inp='<input class="fld wide" id="wr-'+pi+'" '+FLD+' aria-label="Pāda '+(pi+1)+'">';
-      return num?'<div class="pada" style="align-items:center"><span class="pn">'+(pi+1)+'</span><div>'+inp+'</div></div>':'<div class="mrow">'+inp+'</div>';
+      return num?'<div class="pada" style="align-items:center"><span class="pn">'+(pi+1)+'</span><div>'+inp+trGloss(pi)+'</div></div>':'<div class="mrow">'+inp+trGloss(pi)+'</div>';
     }
     return '<div class="mrow"><div class="cloze fitline">'+PADAS[pi].tok.map(function(t,i){
       if(!t.w)return '<span class="sep">'+esc(t.t)+'</span>';
       if(wr.blanks[pi].indexOf(i)>=0)return '<input class="fld" id="wr-'+pi+'-'+i+'" '+FLD+' aria-label="Parola mancante" style="width:'+(t.t.length+1)+'ch">';
       return esc(t.t);
-    }).join('')+'</div></div>';
+    }).join('')+'</div>'+trGloss(pi)+'</div>';
   }).join('');
   if(wr.level<3)lines='<div class="fitbox" data-max="21">'+lines+'</div>';
   $('#p-scrivi').innerHTML=
-   '<div class="card ctl">'+scopeSeg('wr-scope',wr.scope)+diffSeg('wr-level',wr.level)+
+   '<div class="card ctl">'+scopeSeg('wr-scope',wr.scope)+'<div class="diffrow">'+diffSeg('wr-level',wr.level)+trBtn()+'</div>'+
    '</div>'+
-   '<div class="card">'+lines+kbHtml()+wrBtns()+'<div id="wr-fb" aria-live="polite"></div></div>'+
+   '<div class="card">'+lines+kbHtml()+wrBtns()+'<div id="wr-fb" aria-live="polite"></div></div>'+trFull()+
    '<p class="hint" id="wr-perf">'+perfLine()+'</p>';
   updateDock();fitVerse();
 }
@@ -2026,6 +2039,7 @@ document.addEventListener('click',function(e){
    case 'mem-hide':mem.hidden.add(b.dataset.k);renderMem();break;
    case 'wr-hint':wrHint();break;
    case 'mem-show':mem.show=!mem.show;renderMem();break;
+   case 'tr-show':trToggle();break;
    case 'wr-check':wrCheck();break;
    case 'wr-show':wrToggle();break;
    case 'wr-clear':wrRetry();break;
