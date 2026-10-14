@@ -10,7 +10,7 @@ var nf=function(s){return s.normalize('NFC')};
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
 /* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
-var APP_VERSION='1.2';
+var APP_VERSION='1.3';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
@@ -23,7 +23,7 @@ function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 var prefs=load(PKEY),stars=load(SKEY);
 if(['auto','light','dark'].indexOf(prefs.theme)<0)prefs.theme='auto';
 prefs.mode='trad';prefs.dev=false;
-function saveAll(){put(PKEY,{theme:prefs.theme,last:prefs.last});put(SKEY,stars)}
+function saveAll(){put(PKEY,{theme:prefs.theme,last:prefs.last,awake:prefs.awake});put(SKEY,stars)}
 var cur=-1,sel=null;
 
 /* ---------- tema ---------- */
@@ -106,10 +106,12 @@ function contextHtml(d){
   }).join('')+'</details>';
 }
 function fitVerse(){
+  /* in orizzontale il verso cresce con il resto dei testi (--tz), a meno che la grandezza non sia scelta a mano con A− / A+ */
+  var tz=prefs.vs?1:(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tz'))||1);
   $$('.fitbox').forEach(function(box){
-    var lines=$$('.fitline',box),max=Number(box.dataset.max),avail=box.clientWidth;
+    var lines=$$('.fitline',box),max=Number(box.dataset.max)*tz,avail=box.clientWidth;
     if(!lines.length||!avail)return;
-    var f=max,mn=(box.dataset.min?Number(box.dataset.min):10);
+    var f=max,mn=(box.dataset.min?Number(box.dataset.min)*tz:10);
     lines.forEach(function(l){l.style.whiteSpace=''});
     for(var k=0;k<6;k++){
       lines.forEach(function(l){l.style.fontSize=f+'px'});
@@ -1028,6 +1030,7 @@ document.addEventListener('click',function(e){
    case 'tab':goTab(b.dataset.tab);break;
    case 'sreset':sr.q='';sr.src='';sr.met='';sr.star='';renderSearch();break;
    case 'sclear':{sr.q='';var si=$('#sq');if(si){si.value='';si.focus()}b.hidden=true;renderResults();break;}
+   case 'awake':prefs.awake=!awakeWant();saveAll();if(prefs.awake)awakeOn();else awakeOff();awakeUi();break;
    case 'upd-check':updCheck();break;
    case 'upd-go':updGo();break;
    case 'theme':{var sp=$('#set-pop');sp.hidden=!sp.hidden;b.setAttribute('aria-expanded',String(!sp.hidden));break;}
@@ -1150,7 +1153,24 @@ if('serviceWorker' in navigator&&(/(^|\.)github\.io$/.test(location.hostname)||l
   window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 }
 
+/* ---------- schermo sempre acceso mentre l'app è aperta (Screen Wake Lock; si disattiva dalle Impostazioni) ---------- */
+var wl=null,wlBusy=false;
+function awakeWant(){return prefs.awake!==false}
+function awakeOn(){
+  if(wl||wlBusy||!awakeWant()||!navigator.wakeLock||document.visibilityState!=='visible')return;
+  wlBusy=true;
+  navigator.wakeLock.request('screen').then(function(l){wlBusy=false;if(!awakeWant()){try{l.release()}catch(e){}return}wl=l;l.addEventListener('release',function(){wl=null})}).catch(function(){wlBusy=false;wl=null});
+}
+function awakeOff(){if(wl){try{wl.release()}catch(e){}wl=null}}
+function awakeUi(){
+  var t='Schermo sempre acceso: '+(navigator.wakeLock?(awakeWant()?'sì':'no'):'non disponibile');
+  $$('[data-awake]').forEach(function(b){b.textContent=t;b.setAttribute('aria-pressed',String(!!navigator.wakeLock&&awakeWant()))});
+}
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')awakeOn();else wl=null});
+document.addEventListener('pointerdown',awakeOn,{passive:true});/* alcuni telefoni lo concedono solo dopo un tocco */
+
 /* ---------- avvio ---------- */
+awakeUi();awakeOn();
 updInit();
 applyTheme();buildGnav();goHome();
 })();
