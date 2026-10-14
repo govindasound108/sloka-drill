@@ -10,7 +10,7 @@ var nf=function(s){return s.normalize('NFC')};
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
 /* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
-var APP_VERSION='1.0';
+var APP_VERSION='1.1';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
@@ -126,6 +126,14 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitVerse);
 /* ---------- pagina del verso ---------- */
 function hasSandhi(d){return !!(d.sandhi&&d.sandhi.length&&d.seg)}
 function modesOf(d){return ['trad','wbw'].concat(hasSandhi(d)?['gram']:[]).concat(d.metrica?['metr']:[])}
+/* parola per parola: elenco completo sotto il verso, nell'ordine in cui le parole compaiono (come in Kārtika) */
+function glossHtml(d){
+  var seen={},items=[];
+  function add(e){var w=d.words[e];if(!w||seen[e])return;seen[e]=1;items.push('<b>'+esc(w.k)+'</b>—'+esc(w.mean||''))}
+  (d.surf||[]).forEach(function(pa){pa.forEach(function(s){(s.e||[]).forEach(add)})});
+  (d.words||[]).forEach(function(w,e){add(e)});
+  return items.length?'<div class="rule"></div><p class="glbox">'+items.join('; ')+'.</p>':'';
+}
 function renderVerso(){
   var d=DATA[cur],m=prefs.mode;
   var dev=d.padas.map(function(p){return '<div class="dev fitline">'+p.dev+'</div>'}).join('');
@@ -145,7 +153,7 @@ function renderVerso(){
   $('#p-verso').innerHTML=
    '<div class="prefs four" role="group" aria-label="Cosa mostrare" style="grid-template-columns:repeat('+modesOf(d).length+',minmax(0,1fr))">'+chip('pref-trad','Traduzione',m==='trad')+chip('pref-wbw','Parola per parola',m==='wbw')+(hasSandhi(d)?chip('pref-gram','Sandhi',m==='gram'):'')+(d.metrica?chip('pref-metr','Metrica',m==='metr'):'')+'</div>'+
    '<div class="card vcard roman">'+(prefs.dev?'<div class="fitbox" data-max="'+((d.lite&&prefs.vs)?prefs.vs+1:22)+'"'+((d.lite&&prefs.vs)?' data-min="'+(prefs.vs+1)+'"':'')+'>'+dev+'</div><div class="rule"></div>':'')+'<div class="fitbox" data-max="'+((d.lite&&prefs.vs)?prefs.vs:21)+'" data-min="'+((d.lite&&prefs.vs)?prefs.vs:16.5)+'">'+ia+'</div>'+
-   (m==='trad'?'<div class="rule"></div><p class="trad">'+esc(d.translation)+'</p>':'')+'</div>'+
+   (m==='trad'?'<div class="rule"></div><p class="trad">'+esc(d.translation)+'</p>':'')+(m==='wbw'?glossHtml(d):'')+'</div>'+
    extra+
    '<div class="card">'+contextHtml(d)+(d.note?'<details><summary>Nota sul testo</summary><p>'+esc(d.note)+'</p></details>':'')+
    '<details><summary>Fonti</summary><ul class="src">'+(d.translationSrc?['Traduzione: '+d.translationSrc]:[]).concat(d.sources).map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ul></details></div>';
