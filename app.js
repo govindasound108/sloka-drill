@@ -10,7 +10,7 @@ var nf=function(s){return s.normalize('NFC')};
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
 /* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
-var APP_VERSION='1.4';
+var APP_VERSION='1.5';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
@@ -1124,10 +1124,13 @@ function updShow(msg,cls,go){
   $$('.upd').forEach(function(u){
     var s=u.querySelector('.upd-s'),b=u.querySelector('[data-upd]');
     if(s){s.textContent=msg||'';s.className='upd-s'+(cls?' '+cls:'')}
-    if(b){b.dataset.act=go?'upd-go':'upd-check';b.textContent=go?('Aggiorna alla versione '+updNew):'Controlla aggiornamenti';b.disabled=updBusy}
+    if(b){
+      b.dataset.act=go?'upd-go':'upd-check';b.disabled=updBusy;b.classList.toggle('go',!!go);
+      var lb=go?('Aggiorna alla versione '+updNew):'Controlla aggiornamenti';b.setAttribute('aria-label',lb);b.title=lb;
+    }
   });
 }
-function updInit(){$$('.upd .upd-v').forEach(function(v){v.textContent='Śloka Drill · versione '+APP_VERSION})}
+function updInit(){$$('.upd .upd-v').forEach(function(v){v.textContent='v'+APP_VERSION})}
 function updCheck(){
   if(updBusy)return;
   if(navigator.onLine===false){updShow('Sei offline: serve la connessione per controllare.','bad');return}
@@ -1163,8 +1166,8 @@ function awakeOn(){
 }
 function awakeOff(){if(wl){try{wl.release()}catch(e){}wl=null}}
 function awakeUi(){
-  var t='Schermo sempre acceso: '+(navigator.wakeLock?(awakeWant()?'sì':'no'):'non disponibile');
-  $$('[data-awake]').forEach(function(b){b.textContent=t;b.setAttribute('aria-pressed',String(!!navigator.wakeLock&&awakeWant()))});
+  var ok=!!navigator.wakeLock,t='Schermo sempre acceso: '+(ok?(awakeWant()?'sì':'no'):'non disponibile');
+  $$('[data-awake]').forEach(function(b){b.setAttribute('aria-label',t);b.title=t;b.disabled=!ok;b.setAttribute('aria-pressed',String(ok&&awakeWant()))});
 }
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')awakeOn();else wl=null});
 document.addEventListener('pointerdown',awakeOn,{passive:true});/* alcuni telefoni lo concedono solo dopo un tocco */
