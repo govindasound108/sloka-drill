@@ -636,7 +636,9 @@ body.hl .seg{box-shadow:var(--gl-edge),var(--gl-sh)}
 #rbub[hidden]{display:none}
 /* ===== v3 ===== */
 /* testata: titolo al centro, sfumatura al posto della linea */
-body.hl .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:calc(var(--ah) + 18px);padding-bottom:18px;background:linear-gradient(180deg,var(--ground) 0%,color-mix(in srgb,var(--ground) 82%,transparent) 55%,transparent 100%);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;pointer-events:none}
+body.hl .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:calc(var(--ah) + 18px);padding-bottom:18px;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;pointer-events:none}
+/* lo sfumato in alto occupa tutta la larghezza dello schermo (anche in orizzontale), non solo la colonna centrale */
+body.hl .topbar::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:linear-gradient(180deg,var(--ground) 0%,color-mix(in srgb,var(--ground) 82%,transparent) 55%,transparent 100%)}
 body.hl .topbar>*{pointer-events:auto}
 body.hl .abrand{grid-column:2;justify-content:center}
 body.hl #b-theme{grid-column:3;justify-self:end}
@@ -661,7 +663,7 @@ body.hl .vtile[id^="L-"],.vtile[id^="L-"]{scroll-margin-top:calc(var(--ah) + 10p
 body.hl #home .vlist{margin-top:14px}
 /* ===== v4: testata del verso sfumata, freccia centrata ===== */
 body.lite header{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
-body.lite header::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-20px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,var(--ground) 0%,color-mix(in srgb,var(--ground) 82%,transparent) 55%,transparent 100%)}
+body.lite header::before{content:"";position:absolute;left:50%;width:100vw;transform:translateX(-50%);top:0;bottom:-20px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,var(--ground) 0%,color-mix(in srgb,var(--ground) 82%,transparent) 55%,transparent 100%)}
 body.lite #b-home-t{display:none}
 body.lite #b-home svg{margin:0!important;vertical-align:0!important;display:block;width:18px;height:18px}
 body.lite #b-home,body.lite .tbtns .star{width:40px;min-width:40px;height:40px;min-height:40px;padding:0;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--lq-a),var(--lq-b) 55%,var(--lq-c));box-shadow:var(--gl-edge),var(--gl-sh)}
@@ -696,3 +698,34 @@ body.lite .choices button.bad .cn{color:var(--bad)}
 .qbig{font:600 24px/1.2 var(--f-serif);color:var(--ink);text-align:center;margin:6px 0 0}
 .qpc{font:600 44px/1.1 var(--f-ui);color:var(--accent);text-align:center;margin:2px 0 6px;font-variant-numeric:tabular-nums}
 #p-quiz .fbrow{margin-top:8px}
+/* ===== v8: schermo intero, barre che spariscono scorrendo, versione ===== */
+/* scorrendo verso il basso la barra in alto (titolo) sale e quella in basso scende; scorrendo verso l'alto tornano */
+.topbar,header,#gnav,nav,#dock,#rail,#p-verso .prefs,#subnav{transition:transform .28s ease,opacity .24s ease,bottom .28s ease,top .28s ease}
+body.bars-off.hl .topbar{transform:translate(-50%,-125%);opacity:0}
+body.bars-off.hl .topbar>*{pointer-events:none}
+body.bars-off.lite header{transform:translate(-50%,-125%);opacity:0;pointer-events:none}
+body.bars-off.hl #gnav{transform:translateY(calc(100% + 40px));opacity:0;pointer-events:none}
+body.bars-off.lite nav{transform:translate(-50%,calc(100% + 40px));opacity:0;pointer-events:none}
+/* la tastiera dei diacritici scende al posto della barra in basso */
+body.bars-off #dock{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+/* i selettori sotto l'intestazione salgono in cima */
+body.bars-off.lite #p-verso .prefs,body.bars-off.lite #subnav{top:calc(env(safe-area-inset-top,0px) + 8px)}
+/* l'indice laterale si allunga in basso */
+body.bars-off #rail{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+/* orizzontale: barre più basse per lasciare più spazio al testo */
+@media (orientation:landscape) and (max-height:520px){
+  :root{--ah:calc(46px + env(safe-area-inset-top,0px))}
+  body.lite{--hh:calc(52px + env(safe-area-inset-top,0px))}
+  body.hl .topbar{height:calc(var(--ah) + 12px);padding-bottom:12px}
+  #gnav .gt{min-height:32px}
+  body.hl #b-theme{width:38px;height:38px}
+  .bname{font-size:21px}
+  #rail{top:calc(var(--ah) + 56px)}
+}
+/* impostazioni: versione e controllo aggiornamenti */
+.upd{display:grid;gap:8px;padding-top:12px;border-top:1px solid var(--hair)}
+.upd-v{font:500 13.5px var(--f-ui);color:var(--ink);font-variant-numeric:tabular-nums}
+.upd .chip{width:100%;min-height:42px}
+.upd-s{font:400 12.5px/1.35 var(--f-ui);color:var(--soft);min-height:1.35em}
+.upd-s.ok{color:var(--ok)}
+.upd-s.bad{color:var(--bad)}

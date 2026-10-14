@@ -9,6 +9,8 @@ var nf=function(s){return s.normalize('NFC')};
    I versi NON stanno in questo file: sono in versi.js, caricato prima di questo, che definisce la variabile globale DATA.
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
+/* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
+var APP_VERSION='1.0';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
@@ -248,6 +250,7 @@ function view(name){
     dockBar(false);var dk=$('#dock');if(dk)dk.hidden=true;document.body.classList.remove('hasdock','instudio','flat','lite');
   }
   try{window.scrollTo(0,0)}catch(e){}
+  barsReset();
 }
 function goHome(){cur=-1;renderHome();view('home');document.title=BOOK.title}
 function goTab(t){
@@ -1017,6 +1020,8 @@ document.addEventListener('click',function(e){
    case 'tab':goTab(b.dataset.tab);break;
    case 'sreset':sr.q='';sr.src='';sr.met='';sr.star='';renderSearch();break;
    case 'sclear':{sr.q='';var si=$('#sq');if(si){si.value='';si.focus()}b.hidden=true;renderResults();break;}
+   case 'upd-check':updCheck();break;
+   case 'upd-go':updGo();break;
    case 'theme':{var sp=$('#set-pop');sp.hidden=!sp.hidden;b.setAttribute('aria-expanded',String(!sp.hidden));break;}
    case 'aa':{var pp=$('#aa-pop');pp.hidden=!pp.hidden;b.setAttribute('aria-expanded',String(!pp.hidden));break;}
    case 'vs-minus':case 'vs-plus':{
@@ -1083,6 +1088,61 @@ document.addEventListener('click',function(e){
   }
 });
 
+/* ---------- barre che spariscono scorrendo: giù = via il titolo in alto e la barra in basso, su = tornano ---------- */
+var barsY=0,barsAcc=0,barsOff=false,barsTick=false;
+function barsSet(v){if(v!==barsOff){barsOff=v;document.body.classList.toggle('bars-off',v)}}
+function barsReset(){barsY=Math.max(0,window.pageYOffset||0);barsAcc=0;barsSet(false)}
+function barsUpdate(){
+  barsTick=false;
+  var y=Math.max(0,window.pageYOffset||0),d=y-barsY;barsY=y;
+  var a=$('#aa-pop'),s=$('#set-pop');
+  if((a&&!a.hidden)||(s&&!s.hidden)){barsAcc=0;return}/* con un pannello aperto le barre restano */
+  if(y<=16){barsAcc=0;barsSet(false);return}/* in cima alla pagina si vedono sempre */
+  if(Math.abs(d)>300){barsAcc=0;barsSet(false);return}/* salto di posizione (indice, ritorno): barre visibili */
+  var maxY=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+  if(y>=maxY-1)return;/* rimbalzo in fondo: non cambia nulla */
+  if((d>0)!==(barsAcc>0))barsAcc=0;
+  barsAcc+=d;
+  if(barsAcc>14)barsSet(true);else if(barsAcc<-10)barsSet(false);
+}
+window.addEventListener('scroll',function(){if(!barsTick){barsTick=true;window.requestAnimationFrame(barsUpdate)}},{passive:true});
+
+/* ---------- versione, controllo aggiornamenti, uso offline ---------- */
+var updNew=null,updBusy=false;
+function updShow(msg,cls,go){
+  $$('.upd').forEach(function(u){
+    var s=u.querySelector('.upd-s'),b=u.querySelector('[data-upd]');
+    if(s){s.textContent=msg||'';s.className='upd-s'+(cls?' '+cls:'')}
+    if(b){b.dataset.act=go?'upd-go':'upd-check';b.textContent=go?('Aggiorna alla versione '+updNew):'Controlla aggiornamenti';b.disabled=updBusy}
+  });
+}
+function updInit(){$$('.upd .upd-v').forEach(function(v){v.textContent='Śloka Drill · versione '+APP_VERSION})}
+function updCheck(){
+  if(updBusy)return;
+  if(navigator.onLine===false){updShow('Sei offline: serve la connessione per controllare.','bad');return}
+  updBusy=true;updShow('Controllo in corso…');
+  fetch('app.js?c='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()}).then(function(t){
+    var m=/var APP_VERSION='([^']+)'/.exec(t);
+    updBusy=false;
+    if(!m){updShow('Non riesco a leggere la versione online.','bad');return}
+    if(m[1]===APP_VERSION){updNew=null;updShow('Hai già l’ultima versione.','ok')}
+    else{updNew=m[1];updShow('È disponibile la versione '+m[1]+'.','',true)}
+  }).catch(function(){updBusy=false;updShow('Controllo non riuscito: riprova con la connessione attiva.','bad')});
+}
+function updGo(){
+  if(updBusy)return;
+  updBusy=true;updShow('Aggiorno…');
+  var p=[],done=function(){location.reload()};
+  try{if(window.caches)p.push(caches.keys().then(function(ks){return Promise.all(ks.map(function(k){return caches.delete(k)}))}))}catch(e){}
+  try{if(navigator.serviceWorker)p.push(navigator.serviceWorker.getRegistrations().then(function(rs){return Promise.all(rs.map(function(r){return r.update()}))}))}catch(e){}
+  Promise.all(p).then(done,done);
+}
+/* il service worker (sw.js) fa funzionare l'app anche senza rete: solo sulla pagina pubblicata (GitHub Pages), non nell'anteprima dell'artefatto */
+if('serviceWorker' in navigator&&(/(^|\.)github\.io$/.test(location.hostname)||location.hostname==='localhost')){
+  window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+}
+
 /* ---------- avvio ---------- */
+updInit();
 applyTheme();buildGnav();goHome();
 })();

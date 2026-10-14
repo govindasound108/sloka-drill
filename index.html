@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Śloka Drill"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#F3E2BE"><link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png"><link rel="manifest" href="manifest.webmanifest"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Śloka Drill"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#F3E2BE"><link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png"><link rel="manifest" href="manifest.webmanifest"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Śloka Drill</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600&display=swap">
 <link rel="stylesheet" href="stile.css">
@@ -34,6 +34,7 @@
           <div><div class="aa-l">Tema</div><div class="seg" role="group" aria-label="Tema"><button type="button" data-act="theme-set" data-val="auto" aria-pressed="false">Auto</button><button type="button" data-act="theme-set" data-val="light" aria-pressed="false">Giorno</button><button type="button" data-act="theme-set" data-val="dark" aria-pressed="false">Notte</button></div></div>
           <div><div class="aa-l">Grandezza del testo</div><div class="aa-row"><button type="button" class="star" data-act="vs-minus" aria-label="Più piccolo">A−</button><span id="aa-val">Auto</span><button type="button" class="star" data-act="vs-plus" aria-label="Più grande">A+</button><button type="button" class="chip" data-act="vs-auto">Auto</button></div></div>
           <div><div class="aa-l">Devanāgarī</div><button type="button" class="chip" id="aa-dev" data-act="pref-dev" aria-pressed="false" style="width:100%">Mostra la devanāgarī</button></div>
+          <div class="upd"><div class="aa-l">Versione</div><div class="upd-v"></div><button type="button" class="chip" data-act="upd-check" data-upd>Controlla aggiornamenti</button><div class="upd-s" role="status" aria-live="polite"></div></div>
         </div>
       </div>
     </header>
@@ -53,6 +54,7 @@
 <div id="set-pop" hidden role="dialog" aria-label="Impostazioni">
   <div class="aa-t">Impostazioni</div>
   <div><div class="aa-l">Tema</div><div class="seg" role="group" aria-label="Tema"><button type="button" data-act="theme-set" data-val="auto" aria-pressed="false">Auto</button><button type="button" data-act="theme-set" data-val="light" aria-pressed="false">Giorno</button><button type="button" data-act="theme-set" data-val="dark" aria-pressed="false">Notte</button></div></div>
+  <div class="upd"><div class="aa-l">Versione</div><div class="upd-v"></div><button type="button" class="chip" data-act="upd-check" data-upd>Controlla aggiornamenti</button><div class="upd-s" role="status" aria-live="polite"></div></div>
 </div>
 <div id="gnav" hidden><div class="gtabs" role="tablist" aria-label="Sezioni dell’app" id="gtabs"></div></div>
 
