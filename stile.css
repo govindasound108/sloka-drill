@@ -722,6 +722,8 @@ body.bars-off #rail{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
   .bname{font-size:21px}
   #rail{top:calc(var(--ah) + 56px)}
 }
+/* titoli dei versi (elenchi e «Continua») in tondo, non in corsivo */
+.vi,.vtile .vi,.cont-v{font-style:normal}
 /* parola per parola: elenco completo sotto il verso */
 .glbox{margin:0;padding:0 2px;font:400 14.5px/1.65 var(--f-ui);color:var(--soft);text-wrap:pretty}
 .glbox b{font-weight:600;color:var(--ink)}

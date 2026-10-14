@@ -10,7 +10,7 @@ var nf=function(s){return s.normalize('NFC')};
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
 /* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
-var APP_VERSION='1.1';
+var APP_VERSION='1.2';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
