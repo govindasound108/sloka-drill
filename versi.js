@@ -862,4 +862,85 @@ sources:[
 });
 /* ----- fine jaya jaya kṛpāmaya ----- */
 
+/* ----- Caitanya-caritāmṛta Ādi 3.89 ----- */
+DATA.push({
+ id:'cc-adi-3-89',
+ label:'Caitanya-caritāmṛta Ādi 3.89',
+ src:'Caitanya-caritāmṛta Ādi 3.89',
+ sub:'vasantatilakā · 14 sillabe per pāda',
+ padas:[
+  {iast:'ullaṅghita-trividha-sīma-samātiśāyi-', dev:'उल्लङ्घितत्रिविधसीमसमातिशायि'},
+  {iast:'sambhāvanaṁ tava parivraḍhima-svabhāvam', dev:'सम्भावनं तव परिव्रढिमस्वभावम् ।'},
+  {iast:'māyā-balena bhavatāpi niguhyamānaṁ', dev:'मायाबलेन भवतापि निगुह्यमानं'},
+  {iast:'paśyanti kecid aniśaṁ tvad-ananya-bhāvāḥ', dev:'पश्यन्ति केचिदनिशं त्वदनन्यभावाः ॥८९॥'}
+ ],
+ translation:'O mio Signore, tutto ciò che si trova nella natura materiale è limitato dal tempo, dallo spazio e dal pensiero. Le Tue caratteristiche, invece, sono senza pari e insuperabili, e sono trascendentali a tutti questi limiti. Anche se a volte le nascondi con il potere della Tua energia, i Tuoi devoti puri, la cui devozione è esclusivamente per Te, possono sempre vederle.',
+ translationSrc:'Resa italiana mia della traduzione inglese di Śrīla A.C. Bhaktivedanta Swami Prabhupāda, Vedabase, CC Ādi 3.89 (https://vedabase.io/en/library/cc/adi/3/89/). Ho letto la pagina tramite uno strumento che la riassume: solo l’inizio («O my Lord, everything within material nature is limited by time, space and thought») è sicuro parola per parola; il resto rende fedelmente il senso ma va ricontrollato su Vedabase prima di considerarlo definitivo. Il verso non è nello Śrī Ślokāmṛta-bindu (PDF del progetto).',
+ words:[
+  {k:'ullaṅghita-trividha-sīma-sama-atiśāyi-sambhāvanam',mean:'(la Tua natura) che ha oltrepassato i tre tipi di limiti ed è senza pari e insuperabile',info:'composto (un solo composto, a cavallo dei pāda 1 e 2) · dvitīyā ekavacana = accusativo singolare (n.) [mia lettura: concorda con parivraḍhima-svabhāvam e con niguhyamānam]. Significati dei membri letti su Vedabase tramite un riassunto, da ricontrollare; per sambhāvanam non ho un significato sicuro dai synonyms: la resa «ciò con cui si concepisce / la caratteristica concepibile» è un’approssimazione mia, da verificare. «Tre tipi di limiti» = tempo, spazio e pensiero (dalla traduzione di Vedabase).',parts:[['ullaṅghita','(part.) oltrepassato, superato (ut + radice laṅgh) [conoscenza generale, da verificare]'],['tri-vidha','di tre tipi, triplice'],['sīma','limite, confine (tema sīman/sīmā: non ho dati affidabili sul genere)'],['sama','uguale, pari'],['atiśāyin','che eccelle, che supera'],['sambhāvana','(n.) la possibilità / il modo di concepire [significato incerto, da verificare]']]},
+  {k:'tava',mean:'Tuo, di Te',info:'pronome yuṣmad · ṣaṣṭhī ekavacana = genitivo singolare (forma piena; la forma sostitutiva è te, tabella del Vyākaraṇa sul sūtra 253)'},
+  {k:'parivraḍhima-svabhāvam',mean:'la cui natura è la supremazia / la grandezza',info:'composto · dvitīyā ekavacana = accusativo singolare (n.) [mia lettura]. «Supremazia» o «grandezza» per parivraḍhiman: i due riassunti di Vedabase che ho letto non coincidono, quindi il significato esatto è da verificare.',parts:[['parivraḍhiman','(m.) supremazia, grandezza [genere: conoscenza generale, da verificare]'],['svabhāva','(m.) natura propria, natura intrinseca']]},
+  {k:'māyā-balena',mean:'con il potere della māyā (l’energia illusoria)',info:'composto · tṛtīyā ekavacana = strumentale singolare (n.)',parts:[['māyā','(f.) māyā, energia illusoria'],['bala','(n.) forza, potere']]},
+  {k:'bhavatā',mean:'da Te',info:'tema bhavat (m.), forma di rispetto per «Tu» · tṛtīyā ekavacana = strumentale singolare [mia conoscenza generale, da verificare]'},
+  {k:'api',mean:'anche, sebbene',info:'indeclinabile'},
+  {k:'niguhyamānam',mean:'che viene nascosto, celato',info:'participio presente passivo (śānac), radice guh con il prefisso ni: nascondere · dvitīyā ekavacana = accusativo singolare (n.) [mia lettura]'},
+  {k:'paśyanti',mean:'vedono',info:'verbo, presente 3ª plurale · radice dṛś (al presente paśya-): vedere [mia conoscenza generale, da verificare]'},
+  {k:'kecit',mean:'alcuni, certuni',info:'pronome indefinito (ka + cit) · prathamā bahuvacana = nominativo plurale (m.) [mia lettura]. Nel verso compare come kecid (sandhi).'},
+  {k:'aniśam',mean:'sempre, di continuo',info:'indeclinabile (avverbio), letteralmente «senza notte» [mia conoscenza generale, da verificare]'},
+  {k:'tvad-ananya-bhāvāḥ',mean:'coloro la cui devozione è esclusivamente per Te',info:'composto · prathamā bahuvacana = nominativo plurale (m.), soggetto di paśyanti. Nei composti la forma del pronome yuṣmad è tvad-. Vedabase rende «ananya-bhāvāḥ» con «coloro che hanno devozione indivisa» (da un riassunto).',parts:[['tvad','a Te, per Te (forma di yuṣmad nel composto)'],['ananya','(agg.) non altro, esclusivo (na + anya)'],['bhāva','(m.) sentimento, devozione']]}
+ ],
+ surf:[
+  [{t:'ullaṅghita-trividha-sīma-samātiśāyi-',e:[0]}],
+  [{t:'sambhāvanaṁ',e:[0]},{t:'tava',e:[1]},{t:'parivraḍhima-svabhāvam',e:[2]}],
+  [{t:'māyā-balena',e:[3]},{t:'bhavat-',e:[4]},{t:'āpi',e:[5]},{t:'niguhyamānaṁ',e:[6]}],
+  [{t:'paśyanti',e:[7]},{t:'kecid',e:[8]},{t:'aniśaṁ',e:[9]},{t:'tvad-ananya-bhāvāḥ',e:[10]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  61:{txt:'viṣṇudāso viṣṇupadānte harighoṣe ca harigadā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa harigadā; se non è a fine di viṣṇupada, lo diventa solo se segue un harighoṣa.',ex:'Esempio: bhagavat + icchā → bhagavad-icchā',note:'La sostituzione è quella più simile per luogo di pronuncia (sthāne sadṛśatamaḥ).'},
+  66:{txt:'da-tau para-varṇau la-ca-ṭa-vargeṣu nityam',tr:'Da-rāma e ta-rāma cambiano sempre nella varṇa che segue, quando segue la-rāma, ca-varga o ṭa-varga.',ex:'Esempio: tad + lakṣmī-pateḥ → tal lakṣmī-pateḥ'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: saṁsāram + tarati → saṁsāraṁ tarati oppure saṁsāran tarati'}
+ },
+ sandhi:[
+  {a:'ut',b:'laṅghita',r:'ullaṅghita',sut:[66],note:'t davanti a la diventa l (66). Qui ut è un prefisso e laṅghita viene dalla radice laṅgh: i sūtra parlano di fine di viṣṇupada, quindi l’applicazione è una mia lettura, da verificare.'},
+  {a:'sama',b:'atiśāyi',r:'samātiśāyi',sut:[42],note:'a + a → ā, dentro il composto.'},
+  {a:'sam',b:'bhāvanam',r:'sambhāvanam',sut:[72,73],note:'Prima m → ṁ (72), poi ṁ → m, l’hariveṇu del pa-varga a cui appartiene bh (73). Come per «kṛṣṇam bhajati» nel vṛtti del 73. Qui sam è un prefisso, quindi l’applicazione è una mia lettura, da verificare.'},
+  {a:'sambhāvanam',b:'tava',r:'sambhāvanaṁ tava',sut:[72,73],note:'m → ṁ davanti a consonante (72). Con il sūtra 73 la nasale può anche diventare n, la nasale del ta-varga a cui appartiene t (come saṁsāran tarati): è facoltativo, e nel verso c’è ṁ. Il pāda 1 e il pāda 2 sono uniti nel composto, il sandhi è dentro il pāda 2.'},
+  {a:'bhavatā',b:'api',r:'bhavatāpi',sut:[42],note:'ā + a → ā.'},
+  {a:'kecit',b:'aniśam',r:'kecid aniśam',sut:[61],note:'t finale diventa d (harigadā, la lettera sonora dello stesso luogo di pronuncia). Il sūtra non nomina la vocale che segue: l’esempio del vṛtti con vocale è bhagavat + icchā → bhagavad-icchā.'},
+  {a:'aniśam',b:'tvad-',r:'aniśaṁ tvad-',sut:[72,73],note:'m → ṁ davanti a consonante (72). Con il sūtra 73 la nasale può anche diventare n (aniśan tvad): è facoltativo, e nel verso c’è ṁ.'},
+  {a:'tvat',b:'ananya',r:'tvad-ananya',sut:[61],note:'t → d (61), dentro il composto. Il PDF (nota alla declinazione di ṣaṣ) dice che ogni parola dentro un composto è un viṣṇupada a sé: per questo vale la regola della fine di viṣṇupada.'}
+ ],
+ seg:[
+  [{t:'ullaṅghita',s:[1]},{t:'-trividha-sīma-'},{t:'samātiśāyi',s:[2]},{t:'-'}],
+  [{t:'sam',s:[3]},{t:'bhāvanaṁ tava',s:[4]},{t:' parivraḍhima-svabhāvam'}],
+  [{t:'māyā-balena '},{t:'bhavatāpi',s:[5]},{t:' niguhyamānaṁ'}],
+  [{t:'paśyanti '},{t:'kecid',s:[6]},{t:' '},{t:'aniśaṁ',s:[7]},{t:' '},{t:'tvad',s:[8]},{t:'-ananya-bhāvāḥ'}]
+ ],
+ metrica:{
+  name:'Vasantatilakā',
+  syl:14,
+  gana:'ta · bha · ja · ja · ga · ga',
+  yati:'non ho dati affidabili su una pausa fissa (alcuni manuali indicano dopo l’8ª sillaba) [mia conoscenza generale, da verificare]',
+  lakshana:'uktā vasantatilakā ta-bha-jā jagau gaḥ [mia conoscenza generale, da verificare]',
+  scan:['GGLGLLLGLLGLGL','GGLGLLLGLLGLGL','GGLGLLLGLLGLGG','GGLGLLLGLLGLGG'],
+  note:'I quattro pāda seguono lo schema ta-bha-ja-ja-ga-ga (GGL GLL LGL LGL GG). Nei pāda 1 e 2 l’ultima sillaba (yi, vam) è breve: a fine pāda si conta lunga [mia conoscenza generale, da verificare]. Scansione fatta da me sul testo; il nome del metro lo ricavo dallo schema, non da una fonte. Non ho trovato su Vedabase il nome del metro: da verificare.'
+ },
+ context:[
+  {v:true,t:'Il verso è Śrī Caitanya-caritāmṛta, Ādi-līlā 3.89, nel capitolo 3, «Le ragioni esterne dell’apparizione di Śrī Caitanya Mahāprabhu». Il verso precedente (Ādi 3.88) dice che Kṛṣṇa cerca in molti modi di nascondersi, ma i Suoi devoti puri Lo conoscono per quello che è. Il verso seguente (Ādi 3.90) dice che chi ha natura demoniaca non Lo conosce mai, mentre Lui non può nascondersi ai Suoi devoti puri.'},
+  {v:true,t:'Il commento di Vedabase indica che questo verso è citato dallo Stotra-ratna (13) di Yāmunācārya.'},
+  {v:false,t:'Dal testo stesso: chi parla è chi prega e si rivolge direttamente al Signore («Tuo», «da Te»). Nel Caitanya-caritāmṛta il verso è riportato come prova a sostegno di Ādi 3.88 [mia lettura, da verificare]; a citarlo è l’autore dell’opera, Kṛṣṇadāsa Kavirāja [mia conoscenza generale, da verificare]. In che momento Yāmunācārya abbia composto o pronunciato la preghiera: non ho dati affidabili.'}
+ ],
+ note:'Il testo del verso è quello di Vedabase (CC Ādi 3.89), che dà anche la scrittura parivraḍhima. La devanāgarī l’ho ricavata io dal testo in caratteri latini: Vedabase mostra il testo in bengalese. La chiusura ॥८९॥ è il numero del verso nel Caitanya-caritāmṛta. La divisione in quattro pāda da 14 sillabe è mia, dedotta dalla scansione. Il parola per parola l’ho riscritto da un riassunto della pagina di Vedabase, non dai synonyms letti per intero: da verificare.',
+ sources:[
+  'Testo del verso, traduzione inglese, contesto e indicazione dello Stotra-ratna (13) di Yāmunācārya: Vedabase, CC Ādi 3.89 (https://vedabase.io/en/library/cc/adi/3/89/ e https://vedabase.net/cc/adi/3/89.htm); versi vicini Ādi 3.88 e 3.90 su vedabase.io. Pagine lette tramite uno strumento che le riassume.',
+  'Ricerca nello Śrī Ślokāmṛta-bindu (PDF del progetto): il verso non l’ho trovato con due ricerche. Il ca-link-finder non l’ho potuto consultare da qui.',
+  'Sūtra 42, 61, 66, 72 e 73: Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto).',
+  'Devanāgarī: ricavata da me dal testo in caratteri latini.',
+  'Genere, caso, composti, scansione, nome del metro e lakṣaṇa: conoscenza generale, da verificare.'
+ ]
+});
+/* ----- fine Caitanya-caritāmṛta Ādi 3.89 ----- */
+
 /* ===== FINE RACCOLTA ===== */
