@@ -10,7 +10,7 @@ var nf=function(s){return s.normalize('NFC')};
    Per aggiungere o correggere un verso si modifica solo versi.js. */
 var BOOK={title:'Śloka Drill'};
 /* VERSIONE DELL'APP: va aumentata a ogni file caricato sulla repo (il controllo aggiornamenti la confronta con quella online) */
-var APP_VERSION='1.6';
+var APP_VERSION='1.7';
 var DATA=window.DATA||[];
 if(!window.DATA)console.error('versi.js non è stato caricato: nessun verso disponibile.');
 
@@ -984,13 +984,31 @@ function scrollableX(el){for(;el&&el!==document.body;el=el.parentNode){if(el.nod
 document.addEventListener('touchstart',function(e){
   back=null;
   var vv=$('#verseview');if(cur<0||!vv||vv.hidden||!e.target.closest||e.touches.length!==1)return;
-  if(e.target.closest('nav,#subnav,.vcard,input,textarea,select,button,a,.key,#dock')||scrollableX(e.target))return;
+  if(e.target.closest('nav,#subnav,.vcard,.vb-c,input,textarea,select,button,a,.key,#dock')||scrollableX(e.target))return;
   var t=e.touches[0];back={x:t.clientX,y:t.clientY}
 },{passive:true});
 document.addEventListener('touchend',function(e){
   if(!back)return;
   var t=e.changedTouches[0],dx=t.clientX-back.x,dy=t.clientY-back.y;back=null;
   if(dx>60&&Math.abs(dx)>=2*Math.abs(dy))goBack();
+},{passive:true});
+/* scorrendo il dito sul titolo del verso (in alto) si passa al verso successivo (verso sinistra) o precedente (verso destra),
+   nello stesso ordine alfabetico della home. Alla fine dell'elenco non succede nulla. */
+var tsw=null;
+document.addEventListener('touchstart',function(e){
+  tsw=null;
+  var vv=$('#verseview');if(cur<0||!vv||vv.hidden||!e.target.closest||e.touches.length!==1)return;
+  if(!e.target.closest('.vb-c'))return;
+  var t=e.touches[0];tsw={x:t.clientX,y:t.clientY}
+},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(!tsw)return;
+  var t=e.changedTouches[0],dx=t.clientX-tsw.x,dy=t.clientY-tsw.y;tsw=null;
+  if(Math.abs(dx)<45||Math.abs(dx)<1.5*Math.abs(dy))return;
+  var list=order(),p=list.indexOf(cur),n=dx<0?p+1:p-1;
+  if(p<0||n<0||n>=list.length)return;
+  openVerse(list[n]);window.scrollTo(0,0);
+  var h=$('#verseview>header');if(h){h.classList.remove('in-l','in-r');void h.offsetWidth;h.classList.add(dx<0?'in-l':'in-r')}
 },{passive:true});
 document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('[data-kb]'))lastField=e.target});
 document.addEventListener('mousedown',function(e){if(e.target.closest&&e.target.closest('.key'))e.preventDefault()});
