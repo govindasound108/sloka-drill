@@ -277,6 +277,11 @@ body.bgfull #verseview>header,body.bgfull #review>header{margin-bottom:10px;padd
 .vcard.in-r,#verseview>header.in-r{animation:inr .26s ease both}
 @keyframes inl{from{opacity:.3;transform:translateX(26px)}to{opacity:1;transform:none}}
 @keyframes inr{from{opacity:.3;transform:translateX(-26px)}to{opacity:1;transform:none}}
+/* barra alta fissa (body.lite): è centrata con translateX(-50%), quindi l'animazione dello swipe tra i versi deve tenere quello spostamento, altrimenti la barra resta sfasata a destra */
+body.lite #verseview>header.in-l{animation:hinl .26s ease both}
+body.lite #verseview>header.in-r{animation:hinr .26s ease both}
+@keyframes hinl{from{opacity:.3;transform:translateX(calc(-50% + 26px))}to{opacity:1;transform:translateX(-50%)}}
+@keyframes hinr{from{opacity:.3;transform:translateX(calc(-50% - 26px))}to{opacity:1;transform:translateX(-50%)}}
 .tbtns{flex:0 0 auto;display:flex;gap:8px}
 .titlerow{align-items:center}
 .tnav{display:flex;align-items:center;gap:2px;min-width:0}

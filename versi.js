@@ -943,4 +943,57 @@ DATA.push({
 });
 /* ----- fine Caitanya-caritāmṛta Ādi 3.89 ----- */
 
+/* ----- Caitanya-caritāmṛta Ādi 3.16 ----- */
+DATA.push({
+ id:'cc-adi-3-16',
+ label:'Caitanya-caritāmṛta Ādi 3.16',
+ src:'Caitanya-caritāmṛta Ādi 3.16',
+ sub:'verso in bengalese, non in sanscrito · 2 righe (13 + 14 sillabe contate da me)',
+ padas:[
+  {iast:'aiśvarya-jñānete saba jagat miśrita', dev:'ऐश्वर्य-ज्ञानेते सब जगत् मिश्रित ।'},
+  {iast:'aiśvarya-śithila-preme nāhi mora prīta', dev:'ऐश्वर्य-शिथिल-प्रेमे नाहि मोर प्रीत ॥१६॥'}
+ ],
+ translation:'Il mondo intero è pervaso dalla conoscenza della Mia opulenza; ma l’amore reso debole da questa conoscenza dell’opulenza non Mi soddisfa.',
+ translationSrc:'Resa italiana mia, dal senso della traduzione inglese di Śrīla A.C. Bhaktivedanta Swami Prabhupāda, Vedabase, CC Ādi 3.16 (https://vedabase.io/en/library/cc/adi/3/16/). Ho letto la pagina solo tramite uno strumento che la riassume e non ho il testo inglese parola per parola: il senso è confermato da due letture della stessa pagina, ma la formulazione va ricontrollata su Vedabase. Il verso non l’ho trovato nello Śrī Ślokāmṛta-bindu (PDF del progetto).',
+ words:[
+  {k:'aiśvarya-jñānete',mean:'con la conoscenza dell’opulenza (della maestà)',info:'composto bengalese. Significato dai synonyms di Vedabase («with knowledge of the opulences»), letti tramite un riassunto: da ricontrollare.',parts:[['aiśvarya','opulenza, maestà'],['jñānete','con la conoscenza, nella conoscenza']]},
+  {k:'saba',mean:'tutto, tutti',info:'Vedabase: «all» (riassunto).'},
+  {k:'jagat',mean:'il mondo, l’universo',info:'Vedabase: «the world» / «the universe» (riassunto; le due pagine lette danno le due rese).'},
+  {k:'miśrita',mean:'mescolato, misto (pervaso)',info:'Vedabase: «mixed» (riassunto). Nella traduzione il senso è «pervaso» dalla conoscenza dell’opulenza: la resa «pervaso» è mia, da verificare.'},
+  {k:'aiśvarya-śithila-preme',mean:'nell’amore indebolito dall’opulenza',info:'composto bengalese. Vedabase: «weakened by majesty» / «in love» (riassunto): da ricontrollare.',parts:[['aiśvarya','opulenza, maestà'],['śithila','allentato, indebolito'],['preme','nell’amore']]},
+  {k:'nāhi',mean:'non c’è, non',info:'Vedabase: «there is not» (riassunto).'},
+  {k:'mora',mean:'Mio, di Me',info:'Vedabase: «My» (riassunto).'},
+  {k:'prīta',mean:'piacere, soddisfazione',info:'Vedabase: «pleasure» (riassunto). Una seconda lettura della pagina lo rende «delight, attraction»: il significato esatto va ricontrollato.'}
+ ],
+ surf:[
+  [{t:'aiśvarya-jñānete',e:[0]},{t:'saba',e:[1]},{t:'jagat',e:[2]},{t:'miśrita',e:[3]}],
+  [{t:'aiśvarya-śithila-preme',e:[4]},{t:'nāhi',e:[5]},{t:'mora',e:[6]},{t:'prīta',e:[7]}]
+ ],
+ metrica:{
+  name:'metro non identificato: non ho dati affidabili',
+  syl:'13 nella riga 1, 14 nella riga 2',
+  sylNote:'contate da me sul testo in caratteri latini, una sillaba per vocale; la pronuncia bengalese può dare un conteggio diverso',
+  gana:'non ho dati affidabili su uno schema di gaṇa per questo verso',
+  yati:'non ho dati affidabili su una pausa fissa',
+  yatiAt:99,
+  lakshana:'non ho dati affidabili su un lakṣaṇa per questo verso',
+  scan:['GGGGGGLLLGGLL','GGLLLGGGGLGGGL'],
+  note:'Scansione fatta con le regole sanscritte (sillaba lunga se ha vocale lunga, e, o, ai, au, oppure è seguita da due consonanti; ṛ è breve; l’ultima sillaba di ogni riga la conto come è, senza forzarla lunga). Non è una scansione bengalese. Le due righe hanno 13 e 14 sillabe con questo conteggio: non ho dati affidabili per dire se la differenza dipenda dalla pronuncia bengalese o da altro, né quale sia il metro.'
+ },
+ context:[
+  {v:true,t:'Il verso è Śrī Caitanya-caritāmṛta, Ādi-līlā 3.16, nel capitolo 3, «Le ragioni esterne dell’apparizione di Śrī Caitanya Mahāprabhu». Il verso precedente (Ādi 3.15) dice che nel mondo molti Lo adorano seguendo le regole (vidhi-bhakti), ma con la sola devozione regolata non si ottiene il sentimento di Vraja (vraja-bhāva). Il verso seguente (Ādi 3.17) dice che chi Lo adora con le regole, nella conoscenza dell’opulenza, raggiunge Vaikuṇṭha e i quattro tipi di liberazione.'},
+  {v:true,t:'Chi parla è Śrī Kṛṣṇa, in prima persona («Mi», «Mio»): è il Suo ragionamento sul perché apparire come Śrī Caitanya. Secondo la sintesi del commento di Vedabase, vuole dare il rapporto d’amore intimo (di servo, amico, genitore, amante), che non nasce dalla sola conoscenza della Sua opulenza.'},
+  {v:true,t:'Lo stesso testo compare anche su Vedabase come CC Ādi 4.17.'},
+  {v:false,t:'In che momento preciso Kṛṣṇa pronunci o pensi queste parole, oltre al ragionamento sul motivo dell’apparizione di Śrī Caitanya: non ho dati affidabili.'}
+ ],
+ note:'Il testo del verso è quello di Vedabase (CC Ādi 3.16) ed è lo stesso che mi hai mandato (con «nāhi»); la pagina Ādi 4.17 di Vedabase, letta tramite un riassunto, potrebbe avere «nahi»: non l’ho potuto confrontare. Il verso è in bengalese (non in sanscrito): per questo non ho messo né la grammatica né la sezione dei sandhi, solo la metrica. Della metrica ho dato solo il conteggio delle sillabe e una scansione con le regole sanscritte: non ho dati affidabili sul nome del metro. La devanāgarī l’ho ricavata io dal testo in caratteri latini: poiché il testo è bengalese, è solo una trascrizione mia. La chiusura ॥१६॥ è il numero del verso nel Caitanya-caritāmṛta. Il parola per parola l’ho riscritto da riassunti della pagina di Vedabase, non dai synonyms letti per intero: da verificare.',
+ sources:[
+  'Testo del verso, parola per parola, traduzione e contesto: Vedabase, CC Ādi 3.16 (https://vedabase.io/en/library/cc/adi/3/16/); versi vicini Ādi 3.15 e 3.17 su vedabase.io; stesso testo anche in Ādi 4.17 (https://vedabase.io/en/library/cc/adi/4/17/). Pagine lette tramite uno strumento che le riassume.',
+  'Ricerca nello Śrī Ślokāmṛta-bindu (PDF del progetto): il verso non compare (due ricerche). Compare invece, nello stesso argomento, Madhya 8.230 (gopī-ānugatya vinā aiśvarya-jñāne), che è un altro verso. Il ca-link-finder non l’ho potuto consultare da qui.',
+  'Devanāgarī: ricavata da me dal testo in caratteri latini.',
+  'Conteggio delle sillabe e scansione: calcolati da me sul testo con le regole del sanscrito, non da una fonte.'
+ ]
+});
+/* ----- fine Caitanya-caritāmṛta Ādi 3.16 ----- */
+
 /* ===== FINE RACCOLTA ===== */
