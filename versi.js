@@ -996,4 +996,99 @@ DATA.push({
 });
 /* ----- fine Caitanya-caritāmṛta Ādi 3.16 ----- */
 
+/* ----- Stava-mālā · aṅga-śyāmalima ----- */
+DATA.push({
+ id:'stava-mala-anga-syamalima',
+ label:'Stava-mālā · aṅga-śyāmalima',
+ src:'Stava-mālā · Rūpa Gosvāmī · preghiera conclusiva',
+ sub:'śārdūla-vikrīḍita · 19 sillabe per pāda',
+ padas:[
+  {iast:'aṅga-śyāmalima-cchaṭābhir abhito mandīkṛtendīvaraṁ', dev:'अङ्गश्यामलिमच्छटाभिरभितो मन्दीकृतेन्दीवरं'},
+  {iast:'jāḍyaṁ jāguḍa-rociṣāṁ vidadhataṁ paṭṭāmbarasya śriyā', dev:'जाड्यं जागुडरोचिषां विदधतं पट्टाम्बरस्य श्रिया ।'},
+  {iast:'vṛndāraṇya-vilāsinaṁ hṛdi lasad-dāmābhir āmodaraṁ', dev:'वृन्दारण्यविलासिनं हृदि लसद्दामाभिरामोदरं'},
+  {iast:'rādhā-skandha-niveśitojjvala-bhujaṁ dhyāyema dāmodaram', dev:'राधास्कन्धनिवेशितोज्ज्वलभुजं ध्यायेम दामोदरम् ॥'}
+ ],
+ translation:'Su Dāmodara, il cui scuro splendore corporeo mette in imbarazzo i fiori di loto blu, lo splendore delle cui vesti di seta stordisce la gloria del kuṅkuma giallo, che gode di passatempi trascendentali nella foresta di Vṛndāvana, il cui petto è fragrante di una brillante ghirlanda di fiori e il cui magnifico braccio poggia sulla spalla di Rādhā, meditiamo.',
+ translationSrc:'Resa italiana mia della traduzione inglese riportata da kksongs.org (pagina «Untitled Prayer»), identica a quella dello screenshot; la pagina non indica chi ha tradotto. Altre traduzioni inglesi trovate: anusilana.in e Harmonist Monthly («A Mine of Valuable Instructions»); quest’ultima aggiunge «vaijayantī» e «left hand», parole che nel testo sanscrito non vedo. Il verso non è nello Śrī Ślokāmṛta-bindu (PDF del progetto: tre ricerche, nessun risultato).',
+ words:[
+  {k:'aṅga-śyāmalima-cchaṭābhiḥ',mean:'dai bagliori dello scuro (splendore) delle membra',info:'composto · tṛtīyā bahuvacana = strumentale plurale (f.) [mia conoscenza generale, da verificare]. Nel verso compare come aṅga-śyāmalima-cchaṭābhir (sandhi). Significati dei membri dal parola per parola dello screenshot: «limbs», «dark», «splendor».',parts:[['aṅga','(n.) membro, membra del corpo [screenshot: «limbs»]'],['śyāmalima','scuro, scurezza [screenshot: «dark»]; non ho dati affidabili sulla forma esatta del tema'],['cchaṭā','splendore, bagliore [screenshot: «splendor»]; tema e genere (f.) sono una mia lettura, da verificare']]},
+  {k:'abhitaḥ',mean:'ovunque, da ogni parte',info:'indeclinabile [screenshot: «everywhere»]. Nel verso compare come abhito (sandhi).'},
+  {k:'mandī-kṛta-indīvaram',mean:'(Dāmodara) che ha eclissato, reso opaco il loto blu',info:'composto · dvitīyā ekavacana = accusativo singolare (m.) [mia lettura: concorda con dāmodaram, come gli altri attributi]. Screenshot: «eclipsed», «blue lotuses». Nella traduzione: «embarrasses the blue lotus flowers».',parts:[['mandī-kṛta','reso opaco, eclissato [screenshot: «eclipsed»]. Una lezione del ca-link-finder (trascrizione automatica, non verificata) spiega manda come «lento, ottuso»'],['indīvara','loto blu [screenshot: «blue lotuses»]; non ho dati affidabili sul genere']]},
+  {k:'jāḍyam',mean:'freddezza / stordimento (da verificare)',info:'tema jāḍya · dvitīyā ekavacana = accusativo singolare (n.) [mia lettura: oggetto di vidadhatam]. Lo screenshot rende «coldness», la traduzione «stuns»: i due significati non coincidono, quindi il significato esatto è da verificare.'},
+  {k:'jāguḍa-rociṣām',mean:'degli splendori del kuṅkuma (zafferano)',info:'composto · ṣaṣṭhī bahuvacana = genitivo plurale [mia conoscenza generale, da verificare]. Screenshot: «of kuṅkuma», «splendor».',parts:[['jāguḍa','kuṅkuma [screenshot: «of kuṅkuma»]; anusilana.in traduce «saffron»'],['rociṣ','splendore [screenshot: «splendor»]; tema e genere (n.): conoscenza generale, da verificare']]},
+  {k:'vidadhatam',mean:'che produce, che causa',info:'participio presente (śatṛ) · dvitīyā ekavacana = accusativo singolare (m.), da vi + dhā [mia conoscenza generale, da verificare]. Screenshot: «doing». Che regga jāḍyam («che produce jāḍya») è una mia lettura.'},
+  {k:'paṭṭa-ambarasya',mean:'della veste di seta',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare (n.) [mia lettura]. Nel verso compare come paṭṭāmbarasya (sandhi). Lo screenshot dà solo «garments» per tutto il composto; la traduzione dice «silken garments». La divisione nei due membri è mia.',parts:[['paṭṭa','seta [dalla traduzione: «silken»]'],['ambara','veste, abito [screenshot: «garments»]']]},
+  {k:'śriyā',mean:'dallo splendore, con la bellezza',info:'tema śrī (f.) · tṛtīyā ekavacana = strumentale singolare [mia conoscenza generale, da verificare]. Screenshot: «splendor».'},
+  {k:'vṛndāraṇya-vilāsinam',mean:'che gode dei passatempi nella foresta di Vṛndā (Vṛndāvana)',info:'composto · dvitīyā ekavacana = accusativo singolare (m.) [mia lettura]. Screenshot: «Vṛndāvana forest», «enjoying pastimes».',parts:[['vṛndāraṇya','foresta di Vṛndā, cioè di Vṛndāvana [screenshot]'],['vilāsin','che gode di passatempi [screenshot: «enjoying pastimes»]']]},
+  {k:'hṛdi',mean:'nel cuore, sul petto',info:'tema hṛd (n.) · saptamī ekavacana = locativo singolare [mia conoscenza generale, da verificare]. Screenshot: «in the heart»; la traduzione dice «chest».'},
+  {k:'lasat-dāmābhiḥ',mean:'con ghirlande splendenti',info:'composto · tṛtīyā bahuvacana = strumentale plurale [mia lettura]. Nel verso compare come lasad-dāmābhir (sandhi). Screenshot: «splendid», «with garlands».',parts:[['lasat','splendente, che brilla [screenshot: «splendid»]; che sia un participio della radice las è conoscenza generale, da verificare'],['dāmā','ghirlanda [screenshot: «garlands»]; sul tema e sul genere di dāmābhiḥ non ho dati affidabili']]},
+  {k:'āmodaram',mean:'fragrante',info:'accusativo singolare (m.) [mia lettura: concorda con dāmodaram]. Screenshot: «fragrant». Lettura ambigua: kksongs.org e Harmonist Monthly lo scrivono diviso (dāmābhir āmodaraṁ), la devanāgarī di anusilana.in è unita (lasaddāmābhirāmodaram) e non indica la divisione. Non ho trovato un’analisi indipendente di āmodaram: da verificare.'},
+  {k:'rādhā-skandha-niveśita-ujjvala-bhujam',mean:'il cui splendido braccio è posto sulla spalla di Rādhā',info:'composto · dvitīyā ekavacana = accusativo singolare (m.) [mia lettura: concorda con dāmodaram]. Nel verso compare come rādhā-skandha-niveśitojjvala-bhujam (sandhi). Lo screenshot rende bhujam con «splendid», ripetendo ujjvala; la traduzione dice «arm». Che bhuja sia «braccio» è una mia osservazione, coerente con la traduzione, da verificare.',parts:[['rādhā','di Rādhā [screenshot]'],['skandha','spalla [screenshot: «the shoulders»; traduzione: «shoulder»]'],['niveśita','posto, appoggiato [screenshot: «placed»]'],['ujjvala','splendente, magnifico [screenshot: «splendid»]'],['bhuja','braccio [mia osservazione dalla traduzione; lo screenshot dice «splendid»]']]},
+  {k:'dhyāyema',mean:'meditiamo, possiamo meditare',info:'verbo, ottativo (vidhiliṅ) 1ª plurale · radice dhyai: meditare [mia conoscenza generale, da verificare]. Screenshot: «we meditate»; traduzione: «let us meditate».'},
+  {k:'dāmodaram',mean:'su Dāmodara',info:'tema dāmodara (m.) · dvitīyā ekavacana = accusativo singolare, oggetto di dhyāyema [mia lettura]. Screenshot: «on Lord Damodara».'}
+ ],
+ surf:[
+  [{t:'aṅga-śyāmalima-cchaṭābhir',e:[0]},{t:'abhito',e:[1]},{t:'mandīkṛtendīvaraṁ',e:[2]}],
+  [{t:'jāḍyaṁ',e:[3]},{t:'jāguḍa-rociṣāṁ',e:[4]},{t:'vidadhataṁ',e:[5]},{t:'paṭṭāmbarasya',e:[6]},{t:'śriyā',e:[7]}],
+  [{t:'vṛndāraṇya-vilāsinaṁ',e:[8]},{t:'hṛdi',e:[9]},{t:'lasad-dāmābhir',e:[10]},{t:'āmodaraṁ',e:[11]}],
+  [{t:'rādhā-skandha-niveśitojjvala-bhujaṁ',e:[12]},{t:'dhyāyema',e:[13]},{t:'dāmodaram',e:[14]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  43:{txt:'a-dvayam i-dvaye e',tr:'Quando a-dvaya (a, ā) è seguito da i-dvaya (i, ī), si uniscono e diventano e.',ex:'Esempio: yādava + indraḥ → yādavendraḥ',note:'Il militvā del sūtra 42 vale anche per i sūtra da 43 a 49 (Saṁśodhinī del PDF).'},
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  61:{txt:'viṣṇudāso viṣṇupadānte harighoṣe ca harigadā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa harigadā; se non è a fine di viṣṇupada, lo diventa solo se segue un harighoṣa.',ex:'Esempio: bhagavat + icchā → bhagavad-icchā',note:'La sostituzione è quella più simile per luogo di pronuncia (sthāne sadṛśatamaḥ).'},
+  63:{txt:'yādava-mātre harikamalam',tr:'Un viṣṇudāsa diventa un harikamala quando segue un qualsiasi yādava.',ex:'Esempio: kṛṣṇa + chatram → (74) kṛṣṇa-chchatram → (63) kṛṣṇa-cchatram'},
+  66:{txt:'da-tau para-varṇau la-ca-ṭa-vargeṣu nityam',tr:'Da-rāma e ta-rāma cambiano sempre nella varṇa che segue, quando segue la-rāma, ca-varga o ṭa-varga.',ex:'Esempio: tad + lakṣmī-pateḥ → tal lakṣmī-pateḥ'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  74:{txt:'dviḥ sarveśvara-mātrāc chaḥ',tr:'Cha-rāma si raddoppia quando viene dopo una qualsiasi sarveśvara (vocale: sūtra 2).',ex:'Esempio: kṛṣṇa + chatram → (74) kṛṣṇa-chchatram → (63) kṛṣṇa-cchatram'},
+  80:{txt:'ād a-rāma-gopālayor ur nityam',tr:'Un viṣṇusarga (ḥ) dopo a diventa sempre u quando segue a o un gopāla.',ex:'Esempio: kṛṣṇaḥ + gacchati → kṛṣṇo gacchati; kṛṣṇaḥ + atra → kṛṣṇo ’tra'},
+  83:{txt:'ra īśvarāt sarveśvara-gopālayoḥ',tr:'Dopo un īśvara (una vocale diversa da a, ā: sūtra 7), il viṣṇusarga (ḥ) diventa ra-rāma (r) quando segue una sarveśvara (vocale) o un gopāla (consonante sonora, sūtra 28).',ex:'Esempio: hareḥ + idam → harer idam; hariḥ + gacchati → harir gacchati'}
+ },
+ sandhi:[
+  {a:'aṅga-śyāmalima',b:'chaṭābhiḥ',r:'aṅga-śyāmalima-cchaṭābhiḥ',sut:[74,63],note:'Dopo una vocale (qui la a finale di śyāmalima) ch si raddoppia (74): chch; poi il primo ch diventa c (63): cch. È lo stesso passaggio di kṛṣṇa + chatram → kṛṣṇa-cchatram nel vṛtti del 74. Alcuni testi (kksongs.org) scrivono chaṭābhir con un solo c.'},
+  {a:'cchaṭābhiḥ',b:'abhitaḥ',r:'cchaṭābhir abhitaḥ',sut:[83],note:'Dopo bhi (finale in i, un īśvara) il visarga diventa r davanti a vocale (a), come hariḥ + gacchati → harir gacchati e hareḥ + idam → harer idam nel vṛtti.'},
+  {a:'abhitaḥ',b:'mandī-',r:'abhito mandī-',sut:[80,44],note:'ḥ → u (80), poi a + u → o (44). La m è un gopāla (elenco nel sūtra 28), quindi il 80 si applica; non c’è una a dopo, quindi niente caduta della a (56). Stessa catena di kṛṣṇaḥ + gacchati → kṛṣṇo gacchati.'},
+  {a:'mandī-kṛta',b:'indīvaram',r:'mandīkṛtendīvaram',sut:[43],note:'a + i → e, dentro il composto.'},
+  {a:'-m',b:'consonante',r:'-ṁ',sut:[72,73],note:'m finale diventa ṁ davanti a consonante (72). Succede in sette punti: mandīkṛtendīvaraṁ jāḍyam, jāḍyaṁ jāguḍa-, rociṣāṁ vidadhataṁ, vidadhataṁ paṭṭā-, vilāsinaṁ hṛdi, āmodaraṁ rādhā-, bhujaṁ dhyāyema. Con il 73 la nasale può anche diventare quella del varga della consonante che segue (ñ davanti a j, m davanti a p, n davanti a dh): è facoltativo, e nel verso c’è sempre ṁ. Davanti a v, h, r il 73 non vale perché non sono consonanti di un varga (sūtra 17).'},
+  {a:'paṭṭa',b:'ambara',r:'paṭṭāmbara',sut:[42],note:'a + a → ā, dentro il composto.'},
+  {a:'lasat',b:'dāmābhiḥ',r:'lasad-dāmābhiḥ',sut:[61],note:'t finale diventa d (harigadā, la lettera sonora dello stesso luogo di pronuncia) davanti a consonante sonora, dentro il composto. Il PDF dice che ogni parola dentro un composto è un viṣṇupada a sé, per questo vale la regola della fine di viṣṇupada.'},
+  {a:'dāmābhiḥ',b:'āmodaram',r:'dāmābhir āmodaram',sut:[83],note:'ḥ → r dopo bhi (īśvara) davanti a vocale (ā), come in cchaṭābhir abhitaḥ. La lettura però è ambigua: kksongs.org e Harmonist Monthly lo scrivono diviso, la devanāgarī di anusilana.in è unita (lasaddāmābhirāmodaram) senza indicare la divisione. Non ho trovato un’analisi indipendente.'},
+  {a:'niveśita',b:'ujjvala',r:'niveśitojjvala',sut:[44],note:'a + u → o, dentro il composto.'},
+  {a:'ud',b:'jvala',r:'ujjvala',sut:[66],note:'d davanti a j (ca-varga) diventa j (66), come in kaṁsa-jit + jhaṅkāraḥ nel vṛtti. Qui ud è un prefisso e ujjvala è una parola già formata: i sūtra parlano di fine di viṣṇupada, quindi l’applicazione è una mia lettura, da verificare (come ut + laṅghita → ullaṅghita in CC Ādi 3.89).'}
+ ],
+ seg:[
+  [{t:'aṅga-śyāmalima-'},{t:'cch',s:[1]},{t:'aṭābhi'},{t:'r',s:[2]},{t:' abhit'},{t:'o',s:[3]},{t:' mandīkṛt'},{t:'e',s:[4]},{t:'ndīvara'},{t:'ṁ',s:[5]}],
+  [{t:'jāḍya'},{t:'ṁ',s:[5]},{t:' jāguḍa-rociṣā'},{t:'ṁ',s:[5]},{t:' vidadhata'},{t:'ṁ',s:[5]},{t:' paṭṭ'},{t:'ā',s:[6]},{t:'mbarasya śriyā'}],
+  [{t:'vṛndāraṇya-vilāsina'},{t:'ṁ',s:[5]},{t:' hṛdi lasa'},{t:'d',s:[7]},{t:'-dāmābhi'},{t:'r',s:[8]},{t:' āmodara'},{t:'ṁ',s:[5]}],
+  [{t:'rādhā-skandha-niveśit'},{t:'o',s:[9]},{t:'j',s:[10]},{t:'jvala-bhuja'},{t:'ṁ',s:[5]},{t:' dhyāyema dāmodaram'}]
+ ],
+ metrica:{
+  name:'Śārdūla-vikrīḍita',
+  syl:19,
+  gana:'ma · sa · ja · sa · ta · ta · ga',
+  yati:'dopo la 12ª sillaba',
+  yatiNote:'Nei pāda 1, 2 e 4 cade a fine parola (abhito, vidadhataṁ, bhujaṁ); nel pāda 3 cade dopo lasad-, a fine di un membro del composto lasad-dāmābhiḥ',
+  lakshana:'sūryāśvair yadi masajasatatagāḥ śārdūlavikrīḍitam',
+  scan:['GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG'],
+  note:'Tutti e quattro i pāda seguono lo stesso schema ma-sa-ja-sa-ta-ta-ga (GGG LLG LGL LLG GGL GGL G). Le ultime sillabe (raṁ, yā, raṁ, ram) sono lunghe per natura o per posizione, quindi non serve forzarle. Il nome del metro lo ricavo dallo schema, non da una fonte.'
+ },
+ context:[
+  {v:true,t:'È la preghiera conclusiva («Concluding Prayer») della prima parte della Stava-mālā di Śrīla Rūpa Gosvāmī: kksongs.org la indica come «final song of Volume 1 of the Stavamala». La Stava-mālā è l’antologia delle preghiere di Rūpa Gosvāmī raccolta da Jīva Gosvāmī; secondo una lezione del ca-link-finder (trascrizione automatica, non verificata) Jīva Gosvāmī ha messo questo verso come conclusione della prima parte.'},
+  {v:true,t:'Harmonist Monthly lo cita come il verso con cui Śrīla Rūpa Gosvāmī ha mostrato l’umore superiore di Śrī Rādhā-Dāmodara a Vṛndāvana.'},
+  {v:false,t:'A parlare è l’autore stesso, che si rivolge a chi legge o canta con un «meditiamo» in prima persona plurale: non c’è un dialogo né una scena narrata. Il verso descrive Dāmodara in Vṛndāvana con il braccio sulla spalla di Rādhā. In che momento e in che luogo Rūpa Gosvāmī l’abbia composto: non ho dati affidabili.'}
+ ],
+ note:'Il testo è quello di anusilana.in e di Harmonist Monthly. Lo screenshot (kksongs.org) aveva diacritici mancanti («śyamalima», «radha», «dhyayema»), «chaṭābhir» con un solo c e, nella pagina web, «ādhā-skandha» al posto di rādhā-skandha: qui ho usato la forma corretta delle altre fonti. Punti da verificare: la lettura dāmābhir āmodaraṁ (la devanāgarī di anusilana.in è unita: lasaddāmābhirāmodaram) e le varianti «vṛndāraṇya-nivāsinam» e «dhyāyed» che compaiono nella trascrizione automatica di una lezione (ca-link-finder, n. 10699), non verificata. La devanāgarī è quella di anusilana.in, scritta lì senza spazi: gli spazi fra le parole sono miei. Il verso non ha un numero nella raccolta che ho consultato: la chiusura è solo ॥ ॥. La divisione in quattro pāda da 19 sillabe è quella delle fonti.',
+ sources:[
+  'Testo corretto (IAST e devanāgarī) e traduzione inglese alternativa: anusilana.in (https://anusilana.in/anga-syamalima-cchatabhir-abhito-mandikrtendivaram/); IAST e traduzione inglese anche in Harmonist Monthly, «A Mine of Valuable Instructions» (https://www.purebhakti.com/resources/harmonist-monthly/109-centennial-editions-iii/1776-a-mine-of-valuable-instructions).',
+  'Traduzione inglese, titolo «Concluding Prayer» e indicazione «final song of Volume 1 of the Stavamala»: kksongs.org, pagina «Untitled Prayer» (http://kksongs.org/songs/a/angasyamalimachatabhir.html). Il parola per parola è quello dello screenshot che mi hai mandato: nella pagina che ho letto non ho visto i synonyms, quindi non ho potuto confermare che vengano da lì.',
+  'Ricerca nello Śrī Ślokāmṛta-bindu (PDF del progetto): il verso non compare (tre ricerche).',
+  'ca-link-finder (repo gurudas-sda/ca-link-finder, cercata per intero): il verso compare solo nella trascrizione automatica n. 10699, lezione di Śrī Prem Prayojan del 29.10.2026 («a Special prayer»), segnato «VERSE NOT FOUND IN THE DATABASE»: nessuna traduzione o fonte verificata lì.',
+  'Sūtra 42, 43, 44, 61, 63, 66, 72, 73, 74, 80 e 83 (e le definizioni nei sūtra 2, 7, 17 e 28): Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto).',
+  'Genere, caso, composti, radici, nome del metro, gaṇa e lakṣaṇa: conoscenza generale, da verificare.'
+ ]
+});
+/* ----- fine Stava-mālā · aṅga-śyāmalima ----- */
+
 /* ===== FINE RACCOLTA ===== */
