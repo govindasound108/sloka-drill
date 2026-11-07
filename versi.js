@@ -1091,4 +1091,403 @@ DATA.push({
 });
 /* ----- fine Stava-mālā · aṅga-śyāmalima ----- */
 
+/* ----- Padyāvalī 74 · nāhaṁ vipro ----- */
+DATA.push({
+ id:'padyavali-74',
+ label:'Padyāvalī 74 · nāhaṁ vipro',
+ src:'Padyāvalī 74 · Caitanya-caritāmṛta Madhya 13.80',
+ sub:'mandākrāntā · 17 sillabe per pāda',
+ padas:[
+  {iast:'nāhaṁ vipro na ca nara-patir nāpi vaiśyo na śūdro', dev:'नाहं विप्रो न च नरपतिर्नापि वैश्यो न शूद्रो'},
+  {iast:'nāhaṁ varṇī na ca gṛha-patir no vanastho yatir vā', dev:'नाहं वर्णी न च गृहपतिर्नो वनस्थो यतिर्वा ।'},
+  {iast:'kintu prodyan-nikhila-paramānanda-pūrṇāmṛtābdher', dev:'किन्तु प्रोद्यन्निखिलपरमानन्दपूर्णामृताब्धेर्'},
+  {iast:'gopī-bhartuḥ pada-kamalayor dāsa-dāsānudāsaḥ', dev:'गोपीभर्तुः पदकमलयोर्दासदासानुदासः ॥'}
+ ],
+ translation:'[Śrī Caitanya Mahāprabhu disse:] «Non sono un brāhmaṇa, un kṣatriya, un vaiśya o uno śūdra, né un brahmacārī, un gṛhastha, un vānaprastha o un sannyāsī. La mia unica identità è quella di un insignificante servo dei servi dei servi dei piedi di loto di Śrī Kṛṣṇa, l’oceano di beatitudine trascendentale piena di nettare, in continua espansione, noto come il sostentatore delle pastorelle di Vraja.»',
+ translationSrc:'Resa italiana mia della traduzione inglese dello Śrī Ślokāmṛta-bindu, p. 6 (PDF del progetto «Slokamrta bindhu 1.pdf»), identica a quella del foglio che mi hai mandato («Prayers to recite before remembering Dīkṣā Mantras», n. 1, titolo «Bhūta-śuddhi - purification of one’s identity»). Nel PDF il testo estratto ha alcuni diacritici rovinati: per quelli mi sono fidato del foglio. Nello Ślokāmṛta-bindu il verso ha il titolo «One’s eternal identity».',
+ words:[
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not». Indeclinabile. Nel verso compare unito ad aham: na + aham → nāhaṁ (sandhi).'},
+  {k:'aham',mean:'io',info:'Ślokāmṛta-bindu: «I». Pronome asmad · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'vipraḥ',mean:'un brāhmaṇa',info:'tema vipra (m.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a brāhmaṇa».'},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not».'},
+  {k:'ca',mean:'anche',info:'Ślokāmṛta-bindu: «also». Indeclinabile.'},
+  {k:'nara-patiḥ',mean:'un re, un kṣatriya',info:'composto · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a king or kṣatriya».',parts:[['nara','(m.) uomo [mia conoscenza generale, da verificare]'],['pati','(m.) signore [mia conoscenza generale, da verificare]']]},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not».'},
+  {k:'api',mean:'anche',info:'Ślokāmṛta-bindu: «also». Indeclinabile. Nel verso na + api → nāpi (sandhi).'},
+  {k:'vaiśyaḥ',mean:'un mercante (un vaiśya)',info:'tema vaiśya (m.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a merchant».'},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not».'},
+  {k:'śūdraḥ',mean:'un lavoratore (uno śūdra)',info:'tema śūdra (m.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a worker».'},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not».'},
+  {k:'aham',mean:'io',info:'Ślokāmṛta-bindu: «I». Come sopra: na + aham → nāhaṁ.'},
+  {k:'varṇī',mean:'un brahmacārī',info:'Ślokāmṛta-bindu: «a brahmacārī».'},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not».'},
+  {k:'ca',mean:'anche',info:'Ślokāmṛta-bindu: «also».'},
+  {k:'gṛha-patiḥ',mean:'un capofamiglia (un gṛhastha)',info:'composto · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a householder».',parts:[['gṛha','(n.) casa [mia conoscenza generale, da verificare]'],['pati','(m.) signore [mia conoscenza generale, da verificare]']]},
+  {k:'no',mean:'non',info:'Ślokāmṛta-bindu: «not». È la particella no, scritta come parola a sé.'},
+  {k:'vana-sthaḥ',mean:'un vānaprastha (chi vive nella foresta)',info:'composto · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «vānaprastha». Che vana-stha significhi «che dimora nella foresta» è il senso letterale delle parti [mia conoscenza generale, da verificare].',parts:[['vana','(n.) foresta [mia conoscenza generale, da verificare]'],['stha','che sta, che dimora [mia conoscenza generale, da verificare]']]},
+  {k:'yatiḥ',mean:'un mendicante, un rinunciante (un sannyāsī)',info:'tema yati (m.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «a mendicant or renunciant».'},
+  {k:'vā',mean:'oppure',info:'Ślokāmṛta-bindu: «either». Indeclinabile.'},
+  {k:'kintu',mean:'ma',info:'Ślokāmṛta-bindu: «but». Indeclinabile; kiṁ + tu → kintu (sandhi).'},
+  {k:'prodyan',mean:'in continua espansione',info:'Ślokāmṛta-bindu: «forever expanding». Nel verso compare come prodyan- (sandhi: prodyat + nikhila). Sulla radice e sulla forma grammaticale non ho dati affidabili.'},
+  {k:'nikhila',mean:'tutto',info:'Ślokāmṛta-bindu: «all».'},
+  {k:'parama-ānanda',mean:'di beatitudine trascendentale',info:'composto. Ślokāmṛta-bindu: «of transcendental bliss». Nel verso compare come paramānanda (sandhi).',parts:[['parama','supremo [mia conoscenza generale, da verificare]'],['ānanda','(m.) beatitudine [mia conoscenza generale, da verificare]']]},
+  {k:'pūrṇa',mean:'completo',info:'Ślokāmṛta-bindu: «complete».'},
+  {k:'amṛta-abdheḥ',mean:'dell’oceano di nettare',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «of the ocean of nectar». Nel verso compare come amṛtābdheḥ (sandhi), poi abdher (sandhi).',parts:[['amṛta','(n.) nettare, immortalità [mia conoscenza generale, da verificare]'],['abdhi','(m.) oceano [mia conoscenza generale, da verificare]']]},
+  {k:'gopī-bhartuḥ',mean:'del sostentatore delle gopī [oppure: di Colui che è sostenuto dall’amore delle gopī]',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «of the maintainer of the gopīs [or He who is maintained by the gopīs’ love]».',parts:[['gopī','(f.) pastorella di Vraja [mia conoscenza generale, da verificare]'],['bhartṛ','(m.) sostentatore, signore [mia conoscenza generale, da verificare]']]},
+  {k:'pada-kamalayoḥ',mean:'dei due piedi di loto',info:'composto · ṣaṣṭhī dvivacana = genitivo duale [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «of the two lotus feet».',parts:[['pada','(n.) piede [mia conoscenza generale, da verificare]'],['kamala','(n.) loto [mia conoscenza generale, da verificare]']]},
+  {k:'dāsa',mean:'del servo',info:'Ślokāmṛta-bindu: «of the servant». Nel verso è il primo membro di dāsa-dāsānudāsaḥ.'},
+  {k:'dāsa-anudāsaḥ',mean:'questo insignificante servo del servo',info:'Ślokāmṛta-bindu: «this insignificant servant of the servant». Nel verso compare come dāsānudāsaḥ (sandhi). Insieme al dāsa precedente dà «servo del servo del servo», come nella traduzione.',parts:[['dāsa','servo [mia conoscenza generale, da verificare]'],['anudāsa','servo del servo [mia conoscenza generale, da verificare]']]}
+ ],
+ surf:[
+  [{t:'nāhaṁ',e:[0,1]},{t:'vipro',e:[2]},{t:'na',e:[3]},{t:'ca',e:[4]},{t:'nara-patir',e:[5]},{t:'nāpi',e:[6,7]},{t:'vaiśyo',e:[8]},{t:'na',e:[9]},{t:'śūdro',e:[10]}],
+  [{t:'nāhaṁ',e:[11,12]},{t:'varṇī',e:[13]},{t:'na',e:[14]},{t:'ca',e:[15]},{t:'gṛha-patir',e:[16]},{t:'no',e:[17]},{t:'vanastho',e:[18]},{t:'yatir',e:[19]},{t:'vā',e:[20]}],
+  [{t:'kintu',e:[21]},{t:'prodyan-nikhila-paramānanda-pūrṇāmṛtābdher',e:[22,23,24,25,26]}],
+  [{t:'gopī-bhartuḥ',e:[27]},{t:'pada-kamalayor',e:[28]},{t:'dāsa-dāsānudāsaḥ',e:[29,30]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  61:{txt:'viṣṇudāso viṣṇupadānte harighoṣe ca harigadā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa harigadā; se non è a fine di viṣṇupada, lo diventa solo se segue un harighoṣa.',ex:'Esempio: bhagavat + icchā → bhagavad-icchā',note:'La sostituzione è quella più simile per luogo di pronuncia (sthāne sadṛśatamaḥ).'},
+  62:{txt:'hariveṇau hariveṇur vā',tr:'Un viṣṇudāsa a fine di viṣṇupada diventa, a scelta, hariveṇu quando segue un hariveṇu.',ex:'Esempio: jagat + nāthaḥ → jagan-nāthaḥ oppure (61) jagad-nāthaḥ'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  80:{txt:'ād a-rāma-gopālayor ur nityam',tr:'Un viṣṇusarga (ḥ) dopo a diventa sempre u quando segue a o un gopāla.',ex:'Esempio: kṛṣṇaḥ + gacchati → kṛṣṇo gacchati; kṛṣṇaḥ + atra → kṛṣṇo ’tra'},
+  83:{txt:'ra īśvarāt sarveśvara-gopālayoḥ',tr:'Dopo un īśvara (i, ī, u, ū, ṛ, ṝ, ḷ, ḹ, e, ai, o, au) il viṣṇusarga (ḥ) diventa r quando segue un sarveśvara (vocale) o un gopāla (consonante sonora).',ex:'Esempio: hariḥ + gacchati → harir gacchati; hareḥ + idam → harer idam'}
+ },
+ sandhi:[
+  {a:'na',b:'aham',r:'nāhaṁ',sut:[42],note:'a + a → ā (42), come paṭṭa + ambara → paṭṭāmbara. Succede due volte: nāhaṁ vipro e nāhaṁ varṇī.'},
+  {a:'-m',b:'consonante',r:'-ṁ',sut:[72],note:'m finale diventa ṁ davanti a consonante (72): ahaṁ davanti a v, in tutti e due i casi. Il 73 non si applica: v non è una consonante di un varga.'},
+  {a:'vipraḥ',b:'na',r:'vipro na',sut:[80,44],note:'ḥ → u dopo a davanti a un gopāla (80): n è una consonante sonora. Poi a + u → o (44). Stessa catena di kṛṣṇaḥ + gacchati → kṛṣṇo gacchati.'},
+  {a:'nara-patiḥ',b:'na',r:'nara-patir na',sut:[83],note:'Dopo pa-ti (finale in i, un īśvara) il visarga diventa r davanti a una consonante sonora (n): come hariḥ + gacchati → harir gacchati. Il nā seguente è na + api (sandhi 5).'},
+  {a:'na',b:'api',r:'nāpi',sut:[42],note:'a + a → ā (42).'},
+  {a:'vaiśyaḥ',b:'na',r:'vaiśyo na',sut:[80,44],note:'ḥ → u (80), poi a + u → o (44).'},
+  {a:'śūdraḥ',b:'na',r:'śūdro na',sut:[80,44],note:'ḥ → u (80), poi a + u → o (44). Il sandhi passa sopra il confine fra il pāda 1 e il pāda 2: śūdro è l’ultima parola del pāda 1; il na seguente apre il pāda 2 e si unisce ad aham (sandhi 1: nāhaṁ).'},
+  {a:'gṛha-patiḥ',b:'no',r:'gṛha-patir no',sut:[83],note:'ḥ → r dopo i davanti a una consonante sonora (83).'},
+  {a:'vana-sthaḥ',b:'yatiḥ',r:'vanastho yatir',sut:[80,44],note:'ḥ → u (80) davanti a y, una consonante sonora; poi a + u → o (44).'},
+  {a:'yatiḥ',b:'vā',r:'yatir vā',sut:[83],note:'ḥ → r dopo i davanti a una consonante sonora (83): yatiḥ + vā → yatir vā. Il vā è l’ultima parola del pāda 2.'},
+  {a:'kiṁ',b:'tu',r:'kintu',sut:[72,73],note:'m → ṁ davanti a consonante (72); con il 73 la nasale diventa quella del varga della consonante che segue (t, ta-varga: n). A fine di viṣṇupada è facoltativo. Che kintu venga da kim + tu è una mia lettura [mia conoscenza generale, da verificare].'},
+  {a:'pra',b:'udyan',r:'prodyan',sut:[44],note:'a + u → o (44). Che prodyan sia pra + udyan è una mia lettura [mia conoscenza generale, da verificare].'},
+  {a:'prodyat',b:'nikhila',r:'prodyan-nikhila',sut:[62,61],note:'t finale davanti a una nasale (n) diventa n (62, come jagat + nāthaḥ → jagan-nāthaḥ); in alternativa d (61: prodyad-nikhila). Il verso ha la forma con n. Il sūtra parla di fine di viṣṇupada: qui prodyan è il primo membro di un composto, e il PDF dice che ogni parola dentro un composto è un viṣṇupada a sé. Che la forma di partenza sia prodyat è una mia lettura [mia conoscenza generale, da verificare].'},
+  {a:'parama',b:'ānanda',r:'paramānanda',sut:[42],note:'a + ā → ā (42), dentro il composto.'},
+  {a:'pūrṇa',b:'amṛta',r:'pūrṇāmṛta',sut:[42],note:'a + a → ā (42), dentro il composto.'},
+  {a:'amṛta',b:'abdheḥ',r:'amṛtābdheḥ',sut:[42],note:'a + a → ā (42), dentro il composto.'},
+  {a:'abdheḥ',b:'gopī',r:'abdher gopī',sut:[83],note:'Dopo dhe (finale in e, un īśvara) il visarga diventa r davanti a una consonante sonora (g): come hareḥ + idam → harer idam. Il sandhi passa sopra il confine fra il pāda 3 e il pāda 4.'},
+  {a:'kamalayoḥ',b:'dāsa',r:'kamalayor dāsa',sut:[83],note:'ḥ → r dopo o (un īśvara) davanti a una consonante sonora (83).'},
+  {a:'dāsa',b:'anudāsaḥ',r:'dāsānudāsaḥ',sut:[42],note:'a + a → ā (42), dentro il composto.'}
+ ],
+ seg:[
+  [{t:'n'},{t:'ā',s:[1]},{t:'ha'},{t:'ṁ',s:[2]},{t:' vipr'},{t:'o',s:[3]},{t:' na ca nara-pati'},{t:'r',s:[4]},{t:' n'},{t:'ā',s:[5]},{t:'pi vaiśy'},{t:'o',s:[6]},{t:' na śūdr'},{t:'o',s:[7]}],
+  [{t:'n'},{t:'ā',s:[1]},{t:'ha'},{t:'ṁ',s:[2]},{t:' varṇī na ca gṛha-pati'},{t:'r',s:[8]},{t:' no vanasth'},{t:'o',s:[9]},{t:' yati'},{t:'r',s:[10]},{t:' vā'}],
+  [{t:'ki'},{t:'n',s:[11]},{t:'tu pr'},{t:'o',s:[12]},{t:'dya'},{t:'n',s:[13]},{t:'-nikhila-param'},{t:'ā',s:[14]},{t:'nanda-pūrṇ'},{t:'ā',s:[15]},{t:'mṛt'},{t:'ā',s:[16]},{t:'bdhe'},{t:'r',s:[17]}],
+  [{t:'gopī-bhartuḥ pada-kamalayo'},{t:'r',s:[18]},{t:' dāsa-dās'},{t:'ā',s:[19]},{t:'nudāsaḥ'}]
+ ],
+ metrica:{
+  name:'Mandākrāntā',
+  syl:17,
+  sylNote:'contate da me sul testo: 4 × 17 = 68',
+  gana:'ma · bha · na · ta · ta · ga · ga',
+  yati:'dopo la 4ª e dopo la 10ª sillaba',
+  yatiNote:'Nei pāda 1, 2 e 4 le due pause cadono a fine parola (vipro / nara-patir; varṇī / gṛha-patir; bhartuḥ / pada-kamalayor); nel pāda 3 la prima cade dopo prodyan, ma la 10ª sillaba (mā) cade dentro paramānanda, a metà di un membro del composto. Nello schema qui sotto è segnata solo la prima pausa (dopo la 4ª sillaba)',
+  yatiAt:4,
+  lakshana:'mandākrāntāmbudhirasanagair mbhau nato gau gurū cet',
+  scan:['GGGGLLLLLGGLGGLGG','GGGGLLLLLGGLGGLGG','GGGGLLLLLGGLGGLGG','GGGGLLLLLGGLGGLGG'],
+  note:'I quattro pāda hanno la stessa scansione GGGG LLLLLG GLGGLGG (ma-bha-na-ta-ta-ga-ga). Una vocale breve prima di un nesso di consonanti si conta lunga: per esempio vi di vipro, kin di kintu, bhar di bhartuḥ; tir di patir si conta lunga perché la sillaba è chiusa dalla r. L’ultima sillaba di ogni pāda (dro, vā, dher, saḥ) è lunga per natura o per posizione. Il nome del metro lo ricavo dallo schema, non da una fonte [mia conoscenza generale, da verificare].'
+ },
+ context:[
+  {v:true,t:'Il verso è Padyāvalī 74: lo dice la nota di CC Madhya 13.80 su Vedabase (riportata da Vanipedia nei risultati di ricerca), che osserva soltanto che è il verso 74 della Padyāvalī, l’antologia compilata da Śrīla Rūpa Gosvāmī. Lo Ślokāmṛta-bindu (p. 6) lo presenta con il titolo «One’s eternal identity» (L’identità eterna) e introduce la traduzione con «[Śrī Caitanya Mahāprabhu said:]»: attribuisce quindi le parole a Śrī Caitanya Mahāprabhu.'},
+  {v:true,t:'Lo stesso verso è Caitanya-caritāmṛta, Madhya-līlā 13.80, nel capitolo 13, intitolato «The Ecstatic Dancing of the Lord at Ratha-yātrā» (La danza estatica del Signore alla Ratha-yātrā), sulla festa del carro di Jagannātha a Purī (Vedabase). Il verso che lo precede, 13.79, è una citazione dallo Śrīmad-Bhāgavatam 10.90.48 (da una ricerca web su Vedabase, la pagina non l’ho aperta): è il verso «jayati jana-nivāso…» che è già in questa raccolta.'},
+  {v:true,t:'Sul foglio che mi hai mandato è il primo dei quattro versi «Prayers to recite before remembering Dīkṣā Mantras» (preghiere da recitare prima di ricordare i mantra della dīkṣā), con il titolo «Bhūta-śuddhi – purification of one’s identity» (purificazione della propria identità).'},
+  {v:false,t:'In che momento preciso del racconto di Madhya 13 vengano pronunciate queste parole, e se nella pagina di Vedabase siano attribuite a una persona precisa: la pagina che ho letto non lo dice e non ho potuto leggere i versi 13.77 e 13.78. Non ho dati affidabili su questo. Quello che so con certezza è l’attribuzione a Śrī Caitanya Mahāprabhu dello Ślokāmṛta-bindu.'}
+ ],
+ note:'Il testo del verso è quello dello Ślokāmṛta-bindu e del foglio, ed è lo stesso di Vedabase (CC Madhya 13.80) tranne che Vedabase (vedabase.io, CC Madhya 13.80) ha «pūrnāmṛtābdher» senza il punto sotto la n: probabile refuso della pagina. La devanāgarī l’ho ricavata io dal testo in caratteri latini. Il parola per parola è quello dello Ślokāmṛta-bindu, reso in italiano da me; le righe di grammatica (caso, numero, parti dei composti) sono mie. Per il pāda 3, la divisione fra prodyan, nikhila, parama-ānanda, pūrṇa e amṛta-abdheḥ è quella dei synonyms dello Ślokāmṛta-bindu; come si leghino fra loro questi membri (sono tutti attributi di Kṛṣṇa, «l’oceano…», e dipendono da gopī-bhartuḥ) è una mia lettura, da verificare.',
+ sources:[
+  'Testo del verso (IAST), parola per parola e traduzione inglese: Śrī Ślokāmṛta-bindu, p. 6, sezione «One’s eternal identity» (PDF del progetto, «Slokamrta bindhu 1.pdf»; indice dei versi: «nāhaṁ vipro na ca nara-patir … 6»). Il foglio che mi hai mandato (n. 1) riporta lo stesso testo.',
+  'ca-link-finder (repo gurudas-sda/ca-link-finder, cercata nelle trascrizioni inglesi): il verso compare in molte trascrizioni, segnato come verso verificato con la fonte «Padyāvalī (74)».',
+  'Caitanya-caritāmṛta Madhya 13.80 (traduzione inglese, synonyms su varṇī, nota «verso 74 della Padyāvalī compilata da Rūpa Gosvāmī», titolo del capitolo 13) e 13.79 (citazione da ŚB 10.90.48): Vedabase, https://vedabase.io/en/library/cc/madhya/13/80/ (letto dai risultati di ricerca; 13.79 solo da ricerca web): da ricontrollare sul sito.',
+  'Sūtra 42, 44, 61, 62, 72, 73, 80 e 83: Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto), controllati nell’elenco dei sūtra.',
+  'Parola per parola in italiano, devanāgarī, genere, caso, composti, scansione, gaṇa, yati, lakṣaṇa e nome del metro: resa e conoscenza mie, da verificare.'
+ ]
+});
+/* ----- fine Padyāvalī 74 · nāhaṁ vipro ----- */
+
+/* ----- Ātma-dhyāna-mantra · divyaṁ śrī-hari-mandirāḍhya ----- */
+DATA.push({
+ id:'atma-dhyana-mantra',
+ label:'Ātma-dhyāna-mantra · divyaṁ śrī-hari-mandirāḍhya',
+ src:'Ātma-dhyāna-mantra · meditazione su se stessi',
+ sub:'śārdūla-vikrīḍita · 19 sillabe per pāda',
+ padas:[
+  {iast:'divyaṁ śrī-hari-mandirāḍhya-tilakaṁ kaṇṭhaṁ sumālānvitaṁ', dev:'दिव्यं श्रीहरिमन्दिराढ्यतिलकं कण्ठं सुमालान्वितं'},
+  {iast:'vakṣaḥ śrī-harināma-varṇa-subhagaṁ śrī-khaṇḍa-liptaṁ punaḥ', dev:'वक्षः श्रीहरिनामवर्णसुभगं श्रीखण्डलिप्तं पुनः ।'},
+  {iast:'pūtaṁ sūkṣmaṁ navāmbaraṁ vimalatāṁ nityaṁ vahantīṁ tanuṁ', dev:'पूतं सूक्ष्मं नवाम्बरं विमलतां नित्यं वहन्तीं तनुं'},
+  {iast:'dhyāyet śrī-guru-pāda-padma-nikaṭe sevotsukaṁ cātmanaḥ', dev:'ध्यायेत् श्रीगुरुपादपद्मनिकटे सेवोत्सुकं चात्मनः ॥'}
+ ],
+ translation:'Medito su me stesso come arreso ai piedi di loto di śrī-guru e dotato di grande determinazione nel servirlo. Medito su me stesso adornato, sulla fronte, da un bel tilaka che rappresenta il tempio di Śrī Hari. Porto al collo una bella collana di perle di tulasī. Il mio petto è segnato dal santo nome e cosparso di pasta di sandalo. Indosso una veste fine e pura e, dentro, sono costantemente assorto in sentimenti spirituali sempre freschi.',
+ translationSrc:'Resa italiana mia della traduzione inglese che c’è sul foglio («Prayers to recite before remembering Dīkṣā Mantras», n. 2, titolo «Meditation on oneself (ātma-dhyāna-mantra)»). Il foglio non indica chi ha tradotto né da quale opera venga il verso. La traduzione è libera: alcune parti non corrispondono alla lettera alle parole del verso (vedi la nota). Il verso non è nello Śrī Ślokāmṛta-bindu (PDF del progetto: due ricerche, nessun risultato) e il foglio non ha il parola per parola, che quindi è tutto mio.',
+ words:[
+  {k:'divyam',mean:'divino, splendido',info:'creato da me, non verificato. Aggettivo, accusativo singolare neutro [mia lettura]. Il foglio traduce «beautiful».'},
+  {k:'śrī-hari-mandira-āḍhya-tilakam',mean:'il tilaka ricco del tempio di Śrī Hari',info:'creato da me, non verificato. Composto · accusativo singolare (n.) [mia lettura]. Nel verso compare come śrī-hari-mandirāḍhya-tilakaṁ (sandhi). Il foglio traduce «tilaka, representing the temple of Śrī Hari, on my forehead»: «sulla fronte» non è nelle parole del verso. Il senso di āḍhya («ricco, dotato di») è conoscenza generale, da verificare.',parts:[['śrī','sacro, bello [mia conoscenza generale, da verificare]'],['hari','Hari (Kṛṣṇa) [mia conoscenza generale, da verificare]'],['mandira','(n.) tempio [mia conoscenza generale, da verificare]'],['āḍhya','ricco, dotato [mia conoscenza generale, da verificare]'],['tilaka','(n.) tilaka, il segno [mia conoscenza generale, da verificare]']]},
+  {k:'kaṇṭham',mean:'il collo',info:'creato da me, non verificato. Tema kaṇṭha (m.) · accusativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'su-māla-anvitam',mean:'dotato di una bella ghirlanda',info:'creato da me, non verificato. Composto · accusativo singolare [mia lettura]. Nel verso compare come sumālānvitaṁ (sandhi). Il foglio traduce «beautiful necklace of tulasī beads»: «tulasī» non è nelle parole del verso.',parts:[['su','bello [mia conoscenza generale, da verificare]'],['māla','ghirlanda, collana [mia conoscenza generale, da verificare]'],['anvita','dotato, provvisto [mia conoscenza generale, da verificare]']]},
+  {k:'vakṣaḥ',mean:'il petto',info:'creato da me, non verificato. Tema vakṣas (n.) · accusativo singolare, ripreso dal visarga [mia conoscenza generale, da verificare]. Il foglio: «my chest».'},
+  {k:'śrī-harināma-varṇa-subhagam',mean:'bello per le lettere del santo nome di Śrī Hari',info:'creato da me, non verificato. Composto · accusativo singolare [mia lettura]. varṇa vuol dire «lettera» ma anche «colore»: la resa «lettere» segue il foglio («marked with the holy name»), da verificare.',parts:[['śrī','sacro [mia conoscenza generale, da verificare]'],['harināma','il nome di Hari [mia conoscenza generale, da verificare]'],['varṇa','(m.) lettera; colore [mia conoscenza generale, da verificare]'],['subhaga','bello, splendido [mia conoscenza generale, da verificare]']]},
+  {k:'śrī-khaṇḍa-liptam',mean:'cosparso di pasta di sandalo',info:'creato da me, non verificato. Composto · accusativo singolare [mia lettura]. Il foglio: «anointed with sandalwood pulp».',parts:[['śrī-khaṇḍa','sandalo [mia conoscenza generale, da verificare]'],['lipta','cosparso, unto [mia conoscenza generale, da verificare]']]},
+  {k:'punaḥ',mean:'di nuovo, inoltre',info:'creato da me, non verificato. Indeclinabile [mia conoscenza generale, da verificare]. Il foglio stampa «pūnaḥ», ma il ca-link-finder e altri testi hanno punaḥ e la metrica vuole la u breve: ho scritto punaḥ. La traduzione del foglio non lo rende.'},
+  {k:'pūtam',mean:'puro, purificato',info:'creato da me, non verificato. Participio da pū, accusativo singolare neutro [mia lettura]. Il foglio: «pure».'},
+  {k:'sūkṣmam',mean:'sottile, fine',info:'creato da me, non verificato. Accusativo singolare neutro [mia lettura]. Il foglio: «fine». Altri testi online scrivono sūkṣma-navāmbaraṁ (composto): vedi la nota sulla metrica.'},
+  {k:'nava-ambaram',mean:'veste nuova',info:'creato da me, non verificato. Composto · accusativo singolare (n.) [mia lettura]. Nel verso compare come navāmbaraṁ (sandhi). La traduzione del foglio («fine and pure cloth») non rende nava «nuovo».',parts:[['nava','nuovo [mia conoscenza generale, da verificare]'],['ambara','(n.) veste, abito [mia conoscenza generale, da verificare]']]},
+  {k:'vimalatām',mean:'la purezza (l’essere senza macchia)',info:'creato da me, non verificato. Tema vimalatā (f.) · accusativo singolare [mia conoscenza generale, da verificare]. La traduzione del foglio («within I am constantly absorbed in ever-fresh spiritual sentiments») non corrisponde alla lettera a vimalatāṁ nityaṁ vahantīṁ tanuṁ («il corpo che porta sempre purezza»): non ho dati affidabili su come la resa del foglio derivi dal testo.'},
+  {k:'nityam',mean:'sempre, costantemente',info:'creato da me, non verificato. Avverbio (accusativo singolare neutro) [mia conoscenza generale, da verificare]. Il foglio: «constantly».'},
+  {k:'vahantīm',mean:'che porta, che reca',info:'creato da me, non verificato. Participio presente (śatṛ), femminile, accusativo singolare, da vah «portare» [mia conoscenza generale, da verificare].'},
+  {k:'tanum',mean:'il corpo',info:'creato da me, non verificato. Tema tanu (f.) · accusativo singolare [mia conoscenza generale, da verificare]. Che vahantīm tanum («il corpo che porta…») sia ciò su cui si medita è una mia lettura della frase.'},
+  {k:'dhyāyet',mean:'si mediti, si dovrebbe meditare',info:'creato da me, non verificato. Verbo, ottativo (vidhiliṅ) 3ª singolare · radice dhyai: meditare [mia conoscenza generale, da verificare]. Il foglio traduce in prima persona («I meditate on myself»); la forma del verso è alla 3ª persona.'},
+  {k:'śrī-guru-pāda-padma-nikaṭe',mean:'vicino ai piedi di loto di Śrī Guru',info:'creato da me, non verificato. Composto · saptamī ekavacana = locativo singolare [mia lettura]. Il foglio: «surrendered at the lotus feet of śrī-guru».',parts:[['śrī','sacro [mia conoscenza generale, da verificare]'],['guru','maestro spirituale [mia conoscenza generale, da verificare]'],['pāda','(m.) piede [mia conoscenza generale, da verificare]'],['padma','(n.) loto [mia conoscenza generale, da verificare]'],['nikaṭa','(n.) vicinanza [mia conoscenza generale, da verificare]']]},
+  {k:'seva-utsukam',mean:'desideroso di servire',info:'creato da me, non verificato. Composto · accusativo singolare (m.) [mia lettura]. Nel verso compare come sevotsukaṁ (sandhi). Il foglio: «possessing great determination to serve him».',parts:[['sevā','(f.) servizio [mia conoscenza generale, da verificare]'],['utsuka','ansioso, desideroso [mia conoscenza generale, da verificare]']]},
+  {k:'ca',mean:'e',info:'creato da me, non verificato. Indeclinabile.'},
+  {k:'ātmanaḥ',mean:'di sé, di se stesso',info:'creato da me, non verificato. Tema ātman (m.) · ṣaṣṭhī ekavacana = genitivo singolare [mia conoscenza generale, da verificare].'}
+ ],
+ surf:[
+  [{t:'divyaṁ',e:[0]},{t:'śrī-hari-mandirāḍhya-tilakaṁ',e:[1]},{t:'kaṇṭhaṁ',e:[2]},{t:'sumālānvitaṁ',e:[3]}],
+  [{t:'vakṣaḥ',e:[4]},{t:'śrī-harināma-varṇa-subhagaṁ',e:[5]},{t:'śrī-khaṇḍa-liptaṁ',e:[6]},{t:'punaḥ',e:[7]}],
+  [{t:'pūtaṁ',e:[8]},{t:'sūkṣmaṁ',e:[9]},{t:'navāmbaraṁ',e:[10]},{t:'vimalatāṁ',e:[11]},{t:'nityaṁ',e:[12]},{t:'vahantīṁ',e:[13]},{t:'tanuṁ',e:[14]}],
+  [{t:'dhyāyet',e:[15]},{t:'śrī-guru-pāda-padma-nikaṭe',e:[16]},{t:'sevotsukaṁ',e:[17]},{t:'cātmanaḥ',e:[18,19]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'}
+ },
+ sandhi:[
+  {a:'-m',b:'consonante',r:'-ṁ',sut:[72,73],note:'m finale diventa ṁ davanti a consonante (72). Succede in tredici punti: divyaṁ śrī, tilakaṁ kaṇṭhaṁ, kaṇṭhaṁ su-, sumālānvitaṁ vakṣaḥ, subhagaṁ śrī-, liptaṁ punaḥ, pūtaṁ sūkṣmaṁ, sūkṣmaṁ nava-, navāmbaraṁ vimalatāṁ, vimalatāṁ nityaṁ, nityaṁ vahantīṁ, vahantīṁ tanuṁ, tanuṁ dhyāyet. Con il 73 la nasale può anche diventare quella del varga della consonante che segue: è facoltativo, e nel verso c’è sempre ṁ. Davanti a v, ś, s, h il 73 non vale perché non sono consonanti di un varga (sūtra 17).'},
+  {a:'hari-mandira',b:'āḍhya',r:'hari-mandirāḍhya',sut:[42],note:'a + ā → ā (42), dentro il composto.'},
+  {a:'māla',b:'anvitam',r:'mālānvitam',sut:[42],note:'a + a → ā (42), dentro il composto sumālānvitam.'},
+  {a:'nava',b:'ambaram',r:'navāmbaram',sut:[42],note:'a + a → ā (42), dentro il composto.'},
+  {a:'sevā',b:'utsukam',r:'sevotsukam',sut:[44],note:'ā + u → o (44): a-dvaya (a, ā) seguito da u-dvaya, come dvārakā + utsavaḥ → dvārakotsavaḥ.'},
+  {a:'ca',b:'ātmanaḥ',r:'cātmanaḥ',sut:[42],note:'a + ā → ā (42).'}
+ ],
+ seg:[
+  [{t:'divya'},{t:'ṁ',s:[1]},{t:' śrī-hari-mandir'},{t:'ā',s:[2]},{t:'ḍhya-tilaka'},{t:'ṁ',s:[1]},{t:' kaṇṭha'},{t:'ṁ',s:[1]},{t:' sumāl'},{t:'ā',s:[3]},{t:'nvita'},{t:'ṁ',s:[1]}],
+  [{t:'vakṣaḥ śrī-harināma-varṇa-subhaga'},{t:'ṁ',s:[1]},{t:' śrī-khaṇḍa-lipta'},{t:'ṁ',s:[1]},{t:' punaḥ'}],
+  [{t:'pūta'},{t:'ṁ',s:[1]},{t:' sūkṣma'},{t:'ṁ',s:[1]},{t:' nav'},{t:'ā',s:[4]},{t:'mbara'},{t:'ṁ',s:[1]},{t:' vimalatā'},{t:'ṁ',s:[1]},{t:' nitya'},{t:'ṁ',s:[1]},{t:' vahantī'},{t:'ṁ',s:[1]},{t:' tanu'},{t:'ṁ',s:[1]}],
+  [{t:'dhyāyet śrī-guru-pāda-padma-nikaṭe sev'},{t:'o',s:[5]},{t:'tsuka'},{t:'ṁ',s:[1]},{t:' c'},{t:'ā',s:[6]},{t:'tmanaḥ'}]
+ ],
+ metrica:{
+  name:'Śārdūla-vikrīḍita',
+  syl:19,
+  gana:'ma · sa · ja · sa · ta · ta · ga',
+  yati:'dopo la 12ª sillaba',
+  yatiNote:'Nei quattro pāda cade a fine parola (tilakaṁ, subhagaṁ, vimalatāṁ, nikaṭe)',
+  lakshana:'sūryāśvair yadi masajasatatagāḥ śārdūlavikrīḍitam',
+  scan:['GGGLLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG','GGGGLGLGLLLGGGLGGLG','GGGLLGLGLLLGGGLGGLG'],
+  note:'I pāda 1, 2 e 4 seguono lo schema ma-sa-ja-sa-ta-ta-ga (GGG LLG LGL LLG GGL GGL G), con punaḥ nel pāda 2. Il pāda 3, così come è scritto sul foglio (sūkṣmaṁ navāmbaraṁ), ha la 4ª sillaba lunga (ṣmaṁ, per il segno ṁ) invece che breve: la scansione qui sotto è quella reale del testo e in quel punto non rispetta lo schema. Con sūkṣma-navāmbaraṁ (un composto, senza ṁ), come in altri testi online, la 4ª sillaba è breve e il pāda rientra nello schema: non ho dati affidabili su quale sia la lezione originale. Il nome del metro lo ricavo dallo schema, non da una fonte [mia conoscenza generale, da verificare].'
+ },
+ context:[
+  {v:true,t:'Sul foglio che mi hai mandato è il secondo dei quattro versi «Prayers to recite before remembering Dīkṣā Mantras» (preghiere da recitare prima di ricordare i mantra della dīkṣā), con il titolo «Meditation on oneself (ātma-dhyāna-mantra)» (meditazione su se stessi).'},
+  {v:true,t:'Secondo gaudiyadarshan.com (testo «Meditating on Our Ideal», autore non indicato nei risultati che ho letto), è un mantra di meditazione su se stessi che conosce chi ha ricevuto la seconda iniziazione, e prima di adorare il Signore si medita così sul proprio corpo.'},
+  {v:false,t:'In quale opera si trovi originariamente il verso, chi lo abbia composto e chi parli in questo verso: il foglio non lo dice e non ho trovato una fonte affidabile. Non ho dati affidabili su questo. È una meditazione da fare in prima persona su se stessi (il foglio la traduce così); la forma del verso, dhyāyet, è però alla 3ª persona («si mediti»).'}
+ ],
+ note:'Punti da controllare. (1) Il foglio stampa «pūnaḥ» nel pāda 2: ho scritto punaḥ, come nel ca-link-finder e negli altri testi, perché la metrica vuole la u breve. (2) Il pāda 3 è come sul foglio e come nel ca-link-finder (sūkṣmaṁ navāmbaraṁ), ma non torna con lo schema del metro in quel punto: altri testi online scrivono sūkṣma-navāmbaraṁ (vedi la nota sulla metrica). (3) Nel pāda 4 il foglio ha dhyāyet śrī e sevotsukaṁ cātmanaḥ, senza sandhi; gaudiyadarshan.com scrive dhyāyech chhrī-… e sevotsukañ chātmanaḥ (con il sandhi t + ś → c-ch e ṁ + c → ñ-c). Ho lasciato la forma del foglio. (4) La traduzione del foglio è libera e in prima persona: «sulla fronte», «tulasī» e «sentimenti spirituali sempre freschi» non corrispondono alle parole del verso, e nava «nuovo» non è reso. Il parola per parola è tutto mio, non verificato. La devanāgarī l’ho ricavata io dal testo in caratteri latini.',
+ sources:[
+  'Testo del verso (IAST) e traduzione inglese: il foglio che mi hai mandato (n. 2, «Meditation on oneself (ātma-dhyāna-mantra)»). Il foglio non indica l’opera di provenienza né il traduttore.',
+  'ca-link-finder (repo gurudas-sda/ca-link-finder, cercata nelle trascrizioni inglesi): il verso compare in alcune lezioni con il titolo «ātma-dhyāna-mantra», segnato come verso verificato, con lo stesso testo del foglio ma con punaḥ.',
+  'Altro testo con il verso: gaudiyadarshan.com, «Meditating on Our Ideal» (https://gaudiyadarshan.com/?p=8159), con sūkṣma-navāmbaraṁ e punaḥ e una traduzione inglese diversa da quella del foglio. Letto dai risultati di ricerca: da ricontrollare.',
+  'Ricerca nello Śrī Ślokāmṛta-bindu (PDF del progetto): il verso non compare (due ricerche).',
+  'Sūtra 42, 44, 72 e 73 (e la definizione nel sūtra 17): Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto), controllati nell’elenco dei sūtra.',
+  'Parola per parola (interamente mio), devanāgarī, genere, caso, composti, scansione, gaṇa, yati, lakṣaṇa e nome del metro: conoscenza mia, da verificare.'
+ ]
+});
+/* ----- fine Ātma-dhyāna-mantra · divyaṁ śrī-hari-mandirāḍhya ----- */
+
+/* ----- Stava-kalpadruma · tvaṁ gopikā ----- */
+DATA.push({
+ id:'stava-kalpadruma-tvam-gopika',
+ label:'Stava-kalpadruma · tvaṁ gopikā',
+ src:'Stava-kalpadruma · Raghunātha dāsa Gosvāmī',
+ sub:'vasantatilakā · 14 sillabe per pāda',
+ padas:[
+  {iast:'tvaṁ gopikā vṛṣa-raves tanayāntike ’si', dev:'त्वं गोपिका वृषरवेस्तनयान्तिकेऽसि'},
+  {iast:'sevādhikāriṇi guro nija-pāda-padme', dev:'सेवाधिकारिणि गुरो निजपादपद्मे ।'},
+  {iast:'dāsyaṁ pradāya kuru māṁ vraja-kānane śrī-', dev:'दास्यं प्रदाय कुरु मां व्रजकानने श्री-'},
+  {iast:'rādhāṅghri-sevana-rase sukhinīṁ sukhābdhau', dev:'राधाङ्घ्रिसेवनरसे सुखिनीं सुखाब्धौ ॥'}
+ ],
+ translation:'O Gurudeva! Tu sei una gopī nella compagnia della figlia di Vṛṣabhānu Mahārāja e puoi concedere il Suo servizio. Concedendomi il rifugio dei Tuoi piedi di loto, ti prego di farmi impegnare con gioia nell’oceano dei beati sapori del servizio ai piedi di loto di Śrīmatī Rādhikā, nei kuñja di Vraja.',
+ translationSrc:'Resa italiana mia della traduzione inglese dello Śrī Ślokāmṛta-bindu, p. 50 (PDF del progetto «Slokamrta bindhu 1.pdf»), identica a quella del foglio che mi hai mandato (n. 3, «A prayer to Gurudeva to bestow rādhā-dāsyam»). Nel PDF il testo estratto ha alcuni diacritici rovinati: per quelli mi sono fidato del foglio.',
+ words:[
+  {k:'tvam',mean:'tu',info:'Ślokāmṛta-bindu: «you». Pronome yuṣmad · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'gopikā',mean:'una giovane gopī',info:'Ślokāmṛta-bindu: «a young gopī». Tema gopikā (f.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'vṛṣa-raveḥ',mean:'del re Vṛṣabhānu',info:'composto · ṣaṣṭhī ekavacana = genitivo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «of King Vṛṣabhānu». Nel verso compare come vṛṣa-raves (sandhi).',parts:[['vṛṣa','(m.) toro [mia conoscenza generale, da verificare]'],['ravi','(m.) sole [mia conoscenza generale, da verificare]']]},
+  {k:'tanayā',mean:'la figlia',info:'Ślokāmṛta-bindu: «the daughter». Tema tanayā (f.) [mia conoscenza generale, da verificare].'},
+  {k:'antike',mean:'vicino',info:'Ślokāmṛta-bindu: «nearby». Locativo di antika, «vicinanza» [mia conoscenza generale, da verificare]. Nel verso tanayā + antike → tanayāntike (sandhi).'},
+  {k:'asi',mean:'tu sei',info:'Ślokāmṛta-bindu: «you are». Verbo as, presente 2ª singolare [mia conoscenza generale, da verificare]. Nel verso antike + asi → antike ’si (sandhi).'},
+  {k:'sevā-adhikāriṇi',mean:'tu che sei incaricata del Suo servizio',info:'Ślokāmṛta-bindu: «you are encharged with Her service». Composto; adhikāriṇī è femminile «che ha il diritto, incaricata» [mia conoscenza generale, da verificare]. Nel verso compare come sevādhikāriṇi (sandhi).',parts:[['sevā','(f.) servizio [mia conoscenza generale, da verificare]'],['adhikāriṇī','(f.) che ha il diritto, incaricata [mia conoscenza generale, da verificare]']]},
+  {k:'guro',mean:'o Śrī Guru',info:'Ślokāmṛta-bindu: «O Śrī Guru». Vocativo singolare di guru [mia conoscenza generale, da verificare].'},
+  {k:'nija-pāda-padme',mean:'ai Tuoi piedi di loto',info:'composto · saptamī ekavacana = locativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «at your own lotus feet».',parts:[['nija','proprio [mia conoscenza generale, da verificare]'],['pāda','(m.) piede [mia conoscenza generale, da verificare]'],['padma','(n.) loto [mia conoscenza generale, da verificare]']]},
+  {k:'dāsyam',mean:'il servizio',info:'Ślokāmṛta-bindu: «service». Tema dāsya (n.) · accusativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'pradāya',mean:'concedendo',info:'Ślokāmṛta-bindu: «bestowing». Gerundio (ktvā/lyap) da pra + dā, «dare» [mia conoscenza generale, da verificare].'},
+  {k:'kuru',mean:'fai, rendi',info:'Ślokāmṛta-bindu: «make». Imperativo 2ª singolare di kṛ [mia conoscenza generale, da verificare].'},
+  {k:'mām',mean:'me',info:'Ślokāmṛta-bindu: «me». Pronome asmad · accusativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'vraja-kānane',mean:'nella foresta di Vraja',info:'composto · saptamī ekavacana = locativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «in the forest of Vraja».',parts:[['vraja','(m.) Vraja [mia conoscenza generale, da verificare]'],['kānana','(n.) foresta [mia conoscenza generale, da verificare]']]},
+  {k:'śrī-rādhā-aṅghri',mean:'i piedi di loto di Śrī Rādhā',info:'Ślokāmṛta-bindu: «Śrī-Rādhā’s lotus feet». Primo membro del composto che prosegue nel pāda 4: il verso passa da śrī- (fine del pāda 3) a rādhāṅghri- (inizio del pāda 4). Nel verso rādhā + aṅghri → rādhāṅghri (sandhi).',parts:[['śrī','sacro [mia conoscenza generale, da verificare]'],['rādhā','Rādhā [mia conoscenza generale, da verificare]'],['aṅghri','(m.) piede [mia conoscenza generale, da verificare]']]},
+  {k:'sevana-rase',mean:'nel sapore (rasa) del servizio a Lei',info:'Ślokāmṛta-bindu: «of the rasa of service to Her». Composto · saptamī ekavacana = locativo singolare [mia conoscenza generale, da verificare].',parts:[['sevana','(n.) servizio [mia conoscenza generale, da verificare]'],['rasa','(m.) sapore, rasa [mia conoscenza generale, da verificare]']]},
+  {k:'sukhinīm',mean:'felice, beata',info:'Ślokāmṛta-bindu: «blissful». È un femminile accusativo singolare: concorda con mām. Che sia riferito alla forma spirituale femminile del discepolo è una mia lettura, da verificare; il foglio non lo dice.'},
+  {k:'sukha-abdhau',mean:'nell’oceano di beatitudine estatica',info:'composto · saptamī ekavacana = locativo singolare [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «in the ocean of ecstatic bliss». Nel verso compare come sukhābdhau (sandhi).',parts:[['sukha','(n.) felicità [mia conoscenza generale, da verificare]'],['abdhi','(m.) oceano [mia conoscenza generale, da verificare]']]}
+ ],
+ surf:[
+  [{t:'tvaṁ',e:[0]},{t:'gopikā',e:[1]},{t:'vṛṣa-raves',e:[2]},{t:'tanayāntike',e:[3,4]},{t:'’si',e:[5]}],
+  [{t:'sevādhikāriṇi',e:[6]},{t:'guro',e:[7]},{t:'nija-pāda-padme',e:[8]}],
+  [{t:'dāsyaṁ',e:[9]},{t:'pradāya',e:[10]},{t:'kuru',e:[11]},{t:'māṁ',e:[12]},{t:'vraja-kānane',e:[13]},{t:'śrī-',e:[14]}],
+  [{t:'rādhāṅghri-sevana-rase',e:[14,15]},{t:'sukhinīṁ',e:[16]},{t:'sukhābdhau',e:[17]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  56:{txt:'e-obhyām asya haro viṣṇupadānte',tr:'A-rāma (a) cade quando viene dopo una e o una o che sta a fine di viṣṇupada.',ex:'Esempio: hare + atra → hare ’tra'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  79:{txt:'ca-chayoḥ śa-rāmaḥ, ṭa-ṭhayoḥ ṣa-rāmaḥ, ta-thayoḥ sa-rāmaḥ',tr:'Il viṣṇusarga (ḥ) diventa ś quando segue ca o cha, ṣ quando segue ṭa o ṭha, s quando segue ta o tha.',ex:'Esempio: kṛṣṇaḥ + carati → kṛṣṇaś carati',note:'Il PDF riprende la parola viṣṇusargaḥ da un sūtra precedente della versione Bṛhat.'}
+ },
+ sandhi:[
+  {a:'-m',b:'consonante',r:'-ṁ',sut:[72,73],note:'m finale diventa ṁ davanti a consonante (72). Succede in quattro punti: tvaṁ gopikā, dāsyaṁ pradāya, māṁ vraja-, sukhinīṁ su-. Con il 73 la nasale può anche diventare quella del varga della consonante che segue (ṅ davanti a g, m davanti a p): è facoltativo, e nel verso c’è sempre ṁ. Davanti a v e s il 73 non vale perché non sono consonanti di un varga (sūtra 17).'},
+  {a:'vṛṣa-raveḥ',b:'tanayā',r:'vṛṣa-raves tanayā',sut:[79],note:'ḥ → s davanti a ta (79): come kṛṣṇaḥ + carati → kṛṣṇaś carati, ma con ta il visarga diventa s.'},
+  {a:'tanayā',b:'antike',r:'tanayāntike',sut:[42],note:'ā + a → ā (42).'},
+  {a:'antike',b:'asi',r:'antike ’si',sut:[56],note:'La a iniziale di asi cade dopo e a fine di viṣṇupada (56), come hare + atra → hare ’tra. Si scrive con il segno ’ (avagraha).'},
+  {a:'sevā',b:'adhikāriṇi',r:'sevādhikāriṇi',sut:[42],note:'ā + a → ā (42), dentro il composto.'},
+  {a:'rādhā',b:'aṅghri',r:'rādhāṅghri',sut:[42],note:'ā + a → ā (42), dentro il composto. Il composto comincia con śrī- alla fine del pāda 3 e continua nel pāda 4.'},
+  {a:'sukha',b:'abdhau',r:'sukhābdhau',sut:[42],note:'a + a → ā (42), dentro il composto.'}
+ ],
+ seg:[
+  [{t:'tva'},{t:'ṁ',s:[1]},{t:' gopikā vṛṣa-rave'},{t:'s',s:[2]},{t:' tanay'},{t:'ā',s:[3]},{t:'ntike '},{t:'’',s:[4]},{t:'si'}],
+  [{t:'sev'},{t:'ā',s:[5]},{t:'dhikāriṇi guro nija-pāda-padme'}],
+  [{t:'dāsya'},{t:'ṁ',s:[1]},{t:' pradāya kuru mā'},{t:'ṁ',s:[1]},{t:' vraja-kānane śrī-'}],
+  [{t:'rādh'},{t:'ā',s:[6]},{t:'ṅghri-sevana-rase sukhinī'},{t:'ṁ',s:[1]},{t:' sukh'},{t:'ā',s:[7]},{t:'bdhau'}]
+ ],
+ metrica:{
+  name:'Vasantatilakā',
+  syl:14,
+  sylNote:'contate da me sul testo: 4 × 14 = 56',
+  gana:'ta · bha · ja · ja · ga · ga',
+  yati:'nessuna pausa fissa',
+  yatiNote:'Non ho dati affidabili su una cesura fissa nel Vasantatilakā',
+  yatiAt:99,
+  lakshana:'uktā vasantatilakā tabhajā jagau gaḥ',
+  scan:['GGLGLLLGLLGLGL','GGLGLLLGLLGLGG','GGLGLLLGLLGLGG','GGLGLLLGLLGLGG'],
+  note:'I quattro pāda hanno lo stesso schema ta-bha-ja-ja-ga-ga (GGL GLL LGL LGL GG). Una vocale breve prima di un nesso di consonanti si conta lunga: per esempio tvaṁ, dās di dāsyaṁ, vṛ di vṛṣa. Nel pāda 1 l’ultima sillaba (si) è breve per natura: la segno com’è, senza forzarla lunga. Il composto śrī-rādhāṅghri-sevana-rase si spezza fra il pāda 3 e il pāda 4. Il nome del metro lo ricavo dallo schema, non da una fonte.'
+ },
+ context:[
+  {v:true,t:'Lo Ślokāmṛta-bindu (p. 50) lo mette nella parte sul Guru-tattva (la natura del guru), subito dopo la vandanā a Śrīla Sanātana Gosvāmī, con il titolo «A prayer to Gurudeva to bestow rādhā-dāsyam» (preghiera al Gurudeva perché conceda il servizio a Rādhā), e lo attribuisce a Śrīla Raghunātha dāsa Gosvāmī, opera «Śrī Stava Kalpadruma». Il ca-link-finder, che lo segna come verso verificato, riporta la stessa attribuzione.'},
+  {v:true,t:'A parlare è il discepolo che si rivolge al proprio guru (guro, «o Śrī Guru»): lo dice la traduzione dello Ślokāmṛta-bindu, «O Gurudeva! You are a gopī…». Il guru è visto come una gopī al servizio di Śrī Rādhā, la figlia di Vṛṣabhānu, e il discepolo gli chiede di farlo impegnare nel servizio ai piedi di Rādhā nei kuñja di Vraja.'},
+  {v:true,t:'Sul foglio che mi hai mandato è il terzo dei quattro versi «Prayers to recite before remembering Dīkṣā Mantras» (preghiere da recitare prima di ricordare i mantra della dīkṣā).'},
+  {v:false,t:'In che punto dell’opera e in che momento Raghunātha dāsa Gosvāmī lo abbia scritto, e se «Stava Kalpadruma» sia il titolo di una raccolta o di un singolo stotra: non ho dati affidabili su questo.'}
+ ],
+ note:'Il testo del verso è quello dello Ślokāmṛta-bindu e del foglio. Il titolo dell’opera, «Śrī Stava Kalpadruma», è quello dello Ślokāmṛta-bindu e del ca-link-finder: non l’ho potuto confrontare con un’edizione. La devanāgarī l’ho ricavata io dal testo in caratteri latini. Il parola per parola è quello dello Ślokāmṛta-bindu, reso in italiano da me; le righe di grammatica (caso, numero, parti dei composti) sono mie.',
+ sources:[
+  'Testo del verso (IAST), parola per parola e traduzione inglese: Śrī Ślokāmṛta-bindu, p. 50, sezione «A prayer to Gurudeva to bestow rādhā-dāsyam» (PDF del progetto, «Slokamrta bindhu 1.pdf»; indice dei versi: «tvaṁ gopikā vṛṣa-raves tanayāntike ’si … 50»). Il foglio che mi hai mandato (n. 3) riporta lo stesso testo.',
+  'ca-link-finder (repo gurudas-sda/ca-link-finder, cercata nelle trascrizioni inglesi): il verso compare in diverse trascrizioni, segnato come verso verificato con la fonte «Stava Kalpadruma, Śrīla Raghunātha dāsa Gosvāmī».',
+  'Sūtra 42, 56, 72, 73 e 79 (e la definizione nel sūtra 17): Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto), controllati nell’elenco dei sūtra.',
+  'Devanāgarī, genere, caso, composti, scansione, gaṇa, lakṣaṇa e nome del metro: conoscenza mia, da verificare; resa italiana del parola per parola mia.'
+ ]
+});
+/* ----- fine Stava-kalpadruma · tvaṁ gopikā ----- */
+
+/* ----- Vilāpa-kusumāñjali 16 ----- */
+DATA.push({
+ id:'vilapa-kusumanjali-16',
+ label:'Vilāpa-kusumāñjali 16',
+ src:'Vilāpa-kusumāñjali 16 · Raghunātha dāsa Gosvāmī',
+ sub:'vasantatilakā · 14 sillabe per pāda',
+ padas:[
+  {iast:'pādābjayos tava vinā vara-dāsyam eva', dev:'पादाब्जयोस्तव विना वरदास्यमेव'},
+  {iast:'nānyat kadāpi samaye kila devi yāce', dev:'नान्यत् कदापि समये किल देवि याचे ।'},
+  {iast:'sakhyāya te mama namo ’stu namo ’stu nityaṁ', dev:'सख्याय ते मम नमोऽस्तु नमोऽस्तु नित्यं'},
+  {iast:'dāsyāya te mama raso ’stu raso ’stu satyam', dev:'दास्याय ते मम रसोऽस्तु रसोऽस्तु सत्यम् ॥'}
+ ],
+ translation:'O Devī Rādhike! Il mio voto solenne è che non chiederò mai nulla se non quel servizio altissimo e diretto ai Tuoi piedi di loto. Offro praṇāma più e più volte al Tuo sakhītva, la posizione di Tua sakhī, ma il sentimento del mio cuore è esclusivamente per il Tuo dāsītva, la posizione di Tua ancella.',
+ translationSrc:'Resa italiana mia della traduzione inglese dello Śrī Ślokāmṛta-bindu, p. 166 (PDF del progetto «Slokamrta bindhu 1.pdf»), identica a quella del foglio che mi hai mandato (n. 4, «Śrīla Raghunātha dāsa Gosvāmī prays to be solely attached to serving Śrī Rādhā (rādhā-dāsyam)»). Nel PDF il testo estratto ha alcuni diacritici rovinati: per quelli mi sono fidato del foglio.',
+ words:[
+  {k:'pāda-abjayoḥ',mean:'ai piedi di loto',info:'composto · saptamī dvivacana = locativo duale [mia conoscenza generale, da verificare]. Ślokāmṛta-bindu: «at the lotus feet». Nel verso compare come pādābjayos (sandhi).',parts:[['pāda','(m.) piede [mia conoscenza generale, da verificare]'],['abja','(n.) loto (nato dall’acqua) [mia conoscenza generale, da verificare]']]},
+  {k:'tava',mean:'di Te',info:'Ślokāmṛta-bindu: «of You». Pronome yuṣmad · genitivo singolare [mia conoscenza generale, da verificare].'},
+  {k:'vinā',mean:'eccetto, senza',info:'Ślokāmṛta-bindu: «except». Indeclinabile.'},
+  {k:'vara',mean:'eccellente, altissimo',info:'Ślokāmṛta-bindu: «excellent». Nel verso è il primo membro di vara-dāsyam.'},
+  {k:'dāsyam',mean:'servizio',info:'Ślokāmṛta-bindu: «service». Tema dāsya (n.) · accusativo singolare [mia conoscenza generale, da verificare].'},
+  {k:'eva',mean:'certamente, soltanto',info:'Ślokāmṛta-bindu: «certainly». Indeclinabile; sottolinea la parola precedente.'},
+  {k:'na',mean:'non',info:'Ślokāmṛta-bindu: «not». Nel verso na + anyat → nānyat (sandhi).'},
+  {k:'anyat',mean:'qualcos’altro',info:'Ślokāmṛta-bindu: «anything else». Accusativo singolare neutro di anya [mia conoscenza generale, da verificare].'},
+  {k:'kadā api',mean:'mai',info:'Ślokāmṛta-bindu: «ever». Nel verso compare come kadāpi (sandhi): con na, «mai».'},
+  {k:'samaye',mean:'in un voto solenne',info:'Ślokāmṛta-bindu: «in a solmn covenant» (refuso nel PDF per «solemn»). Locativo singolare di samaya [mia conoscenza generale, da verificare].'},
+  {k:'kila',mean:'certamente',info:'Ślokāmṛta-bindu: «certainly». Indeclinabile.'},
+  {k:'devi',mean:'o Regina',info:'Ślokāmṛta-bindu: «O Queen». Vocativo singolare di devī [mia conoscenza generale, da verificare]. Nella traduzione: «O Devī Rādhike!».'},
+  {k:'yāce',mean:'chiedo, imploro',info:'Ślokāmṛta-bindu: «I beg». Verbo yāc, presente 1ª singolare, ātmanepada [mia conoscenza generale, da verificare].'},
+  {k:'sakhyāya',mean:'per l’amicizia (la posizione di sakhī)',info:'Ślokāmṛta-bindu: «for friendship» (nel PDF «sākhyāya», con ā: il verso ha sakhyāya). Dativo singolare di sakhya [mia conoscenza generale, da verificare]. Nella traduzione: «Your sakhītva, a position as Your sakhī».'},
+  {k:'te',mean:'di Te',info:'Ślokāmṛta-bindu: «of You». Forma enclitica del genitivo di yuṣmad [mia conoscenza generale, da verificare].'},
+  {k:'mama',mean:'di me',info:'Ślokāmṛta-bindu: «of me». Genitivo singolare di asmad [mia conoscenza generale, da verificare].'},
+  {k:'namaḥ',mean:'omaggio, prostrazioni',info:'Ślokāmṛta-bindu: «obeisances». Tema namas (n.) [mia conoscenza generale, da verificare]. Nel verso namaḥ + astu → namo ’stu (sandhi).'},
+  {k:'astu',mean:'sia, ci sia',info:'Ślokāmṛta-bindu: «may be». Verbo as, imperativo 3ª singolare [mia conoscenza generale, da verificare].'},
+  {k:'namaḥ',mean:'omaggio, prostrazioni',info:'Ślokāmṛta-bindu: «obeisances». Ripetuto.'},
+  {k:'astu',mean:'sia, ci sia',info:'Ślokāmṛta-bindu: «may be».'},
+  {k:'nityam',mean:'eternamente, sempre',info:'Ślokāmṛta-bindu: «eternally». Avverbio [mia conoscenza generale, da verificare].'},
+  {k:'dāsyāya',mean:'per il servizio',info:'Ślokāmṛta-bindu: «for service». Dativo singolare di dāsya [mia conoscenza generale, da verificare]. Nella traduzione: «Your dāsītva, a position as Your maidservant».'},
+  {k:'te',mean:'di Te',info:'Ślokāmṛta-bindu: «of You».'},
+  {k:'mama',mean:'di me',info:'Ślokāmṛta-bindu: «of me».'},
+  {k:'rasaḥ',mean:'gusto, sentimento del cuore',info:'Ślokāmṛta-bindu: «taste, sentiment of the heart». Tema rasa (m.) · prathamā ekavacana = nominativo singolare [mia conoscenza generale, da verificare]. Nel verso rasaḥ + astu → raso ’stu (sandhi).'},
+  {k:'astu',mean:'sia',info:'Ślokāmṛta-bindu: «let it be».'},
+  {k:'rasaḥ',mean:'sapore, dolcezza (mellow)',info:'Ślokāmṛta-bindu: «mellow». Ripetuto.'},
+  {k:'astu',mean:'sia',info:'Ślokāmṛta-bindu: «let it be».'},
+  {k:'satyam',mean:'in verità',info:'Ślokāmṛta-bindu: «in truth». Tema satya (n.) · usato come avverbio [mia conoscenza generale, da verificare].'}
+ ],
+ surf:[
+  [{t:'pādābjayos',e:[0]},{t:'tava',e:[1]},{t:'vinā',e:[2]},{t:'vara-dāsyam',e:[3,4]},{t:'eva',e:[5]}],
+  [{t:'nānyat',e:[6,7]},{t:'kadāpi',e:[8]},{t:'samaye',e:[9]},{t:'kila',e:[10]},{t:'devi',e:[11]},{t:'yāce',e:[12]}],
+  [{t:'sakhyāya',e:[13]},{t:'te',e:[14]},{t:'mama',e:[15]},{t:'namo',e:[16]},{t:'’stu',e:[17]},{t:'namo',e:[18]},{t:'’stu',e:[19]},{t:'nityaṁ',e:[20]}],
+  [{t:'dāsyāya',e:[21]},{t:'te',e:[22]},{t:'mama',e:[23]},{t:'raso',e:[24]},{t:'’stu',e:[25]},{t:'raso',e:[26]},{t:'’stu',e:[27]},{t:'satyam',e:[28]}]
+ ],
+ sutra:{
+  42:{txt:'daśāvatāra ekātmake militvā trivikramaḥ',tr:'Un daśāvatāra seguito dal suo ekātmaka si unisce a esso e diventa trivikrama (vocale lunga).',ex:'Esempio: hari + īhā → harīhā'},
+  44:{txt:'u-dvaye o',tr:'Quando a-dvaya (a, ā) è seguito da u-dvaya (u, ū), si uniscono e diventano o.',ex:'Esempio: dvārakā + utsavaḥ → dvārakotsavaḥ',note:'a-dvayam è ripreso dal sūtra 43.'},
+  56:{txt:'e-obhyām asya haro viṣṇupadānte',tr:'A-rāma (a) cade quando viene dopo una e o una o che sta a fine di viṣṇupada.',ex:'Esempio: hare + atra → hare ’tra'},
+  72:{txt:'mo viṣṇucakraṁ viṣṇujane',tr:'Ma-rāma (m) a fine di viṣṇupada diventa viṣṇucakra (ṁ) quando segue un viṣṇujana (una consonante).',ex:'Esempio: kṛṣṇam + smarati → kṛṣṇaṁ smarati. Ma: kṛṣṇam iccha (segue una vocale, la m resta).'},
+  73:{txt:'viṣṇucakrasya hariveṇur viṣṇuvarge, viṣṇupadāntasya tu vā',tr:'Il viṣṇucakra (ṁ) diventa l’hariveṇu dello stesso varga della consonante che segue, se segue un viṣṇuvarga; a fine di viṣṇupada è facoltativo.',ex:'Esempio: kṛṣṇaṁ kīrtayati → kṛṣṇaṁ kīrtayati oppure kṛṣṇaṅ kīrtayati'},
+  79:{txt:'ca-chayoḥ śa-rāmaḥ, ṭa-ṭhayoḥ ṣa-rāmaḥ, ta-thayoḥ sa-rāmaḥ',tr:'Il viṣṇusarga (ḥ) diventa ś quando segue ca o cha, ṣ quando segue ṭa o ṭha, s quando segue ta o tha.',ex:'Esempio: kṛṣṇaḥ + carati → kṛṣṇaś carati',note:'Il PDF riprende la parola viṣṇusargaḥ da un sūtra precedente della versione Bṛhat.'},
+  80:{txt:'ād a-rāma-gopālayor ur nityam',tr:'Un viṣṇusarga (ḥ) dopo a diventa sempre u quando segue a o un gopāla.',ex:'Esempio: kṛṣṇaḥ + gacchati → kṛṣṇo gacchati; kṛṣṇaḥ + atra → kṛṣṇo ’tra'}
+ },
+ sandhi:[
+  {a:'pāda',b:'abjayoḥ',r:'pādābjayoḥ',sut:[42],note:'ā + a → ā (42), dentro il composto.'},
+  {a:'pādābjayoḥ',b:'tava',r:'pādābjayos tava',sut:[79],note:'ḥ → s davanti a ta (79).'},
+  {a:'na',b:'anyat',r:'nānyat',sut:[42],note:'a + a → ā (42).'},
+  {a:'kadā',b:'api',r:'kadāpi',sut:[42],note:'ā + a → ā (42).'},
+  {a:'namaḥ',b:'astu',r:'namo ’stu',sut:[80,44,56],note:'ḥ → u dopo a davanti a a (80); a + u → o (44); poi la a di astu cade dopo o a fine di viṣṇupada (56) e si scrive ’. È la stessa catena di kṛṣṇaḥ + atra → kṛṣṇo ’tra del vṛtti del 80. Succede quattro volte: namo ’stu namo ’stu e raso ’stu raso ’stu.'},
+  {a:'nityam',b:'dāsyāya',r:'nityaṁ dāsyāya',sut:[72,73],note:'m → ṁ davanti a consonante (72). Con il 73 la nasale può anche diventare quella del varga seguente (qui n, perché d appartiene al ta-varga): è facoltativo, e nel verso c’è ṁ. Il sandhi passa sopra il confine fra il pāda 3 e il pāda 4. In dāsyam eva e in satyam la m resta: nel primo segue una vocale, il secondo è la fine del verso.'}
+ ],
+ seg:[
+  [{t:'pād'},{t:'ā',s:[1]},{t:'bjayo'},{t:'s',s:[2]},{t:' tava vinā vara-dāsyam eva'}],
+  [{t:'n'},{t:'ā',s:[3]},{t:'nyat kad'},{t:'ā',s:[4]},{t:'pi samaye kila devi yāce'}],
+  [{t:'sakhyāya te mama nam'},{t:'o',s:[5]},{t:' '},{t:'’',s:[5]},{t:'stu nam'},{t:'o',s:[5]},{t:' '},{t:'’',s:[5]},{t:'stu nitya'},{t:'ṁ',s:[6]}],
+  [{t:'dāsyāya te mama ras'},{t:'o',s:[5]},{t:' '},{t:'’',s:[5]},{t:'stu ras'},{t:'o',s:[5]},{t:' '},{t:'’',s:[5]},{t:'stu satyam'}]
+ ],
+ metrica:{
+  name:'Vasantatilakā',
+  syl:14,
+  sylNote:'contate da me sul testo: 4 × 14 = 56',
+  gana:'ta · bha · ja · ja · ga · ga',
+  yati:'nessuna pausa fissa',
+  yatiNote:'Non ho dati affidabili su una cesura fissa nel Vasantatilakā',
+  yatiAt:99,
+  lakshana:'uktā vasantatilakā tabhajā jagau gaḥ',
+  scan:['GGLGLLLGLLGLGL','GGLGLLLGLLGLGG','GGLGLLLGLLGLGG','GGLGLLLGLLGLGG'],
+  note:'I quattro pāda hanno lo stesso schema ta-bha-ja-ja-ga-ga (GGL GLL LGL LGL GG). La m finale di una parola si conta unita alla vocale seguente (dās-ya-me-va). Una vocale breve prima di un nesso di consonanti si conta lunga: per esempio dāb di pādābjayos, nān di nānyat. Nel pāda 1 l’ultima sillaba (va di eva) è breve per natura: la segno com’è, senza forzarla lunga. Il nome del metro lo ricavo dallo schema, non da una fonte.'
+ },
+ context:[
+  {v:true,t:'Lo Ślokāmṛta-bindu (p. 166) lo presenta così: «Śrīla Raghunātha dāsa Gosvāmī prays to be solely attached to serving Śrī Rādhā (rādhā-dāsyam)» (Raghunātha dāsa Gosvāmī prega di essere unicamente legato al servizio di Śrī Rādhā), e lo indica come Vilāpa-kusumāñjaliḥ (16). A parlare è l’autore, che si rivolge a Śrī Rādhā (devi, «O Devī Rādhike» nella traduzione).'},
+  {v:true,t:'Sul foglio che mi hai mandato è il quarto dei quattro versi «Prayers to recite before remembering Dīkṣā Mantras» (preghiere da recitare prima di ricordare i mantra della dīkṣā).'},
+  {v:false,t:'In che momento Raghunātha dāsa Gosvāmī abbia scritto questo verso e in che punto del poema stia nella sequenza dei versi: non ho dati affidabili su questo; so soltanto che lo Ślokāmṛta-bindu lo indica come Vilāpa-kusumāñjaliḥ 16.'}
+ ],
+ note:'Il testo del verso è quello dello Ślokāmṛta-bindu e del foglio. Nel ca-link-finder c’è una trascrizione che, con la stessa etichetta «Vilāpa-kusumāñjaliḥ (16)» e la stessa fonte, ha come primo pāda «gāndharvike tava vinā vara-dāsyam eva» invece di «pādābjayos tava vinā…»: è una variante che non ho potuto verificare; ho scritto la lezione dello Ślokāmṛta-bindu e del foglio. Nel parola per parola dello Ślokāmṛta-bindu c’è un refuso («solmn» per «solemn») e «sākhyāya» con la ā lunga, mentre il verso ha sakhyāya: ho scritto sakhyāya e segnalato il refuso. La devanāgarī l’ho ricavata io dal testo in caratteri latini. Il parola per parola è quello dello Ślokāmṛta-bindu, reso in italiano da me; le righe di grammatica (caso, numero, parti dei composti) sono mie.',
+ sources:[
+  'Testo del verso (IAST), parola per parola e traduzione inglese: Śrī Ślokāmṛta-bindu, p. 166, sezione «Rādhā-dāsyam» (PDF del progetto, «Slokamrta bindhu 1.pdf»). Il foglio che mi hai mandato (n. 4) riporta lo stesso testo.',
+  'ca-link-finder (repo gurudas-sda/ca-link-finder, cercata nelle trascrizioni inglesi): il verso compare in molte trascrizioni con la lezione «pādābjayos tava vinā…» e in una con «gāndharvike tava vinā…», sempre segnato come verso verificato con la fonte «Vilāpa-kusumāñjaliḥ (16), Śrīla Raghunātha dāsa Gosvāmī» (Śrī Ślokāmṛtam-bindu).',
+  'Sūtra 42, 44, 56, 72, 73, 79 e 80 (e la definizione nel sūtra 17): Hari-nāmāmṛta-vyākaraṇam di Jīva Gosvāmī, vol. 1 (PDF del progetto), controllati nell’elenco dei sūtra.',
+  'Devanāgarī, genere, caso, composti, scansione, gaṇa, lakṣaṇa e nome del metro: conoscenza mia, da verificare; resa italiana del parola per parola mia.'
+ ]
+});
+/* ----- fine Vilāpa-kusumāñjali 16 ----- */
+
 /* ===== FINE RACCOLTA ===== */
